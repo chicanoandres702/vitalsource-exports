@@ -1,0 +1,6 @@
+node_modules/
+*.log
+.screenshot.png
+playwright_cookies.js
+playwright_requests.json
+playwright_sniff.js
