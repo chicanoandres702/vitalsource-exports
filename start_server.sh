@@ -1,7 +1,4 @@
 #!/bin/bash
-# Usage: ./start_server.sh [bc_token_url]
-# Or send bc_token URL later: curl -X POST http://localhost:3001/vs/api/init -d '{"url":"..."}'
-
-TOKEN_URL="${1:-}"
+# VitalSource Export Server startup script
 cd /root/vitalsource_captures
-exec node server.mjs "$TOKEN_URL"
+exec node server.mjs "https://capella.vitalsource.com/reader/books/9781266607752" 2>&1
