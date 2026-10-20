@@ -1,0 +1,96 @@
+[
+  {
+    "name": "_businesscenter",
+    "value": "683a0e3c4f312ce96a3b1405cf25f032",
+    "domain": "bc.vitalsource.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_aloha__session",
+    "value": "ae4c1192-406e-4fb1-8663-988b9cc98bfa",
+    "domain": "login.vitalsource.com",
+    "path": "/",
+    "expires": 1792097837.410281,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://vitalsource.com",
+    "_crHasCrossSiteAncestor": false
+  },
+  {
+    "name": "_aloha_universal",
+    "value": "eyJhbGciOiJSUzI1NiJ9.eyJpZCI6ImNmOTc4MyIsInN1YiI6IkJZQlNBVVIzVkI3WEJQS1ZVUVpCIiwiYm5kIjoiY2FwZWxsYS52aXRhbHNvdXJjZS5jb20iLCJ0eXAiOiJib29rc2hlbGYiLCJjdHgiOiI2MWJmZWMxMC1hYWU2LTAxM2YtZjE4OS0xZWIyODZmYzM5YTAiLCJzc28iOjEsImV4cCI6MTc5MjA5NzgzN30.2n_PcXvCOIt57t4Ihcat1DPUpC0ggjXf0A15iPi6m_fk0rQX0LhS-7WC0vsuZOZvmf9-EVmeXr4iVdSFXoHcon_kgNtUAg6lBLttw9ppKj3JJvq2nw6lhAAMAInY7dfXTs8IeZLkvOkvEkqWakI9Q02CJ00tEQri1XQeSB6PHmmD41tSvUmvYNu8AzDLHvZR93OGkIOQDIGkcU2aOfgkfa4WOcWA1UJE6dDJFeo2MbdoDPVRUCt7CcUHN0AN024hNdUfCNqwR7vt9XZuf8PXnUFqFI-an8Mn3P8wD3yiqopp1wgQOxisYLBBea0qXpZFbZFWlaJtz9DrFjra_FZRW1veayt8ow_4Z-qsE_NK5_eyxglKyTFzWR0EiPEeK2PfDh_sJWqygDHTDxAHUtKEbTYRd6obsWvgz-fzI-ElmVy7n-fjChdrmvsYv6BGadGF3Ww5sCor3nNx-6_9OnR_KB4lsDGM1IFY-DVccArqiexzMwE0q1xoZRO7-ZhEbzIs",
+    "domain": ".vitalsource.com",
+    "path": "/",
+    "expires": 1794679037.410521,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "jig_isbns",
+    "value": "IntcImlzYm5zXCI6W1wiOTc4MDQ2NTA5NDQ2MlwiLFwiODI1NTQxQlwiLFwiOTc4MTI2NjYwNzc1MlwiLFwiOTc5ODIxNDM0MjQ0M1wiLFwiOTc5ODIxNDM0NjI1MFwiLFwiOTc5ODIxNDU4MjU0MlwiXSxcImd1aWRcIjpcIkJZQlNBVVIzVkI3WEJQS1ZVUVpCXCIsXCJlXCI6MSxcImlkXCI6XCIwZmU4ODFhZDBiNTFjZWQzNTZkM2YzZmM0NmY0M2M5N1wiLFwicnRcIjpudWxsLFwicmlcIjpudWxsfSI%3D--9f7b2caf2ee757365382d4cf9bf93887d6e79f605fc3c6b2aa751bd65e878b59",
+    "domain": "jigsaw.vitalsource.com",
+    "path": "/",
+    "expires": 1792088864.439845,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "cf_clearance",
+    "value": "HJ.j1M1hrtnb5zkqftypqxHuuRLoV4OJ9V3GsnsDCFk-1792087048-1.2.1.1-dR5v5I4R2G6RM2wRKl7BMPnDrNvcW0bH5ejNGPMAe9lKjAvSX.fPEaiz4JNCAwFnWQP1fVYvUJd3i.IZp01nPf7RQzqGAleMhYoffkcU4VLj6ORp9mFH2GbWZerPuuyKcRqYarsGtfCTb6OMw7GWf6t_R0ZqvoNkk4zxZIp8zpzPh5zahjI0MccDmtQjiMh.83zGKoDIcjnAw_UJPLDwk36bAXA3P28ygxU8WqyezgUneQUjCKgT5HXiIShrkAfQ2Wbz3srtjjXQSRWOtOEYhlooExwNrYeni0FNHjZkZMK3Q_ewoQo4ekJkoJUyJUetWrOHbcsWg8D4SM.jzXN27VdepiHO.MdiG3g6_82wAWQ",
+    "domain": ".vitalsource.com",
+    "path": "/",
+    "expires": 1823623048.450906,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None",
+    "partitionKey": "https://vitalsource.com",
+    "_crHasCrossSiteAncestor": false
+  },
+  {
+    "name": "JSESSIONID",
+    "value": "a7d1066d26aa5389",
+    "domain": ".nr-data.net",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_cat",
+    "value": "epfm-BYBSAUR3VB7XBPKVUQZB",
+    "domain": ".vitalsource.com",
+    "path": "/",
+    "expires": 1823623060.848532,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "prokofiev",
+    "value": "IlwiMmNiNmY1ZDEyMjA2NjBhYTgzMmE1YmRlNWI4NzE1ZjlcIiI%3D--c40cc809214736466ddd7934c72c50bd41e7dfb4e29c5d163b45d3ed20c3c515",
+    "domain": "jigsaw.vitalsource.com",
+    "path": "/",
+    "expires": 1792346260.958816,
+    "httpOnly": false,
+    "secure": true,
+    "sameSite": "None"
+  },
+  {
+    "name": "_jigsaw_session",
+    "value": "meU1aZHL7Jt%2Bcz8%2FG2IeLCKZKhwzG8p1ZiA8%2B5VUWFm%2BOrW9hFuYWZxOiU9th58CQS%2BpNS%2FNTkBBYT6CBdQ%2F474zqST3BvP7zuRFBL9A0od8AIfxqYyM3REZbF0iJRchWKuiprjB3wHMEhkKgyu8eHpVuItATAuNGFHWsyjNX5wNP0NeQekJaP%2BG99osklqxaEVUIYpigjxMyAMDQRAzjbXRfSYKNekcFpq04zsIa8fb5PhAjsqMkbkLFGvE8XtlyCJ2sTweT0ztXTVYjyrdRxe8XCaqihkcmEIJT1zLZGqGURofO7bIdPAABzXJFMOGyXCdbavoGy44TXrd6cEA%2Fa1Xse3plnWymfQprUmF6v%2FY5n8G9urNQiQ9d0otLmOUbiRjzelyERq1OrQvxcf4iCXJitJHtBPtjpPfkHuRvhlCbohwNssx0dnLl0EFndmEh%2FgZEKo8tbbUzPwPMx%2B3Nsmyp9i3Xd%2BaWx15uITHvcZRkoobghDBUnX7S1X4tYfmLjDUTZQ1%2BfgVSzhcFDLzQK%2BOcKXZulbpW%2FuVJdmsaFJ68KNdBFaHuJETElO2--24iFIdXrca9G%2BfgM--oN%2FokiTOrD4WdpYjfg4aVw%3D%3D",
+    "domain": "jigsaw.vitalsource.com",
+    "path": "/",
+    "expires": -1,
+    "httpOnly": true,
+    "secure": true,
+    "sameSite": "None"
+  }
+]

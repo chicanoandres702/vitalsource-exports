@@ -1,0 +1,327 @@
+[
+  {
+    "url": "https://jigsaw.vitalsource.com/auth/redirects/FX8FR9VMB58G6TQZP959SMTCE6BUP6DRVDQTV2CUC668VW72CK",
+    "method": "GET",
+    "headers": {
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Linux\""
+    }
+  },
+  {
+    "url": "https://login.vitalsource.com/redirect?redirect_uri=https%3A%2F%2Fcapella.vitalsource.com%2Fbooks%2F9781266607752%3Fcontext_token%3D61bfec10-aae6-013f-f189-1eb286fc39a0&verified_data=IntcImFjY2Vzc190b2tlblwiOlwiYjEwNjk5NWFmZDVmNDllNzNiYjU4ZGUxMDVlMjJiOWNcIixcImd1aWRcIjpcIkJZQlNBVVIzVkI3WEJQS1ZVUVpCXCIsXCJlbWFpbFwiOlwiTWFnaWNrMTIyMkBnbWFpbC5jb21cIixcImVtYWlsX3ZlcmlmaWNhdGlvbl9yZXF1aXJlZFwiOmZhbHNlLFwiZW1haWxfdmVyaWZpY2F0aW9uX2NvbXBsZXRlZFwiOnRydWUsXCJzc29fc2Vzc2lvblwiOnRydWUsXCJqaWdzYXdfYnJhbmRcIjpudWxsLFwiZXVsYV9hY2NlcHRlZFwiOnRydWUsXCJldWxhX2FjY2VwdGVkX2F0XCI6XCIyMDI2LTEwLTE1VDA5OjQ3OjU1LjAwMFpcIixcImxvY2FsZVwiOlwiZW5cIixcImVtYWlsX2xvY2tlZFwiOmZhbHNlLFwibGFzdF9icmFuZF9hY2Nlc3NlZFwiOlwiY2FwZWxsYVwiLFwibmVlZHNfcGFzc3dvcmRfdXBkYXRlXCI6ZmFsc2UsXCJyZWZlcmVuY2VfdXNlclwiOmZhbHNlLFwibWFzcXVlcmFkZVwiOm51bGwsXCJleHBcIjoxNzkyMDg3MjE4fSI=--1171fcdb7b8982eabc1fb57eb37f97c33d8dc07bda4a2061d03b1f31c67ff24a&brand=capella.vitalsource.com&auth_host=jigsaw.vitalsource.com&auth_protocol=https://",
+    "method": "GET",
+    "headers": {
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Linux\""
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/auth/redirects/KHHWAYMRECXXT4FGU6CEV5KUMVG4ZZF4ZJQ7WD48G9B885JQ66?jwt=aloha",
+    "method": "GET",
+    "headers": {
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Linux\""
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/assets/v1/jigsaw/box.js?v=1785420149171",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://capella.vitalsource.com/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/secure-token",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://capella.vitalsource.com/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/socket?xdm_e=https%3A%2F%2Fcapella.vitalsource.com&xdm_c=default3645&xdm_p=1",
+    "method": "GET",
+    "headers": {
+      "referer": "https://capella.vitalsource.com/",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Linux\""
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/assets/v1/jigsaw/puzzle_pieces/index-c451e4e862d2413a0762d4b5e520e2c79d6cbf6069d8d28d0137537a98a2e056.js",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/socket?xdm_e=https%3A%2F%2Fcapella.vitalsource.com&xdm_c=default3645&xdm_p=1",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/assets/application-1677fc488898d350308f83929276aaee08a3db6a7dc8c98d1049823e4ce9f47a.css",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/socket?xdm_e=https%3A%2F%2Fcapella.vitalsource.com&xdm_c=default3645&xdm_p=1",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/assets/application-e1606d8e2c45d8b01666307dc4655ed8a9c56aeef74382775cf5038d1841b473.js",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/socket?xdm_e=https%3A%2F%2Fcapella.vitalsource.com&xdm_c=default3645&xdm_p=1",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/fingerprint.js",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/socket?xdm_e=https%3A%2F%2Fcapella.vitalsource.com&xdm_c=default3645&xdm_p=1",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/user/languages",
+    "method": "GET",
+    "headers": {
+      "x-vitalsource-secure-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqaWdzYXciLCJleHAiOjE3OTIwODc4MjgsIm5iZiI6MTc5MjA4NjkyOCwicmVmZXJyZXIiOiJodHRwczovL2NhcGVsbGEudml0YWxzb3VyY2UuY29tLyIsImhvc3RuYW1lIjoiY2FwZWxsYS52aXRhbHNvdXJjZS5jb20ifQ.1q8ksYOPvc-brmILF_TUWQ3nBu_5WwM-geu_TOulEqQ",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/socket?xdm_e=https%3A%2F%2Fcapella.vitalsource.com&xdm_c=default3645&xdm_p=1",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-vitalsource-keepalive": "false",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "accept": "application/json, text/javascript, */*; q=0.01"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/user",
+    "method": "GET",
+    "headers": {
+      "x-vitalsource-secure-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqaWdzYXciLCJleHAiOjE3OTIwODc4MjgsIm5iZiI6MTc5MjA4NjkyOCwicmVmZXJyZXIiOiJodHRwczovL2NhcGVsbGEudml0YWxzb3VyY2UuY29tLyIsImhvc3RuYW1lIjoiY2FwZWxsYS52aXRhbHNvdXJjZS5jb20ifQ.1q8ksYOPvc-brmILF_TUWQ3nBu_5WwM-geu_TOulEqQ",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/socket?xdm_e=https%3A%2F%2Fcapella.vitalsource.com&xdm_c=default3645&xdm_p=1",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-vitalsource-keepalive": "false",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "accept": "application/json, text/javascript, */*; q=0.01"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752",
+    "method": "GET",
+    "headers": {
+      "x-vitalsource-secure-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqaWdzYXciLCJleHAiOjE3OTIwODc4MjgsIm5iZiI6MTc5MjA4NjkyOCwicmVmZXJyZXIiOiJodHRwczovL2NhcGVsbGEudml0YWxzb3VyY2UuY29tLyIsImhvc3RuYW1lIjoiY2FwZWxsYS52aXRhbHNvdXJjZS5jb20ifQ.1q8ksYOPvc-brmILF_TUWQ3nBu_5WwM-geu_TOulEqQ",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/socket?xdm_e=https%3A%2F%2Fcapella.vitalsource.com&xdm_c=default3645&xdm_p=1",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-vitalsource-keepalive": "false",
+      "x-requested-with": "XMLHttpRequest",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "accept": "application/json, text/javascript, */*; q=0.01"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/user/verify",
+    "method": "POST",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/socket?xdm_e=https%3A%2F%2Fcapella.vitalsource.com&xdm_c=default3645&xdm_p=1",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "content-type": "application/json; charset=UTF-8",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/mosaic.js",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://capella.vitalsource.com/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/secure-token",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://capella.vitalsource.com/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/provider.html",
+    "method": "GET",
+    "headers": {
+      "referer": "https://capella.vitalsource.com/",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Linux\""
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/provider.4b5740a9db71f1c6fadd.js",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/mosaic/provider.html",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/user",
+    "method": "GET",
+    "headers": {
+      "x-vitalsource-secure-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqaWdzYXciLCJleHAiOjE3OTIwODc4MzUsIm5iZiI6MTc5MjA4NjkzNSwicmVmZXJyZXIiOiJodHRwczovL2NhcGVsbGEudml0YWxzb3VyY2UuY29tLyIsImhvc3RuYW1lIjoiY2FwZWxsYS52aXRhbHNvdXJjZS5jb20ifQ.DTCl6oDCf2uaisX3Hh8sk-0S5IYtFDrg0U2E1jY-YRc",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/mosaic/provider.html",
+      "x-vitalsource-brand": "capella",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "accept": "application/json"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/wrapper.html?uuid=bed1fd6e-81e8-4e09-b4ec-2130a8217bef&type=book",
+    "method": "GET",
+    "headers": {
+      "referer": "https://capella.vitalsource.com/",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Linux\""
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/user",
+    "method": "GET",
+    "headers": {
+      "x-vitalsource-secure-token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqaWdzYXciLCJleHAiOjE3OTIwODc4MzUsIm5iZiI6MTc5MjA4NjkzNSwicmVmZXJyZXIiOiJodHRwczovL2NhcGVsbGEudml0YWxzb3VyY2UuY29tLyIsImhvc3RuYW1lIjoiY2FwZWxsYS52aXRhbHNvdXJjZS5jb20ifQ.DTCl6oDCf2uaisX3Hh8sk-0S5IYtFDrg0U2E1jY-YRc",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/mosaic/provider.html",
+      "x-vitalsource-brand": "capella",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "accept": "application/json"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/wrapper.0101e38bb6341c7f5665.js",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/mosaic/wrapper.html?uuid=bed1fd6e-81e8-4e09-b4ec-2130a8217bef&type=book",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/base64font",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/mosaic/wrapper.html?uuid=bed1fd6e-81e8-4e09-b4ec-2130a8217bef&type=book",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/info/books.json?reload_license=true&isbns=9781266607752",
+    "method": "GET",
+    "headers": {
+      "x-vitalsource-secure-token": "",
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/mosaic/wrapper.html?uuid=bed1fd6e-81e8-4e09-b4ec-2130a8217bef&type=book",
+      "x-vitalsource-brand": "capella",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0",
+      "x-vitalsource-sed": "secure",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "accept": "application/json"
+    }
+  },
+  {
+    "url": "https://bam.nr-data.net/1/2285d4559b?a=971971472&sa=1&v=1208.49599aa&t=Unnamed%20Transaction&rst=5887&ck=0&ref=https://jigsaw.vitalsource.com/mosaic/wrapper.html&be=225&fe=5503&dc=4719&af=err,xhr,stn,ins,spa&perf=%7B%22timing%22:%7B%22of%22:1792086937552,%22n%22:0,%22f%22:4,%22dn%22:4,%22dne%22:4,%22c%22:4,%22ce%22:4,%22rq%22:11,%22rp%22:131,%22rpe%22:147,%22dl%22:187,%22di%22:246,%22ds%22:4718,%22de%22:4719,%22dc%22:5501,%22l%22:5501,%22le%22:5541%7D,%22navigation%22:%7B%7D%7D&jsonp=NREUM.setToken",
+    "method": "GET",
+    "headers": {
+      "sec-ch-ua-platform": "\"Linux\"",
+      "referer": "https://jigsaw.vitalsource.com/",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0"
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/pages/recent?brand=vitalsource&create=true",
+    "method": "GET",
+    "headers": {
+      "referer": "https://jigsaw.vitalsource.com/mosaic/wrapper.html?uuid=bed1fd6e-81e8-4e09-b4ec-2130a8217bef&type=book",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Linux\""
+    }
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/epub/cfi/6/12!/4/2/4/3:245?brand=vitalsource&create=true",
+    "method": "GET",
+    "headers": {
+      "referer": "https://jigsaw.vitalsource.com/mosaic/wrapper.html?uuid=bed1fd6e-81e8-4e09-b4ec-2130a8217bef&type=book",
+      "upgrade-insecure-requests": "1",
+      "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "sec-ch-ua": "\"HeadlessChrome\";v=\"153\", \"Not_A Brand\";v=\"8\", \"Chromium\";v=\"153\"",
+      "sec-ch-ua-mobile": "?0",
+      "sec-ch-ua-platform": "\"Linux\""
+    }
+  }
+]

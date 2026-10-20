@@ -1,0 +1,2783 @@
+import { a as e } from "./rolldown-runtime-B0Z9INg1.js";
+
+import { i as t, t as n } from "./jsx-runtime-DU6_sasz.js";
+
+import { b as r, f as i, h as a, s as o } from "./index-maEWt9hW.js";
+
+import { A as s, C as c, D as l, E as u, h as d, k as f, w as p, x as m, y as h, z as g } from "./LocaleProvider-DoP-dlkE.js";
+
+import { t as _ } from "./uuid-DwkZyVS8.js";
+
+import { o as v, r as y, t as b } from "./styled-components.browser.esm-BcYycfu6.js";
+
+import { _ as x, c as S, f as C, g as w, i as ee, l as T, n as E, r as te, s as ne, t as re, u as ie, y as ae } from "./enrichments-DzDQ_toR.js";
+
+import { t as oe } from "./useIntl-DaqDtX5V.js";
+
+import { g as se, o as ce, p as le } from "./array-BlXv2BOg.js";
+
+import { d as ue, s as de } from "./StaticLoader-LtUItV9i.js";
+
+import { A as D, B as O, E as fe, J as k, O as pe, P as A, R as j, T as me, Y as he, g as ge, h as _e, j as ve, q as ye, u as M, z as be } from "./actions-B2bqznsY.js";
+
+import { S as xe, Tt as Se, Zt as Ce, a as we, an as N, at as Te, b as Ee, ct as De, dt as Oe, in as P, lt as ke, rn as Ae, u as je, ut as Me, v as Ne } from "./Tooltip-DA2Rdtm3.js";
+
+var F = e(t()), Pe = O(A.GET_PAGE_BREAKS);
+
+function Fe() {
+  let e = k(ge), t = ye(), n = k(_e);
+  return (0, F.useEffect)(() => {
+    e === i.WAITING && t(Pe());
+  }, [ t, e ]), {
+    loadStatus: e,
+    cfiToPage: e => ne(n, e)
+  };
+}
+
+function Ie() {
+  return k(M);
+}
+
+v();
+
+var I = ae(), Le = `Enter`;
+
+function Re() {
+  return document.getElementById(`root`)?.getAttribute(`aria-hidden`) === `true` || !!document.querySelector(`[aria-modal='true']:not([aria-hidden='true'])`);
+}
+
+function ze(e) {
+  if (!e?.target) {
+    return !1;
+  }
+  let t = e.target.attributes, n = t?.role?.value;
+  return [ `INPUT`, `TEXTAREA` ].indexOf(e.target.nodeName.toUpperCase()) >= 0 || n === `tab` || n === `separator` && t?.[`aria-valuemax`]?.value;
+}
+
+function Be(e) {
+  return ze(e) || Re();
+}
+
+function Ve(e, t) {
+  return [ `shiftKey`, `ctrlKey`, `altKey`, `metaKey` ].every(n => e[n] === (t[n] ?? !1));
+}
+
+var He = e => e.hasOwnProperty(`viewerUUID`);
+
+function Ue(e, t) {
+  let n = (0, F.useCallback)(n => {
+    (e !== ke.KEYUP || !Be(n)) && t(n);
+  }, [ t, e ]);
+  (0, F.useEffect)(() => (window.addEventListener(e, n), () => {
+    window.removeEventListener(e, n);
+  }), [ n, e ]), De(e, n);
+}
+
+var We = function(e) {
+  return e[e.None = 0] = `None`, e[e.Marker = 1] = `Marker`, e[e.OnlyNotes = 2] = `OnlyNotes`, 
+  e;
+}({}), Ge = `highlightsSetFilter`, Ke = e => (t, n) => {
+  let r = Date.parse(e(t)), i = Date.parse(e(n));
+  return isNaN(r) ? 1 : isNaN(i) ? -1 : r < i ? 1 : r > i ? -1 : 0;
+}, qe = Ke(e => e.lastModifiedAt), Je = Ke(e => e.lastUsedAt), Ye = e => e && e.length > 0 ? e.sort(qe).reduce((e, t) => (e[t.markerId] || (e[t.markerId] = t.lastModifiedAt), 
+e), {}) : {}, Xe = `Emoji Note Marker`;
+
+function L(e) {
+  return e.markers;
+}
+
+var Ze = (e, t) => e.label.localeCompare(t.label);
+
+function Qe(e) {
+  return e.label === Xe;
+}
+
+function $e(e) {
+  switch (e.vstColor) {
+   case `#ff7979`:
+    return `red`;
+
+   case `#80e1fd`:
+    return `blue`;
+
+   case `#47e6b4`:
+    return `teal`;
+
+   case `#f4ed75`:
+    return `yellow`;
+
+   case `#ffa0ea`:
+    return `pink`;
+
+   case `#aca6ff`:
+    return `purple`;
+
+   case `#e5be8b`:
+    return `brown`;
+
+   case `#a1ec80`:
+    return `green`;
+
+   case `#ffc766`:
+    return `orange`;
+
+   case `#8ac6ff`:
+    return `darkblue`;
+
+   default:
+    return `yellow`;
+  }
+}
+
+var R = D(e => L(e).markerIds, e => L(e).markerData, (e, t) => e.map(e => t[e]).sort(Je).filter(e => !Qe(e))), et = D(R, e => [ ...e ].sort(Ze)), tt = e => L(e).highlightsSubscribedMarkers, nt = D(tt, R, (e, t) => {
+  let {used: n, unused: r} = t.reduce(({used: e, unused: t}, n) => (n.lastUsedAt ? e.push(n) : t.push(n), 
+  {
+    used: e,
+    unused: t
+  }), {
+    used: [],
+    unused: []
+  });
+  return n.concat(e).concat(r);
+}), rt = e => L(e).colorOptions.map(e => ({
+  ...e,
+  labelId: $e(e)
+})), it = e => L(e).colorOptionsLoadStatus, at = e => L(e).markerLoadStatus, ot = D(e => L(e).markerIds, e => L(e).markerData, (e, t) => e.map(e => t[e]).filter(e => e.shared).length), st = e => {
+  let t = L(e).activeMarkerId;
+  return t ||= L(e).markerIds[0] || ``, t;
+}, ct = D(e => L(e).markerIds, e => L(e).markerData, (e, t) => e.map(e => t[e]).filter(e => Qe(e))), lt = /(?:[\u2700-\u27bf]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff])[\ufe0e\ufe0f]?(?:[\u0300-\u036f\ufe20-\ufe23\u20d0-\u20f0]|\ud83c[\udffb-\udfff])?(?:\u200d(?:[^\ud800-\udfff]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff])[\ufe0e\ufe0f]?(?:[\u0300-\u036f\ufe20-\ufe23\u20d0-\u20f0]|\ud83c[\udffb-\udfff])?)*/;
+
+function ut(e) {
+  let t = e.noteText?.match(lt);
+  return !!(e.hasNote && t && t[0]);
+}
+
+var dt = e => e.sort(function(e, t) {
+  if (e.cfi && t.cfi) {
+    let n = x(e.cfi)?.start || w(e.cfi), r = x(t.cfi)?.start || w(t.cfi);
+    return n && r ? I.CFI.compare(n, r, {
+      compareOffsets: !0
+    }) : 1;
+  }
+  return e.startPage - t.startPage || e.chapterOffset - t.chapterOffset;
+}), ft = e => e && e.sort((e, t) => {
+  if (!e.cfi) {
+    return 1;
+  }
+  if (!t.cfi) {
+    return -1;
+  }
+  if (e.cfi && t.cfi) {
+    let n = w(e.cfi), r = w(t.cfi);
+    return n && r ? I.CFI.compare(n, r, {
+      compareOffsets: !0
+    }) : 1;
+  }
+  return 0;
+}), pt = ve(`spine`), mt = pt.getData, ht = pt.getFetchStatus, gt = D(mt, e => e.reduce((e, t) => {
+  let n = w(t.cfi), r = S(t.cfi);
+  return n && r && !e[r] && (e[r] = n.toString()), e;
+}, {}));
+
+function _t(e) {
+  return e.highlights;
+}
+
+var vt = e => _t(e).highlightsRawData, yt = e => _t(e).subscribedHighlightsRawData, bt = D(vt, yt, (e, t) => e.concat(t)), xt = e => _t(e).loadStatus, St = D(e => vt(e), e => yt(e), e => R(e), e => tt(e), (e, t, n, r) => ({
+  highlights: e,
+  subscribedHighlights: t,
+  markers: n,
+  subscribedMarkers: r
+})), Ct = D(bt, _e, R, ct, tt, gt, (e, t, n, r, i, a) => {
+  let o = r.map(e => e.globalId);
+  if (!e || !t || !n || !i) {
+    return;
+  }
+  let s = e?.map(e => ({
+    ...e,
+    startLabel: Et(e, t, a),
+    authorInitials: Dt(e.authorName),
+    isEmoji: ut(e) && o.includes(e.markerId),
+    markerColorName: n.concat(i).find(t => t.globalId === e.markerId)?.label ?? ``
+  }));
+  return dt(s);
+}), wt = e => _t(e).highlightsFilter, Tt = D(Ct, wt, (e, t) => e?.filter(e => t.type === We.None || t.type === We.OnlyNotes && e.hasNote && e.markerColorName || t.type === We.Marker && e.markerId === t.globalId)), Et = (e, t, n) => {
+  let r = ``;
+  if (e.cfi) {
+    let t = x(e.cfi);
+    if (!t) {
+      return ``;
+    }
+    r = T(t.start.toString(), n);
+  }
+  return !e.startLabel && r ? ne(t, r) : e.startLabel;
+}, Dt = e => {
+  if (e) {
+    return e.split(` `).reduce((e, t, n, r) => n === 0 || n === r.length - 1 ? e + t.toUpperCase().charAt(0) : e, ``);
+  }
+}, Ot = D(e => Ct(e), e => fe(e), e => pe(e), (e, t, n) => {
+  if (!t || !e || n) {
+    return [];
+  }
+  let r = (0, I.parseCfi)(t);
+  return e.filter(e => {
+    let t;
+    try {
+      return t = e.cfi ? (0, I.parseCfiRange)(e.cfi).start.contentDoc : (0, I.parseCfi)(`/${e.startPage}`), 
+      I.CFI.equals(r, t, {
+        checkAssertions: !0
+      });
+    } catch {
+      return !1;
+    }
+  });
+}), kt = e => D(Ct, t => t && e ? t.find(t => t.syncId === e) : null), At = e => D(R, kt(e), (e, t) => t ? e.find(e => e.globalId === t.markerId) : null), jt = D(Tt, Ee, Ne, gt, (e, t, n, r) => {
+  let i = e?.reduce((e, t, i, a) => {
+    let o, s, c = t.chapterTitle, l = e[e.length - 1], u = l?.uuid, d = x(t.cfi);
+    if (d) {
+      let e = T(d.start.toString(), r), t = xe(e, {
+        toc: n
+      });
+      t && (o = t.uuid, c = t.title, s = t.cfi);
+    }
+    return l && (o && o === u || c && c === l.title) ? l.highlights.push(t) : e.push({
+      cfi: ie(s),
+      title: c,
+      uuid: o || `${c}_${_()}`,
+      highlights: [ t ]
+    }), e;
+  }, []);
+  return ft(i);
+}), Mt = O(A.GET_HIGHLIGHTS), Nt = O(A.HIGHLIGHT_CURRENT_SELECTION), Pt = O(A.GO_TO_HIGHLIGHT), Ft = e => ({
+  type: Ge,
+  filter: e
+}), It = O(A.DELETE_HIGHLIGHT), Lt = O(A.UPDATE_HIGHLIGHT), Rt = () => (e, t) => {
+  if (xt(t()) === i.WAITING) {
+    return e(Mt());
+  }
+};
+
+function zt() {
+  let e = k(xt), t = he();
+  return (0, F.useEffect)(() => {
+    t(Rt());
+  }, [ t ]), e;
+}
+
+var Bt = j(N.GET_MARKERS), Vt = j(N.CREATE_MARKER), Ht = O(A.REDRAW_HIGHLIGHTS), Ut = e => function(t, n) {
+  let r = j(N.DELETE_MARKER);
+  return R(n()).length > 1 ? t(r(e)).then(({ok: e}) => e ? t(Ht()) : {
+    ok: !1
+  }) : Promise.resolve({
+    ok: !1
+  });
+}, Wt = Rt, Gt = () => (e, t) => it(t()) === i.WAITING ? e(Bt()) : Promise.resolve({
+  ok: !0
+}), Kt = (e, t) => {
+  let n = j(N.UPDATE_MARKER);
+  return function(r) {
+    return r(n(e, t)).then(({ok: e}) => e ? r(Ht()) : {
+      ok: !1
+    });
+  };
+};
+
+function qt() {
+  let e = k(at), t = he();
+  return (0, F.useEffect)(() => {
+    t(Wt());
+  }, [ t ]), e;
+}
+
+function Jt() {
+  let e = qt(), t = k(R), n = k(et), r = k(nt), i = ye();
+  function a(e) {
+    return i(Vt(e));
+  }
+  return {
+    markers: t,
+    labelSortedMarkers: n,
+    loadStatus: e,
+    createMarker: a,
+    allMarkers: r
+  };
+}
+
+function Yt() {
+  let e = zt(), {loadStatus: t} = Jt(), n = k(Ct), r = k(tt), {bookInfo: i} = Ce(), o = ye(), s = (0, 
+  F.useCallback)((e, t) => {
+    let r = n?.find(t => t.syncId === e), a;
+    if (i.vbkType === Se.EPUB) {
+      let e = C(r?.cfi ?? ``);
+      a = e ? e.toString() : null;
+    } else {
+      a = r?.location ? `/` + r.location.split(`/`).pop() : null;
+    }
+    return o(Pt({
+      syncId: e,
+      subscribed: t
+    }, Te({
+      highlightCfi: a
+    })));
+  }, [ i, o, n ]), c = (0, F.useCallback)((e, t) => o(Nt({
+    markerId: e,
+    text: t
+  })), [ o ]), l = (0, F.useCallback)(e => o(It({
+    syncId: e
+  })), [ o ]), u = (0, F.useCallback)((e, t) => o(Lt({
+    syncId: e,
+    dataFields: t
+  })), [ o ]);
+  return {
+    loadStatus: a([ e, t ]),
+    highlightsData: n,
+    numHighlights: n?.length ?? 0,
+    highlightsSubscribedMarkers: r,
+    goToHighlight: s,
+    highlightCurrentSelection: c,
+    deleteHighlight: l,
+    updateHighlight: u
+  };
+}
+
+function Xt(e) {
+  return e.ai.chatLog;
+}
+
+function Zt(e) {
+  return !!e.sessionId && !!e.artifactEntryId;
+}
+
+function Qt(e) {
+  return Zt(e.ai.lastChatInteraction) ? e.ai.lastChatInteraction : null;
+}
+
+function $t(e) {
+  return e.ai.sessionId;
+}
+
+var en = ve(`ai.isIndexed`), tn = en.getData, nn = en.getFetchStatus, rn = ve(`ai.chatHistory`), an = rn.getData, on = rn.getFetchStatus, sn = D([ an ], e => e ? [ ...e ].sort((e, t) => new Date(t.updatedAt).getTime() - new Date(e.updatedAt).getTime()) : []), cn = D([ sn ], e => e[0]);
+
+function ln(e) {
+  return e.ai.isLoadingSession;
+}
+
+function un(e) {
+  return e.ai.chatHistory.pendingDeleteIds ?? [];
+}
+
+var z = function(e) {
+  return e.NEW_CHAT = `ai/new-chat`, e.LOAD_CHAT = `ai/load-chat`, e.SET_SESSION_ID = `ai/set-session-id`, 
+  e.SET_ARTIFACT_ENTRY_ID = `ai/set-artifact-entry-id`, e.LOAD_SESSION_START = `ai/load-session-start`, 
+  e.LOAD_SESSION_END = `ai/load-session-end`, e.CHAT_START = `ai/chat/start`, e.CHAT_SUCCESS = `ai/chat/success`, 
+  e.CHAT_FAIL = `ai/chat/fail`, e.LIST_SESSIONS_START = `ai/list-sessions/start`, 
+  e.LIST_SESSIONS_SUCCESS = `ai/list-sessions/success`, e.LIST_SESSIONS_FAIL = `ai/list-sessions/fail`, 
+  e.UPDATE_SESSION_START = `ai/update-session/start`, e.UPDATE_SESSION_SUCCESS = `ai/update-session/success`, 
+  e.UPDATE_SESSION_FAIL = `ai/update-session/fail`, e.DELETE_SESSION_START = `ai/delete-session/start`, 
+  e.DELETE_SESSION_SUCCESS = `ai/delete-session/success`, e.DELETE_SESSION_FAIL = `ai/delete-session/fail`, 
+  e;
+}({});
+
+function dn(e, t) {
+  return e.score?.value === t;
+}
+
+function fn(e) {
+  return e.reduce((e, t) => {
+    let n = e.get(t.question) || [];
+    return e.set(t.question, [ ...n, t ]), e;
+  }, new Map);
+}
+
+function pn(e) {
+  if (e.length === 1) {
+    return new Set([ e[0].supernovaId ]);
+  }
+  let t = e.reduce((e, t) => (t.hasError || e.add(t.supernovaId), e), new Set);
+  return t.add(e[e.length - 1].supernovaId), t;
+}
+
+function mn(e) {
+  let t = fn(e), n = new Set;
+  return t.forEach(e => {
+    pn(e).forEach(e => n.add(e));
+  }), e.filter(e => n.has(e.supernovaId));
+}
+
+function hn() {
+  return !0;
+}
+
+function gn() {
+  return hn() ? `mml` : `legacy`;
+}
+
+var _n = function(e) {
+  return e.ASK_YOUR_BOOK = `AskYourBook`, e.SIMPLIFY = `Simplify`, e;
+}({});
+
+function B() {
+  let e = window.Jigsaw?.Babble;
+  if (!e) {
+    throw Error(`window.Jigsaw.Babble is not available — is Mosaic loaded?`);
+  }
+  return e;
+}
+
+function vn(e, t) {
+  let n = Math.random().toString(36).slice(2);
+  return new Promise((r, i) => {
+    let a = `jigsaw.babble.${n}`, o = !1, s = () => !o && (o = !0, window.removeEventListener(a, c), 
+    !0), c = e => {
+      let {event: n, ...a} = e.detail;
+      switch (n) {
+       case `session`:
+        t.onSession?.(a.id);
+        break;
+
+       case `status`:
+        t.onStatus?.(a.status);
+        break;
+
+       case `data`:
+        t.onData?.(a);
+        break;
+
+       case `error`:
+        a.code ? (t.onError?.(a.code, a.message), s() && i(Error(a.message ?? `ask-your-book error code ${String(a.code)}`))) : (console.error(`ask-your-book stream error`, a), 
+        s() && i(Error(`ask-your-book stream error`)));
+        break;
+
+       case `done`:
+        t.onDone?.(a.durationMs, typeof a.artifactEntryId == `number` ? a.artifactEntryId : null), 
+        s() && r();
+        break;
+
+       case `debug`:
+        console.debug(`ask-your-book debug`, a);
+        break;
+
+       case `info`:
+        console.info(`ask-your-book info`, a);
+        break;
+
+       case `warn`:
+        console.warn(`ask-your-book warn`, a);
+      }
+    };
+    window.addEventListener(a, c);
+    let l = e => {
+      if (s()) {
+        let n = e instanceof Error ? e.message : `The AI response stream ended unexpectedly`;
+        console.error(`ask-your-book stream ended without done/error event`, e), t.onError?.(`stream_error`, n), 
+        i(Error(n));
+      }
+    };
+    B().agenticInterface(`ask-your-book`, e, n).then(() => l()).catch(e => l(e));
+  });
+}
+
+async function yn(e = `AskYourBook`, t) {
+  let {ok: n, data: r} = await B().listSessions({
+    agenticInterface: e,
+    vbid: t
+  });
+  if (!n) {
+    throw Error(`listSessions failed`);
+  }
+  return r;
+}
+
+async function bn(e) {
+  let {ok: t, data: n} = await B().getSession(e);
+  if (!t) {
+    throw Error(`getSession failed`);
+  }
+  return n;
+}
+
+async function xn(e) {
+  let {ok: t, data: n} = await B().getArtifact(e);
+  if (!t) {
+    throw Error(`getArtifact failed`);
+  }
+  return n;
+}
+
+async function Sn(e) {
+  let {ok: t} = await B().deleteSession(e);
+  if (!t) {
+    throw Error(`deleteSession failed`);
+  }
+}
+
+async function Cn(e, t) {
+  let {ok: n} = await B().updateSession(e, {
+    summary: t
+  });
+  if (!n) {
+    throw Error(`updateSession failed`);
+  }
+}
+
+var wn = function(e) {
+  return e.GENERATE_STUDY_PLAN = `Jigsaw.StudyPlan.generateStudyPlan`, e.SIMPLIFY = `Jigsaw.AI.simplify`, 
+  e;
+}(wn || {}), Tn = function(e) {
+  return e.REPHRASE = `rephrasing`, e.SIMPLIFY_AGAIN = `simplify_again`, e.SAY_IT_BACK = `say_it_back`, 
+  e.SAY_IT_BACK_REMINDER = `say_it_back_reminder`, e;
+}({}), En = e => e.simplify.logs, Dn = e => e.simplify.sessionId, On = e => e.simplify.isLoadingSession, kn = be(wn.SIMPLIFY), An = `simplify/reset`, jn = () => ({
+  type: An
+}), Mn = `simplify/load-session-success`;
+
+function Nn(e, t) {
+  return (n, r) => {
+    let i = M(r()), a = me(r()), o = a?.cfi, s = a?.absoluteURL;
+    return n(kn(e, {
+      vbid: i,
+      cfi: o,
+      chapterPath: s,
+      sessionId: Dn(r()),
+      ...t
+    })).then(e => (e.ok && Dn(r()) !== cn(r())?.id && n(Jn()), e));
+  };
+}
+
+function Pn(e) {
+  let t = [], n = Tn.REPHRASE, r;
+  for (let i of e) {
+    if (i.role === `user`) {
+      n = i.action.action, r = i.action.action === Tn.SAY_IT_BACK ? i.action.userInput || i.content : void 0;
+    } else if (i.role === `assistant`) {
+      let e = {
+        text: i.content
+      };
+      t.push({
+        action: n,
+        interaction: [ e ],
+        artifactEntryId: i.id,
+        sayItBack: r,
+        fromHistory: !0
+      });
+    }
+  }
+  return t;
+}
+
+function Fn(e, t, n) {
+  return function(r) {
+    r({
+      type: Mn,
+      payload: {
+        logs: Pn(e),
+        sessionId: t,
+        location: n
+      }
+    });
+  };
+}
+
+var In = j(N.AI_TRANSLATE), Ln = j(N.AI_TRANSLATE_EVENT);
+
+function Rn(e, t) {
+  return function(n, r) {
+    let i = M(r()), a = $t(r()), o = me(r()), s = o?.cfi, c = o?.absoluteURL, l = _(), u = _();
+    return n({
+      type: z.CHAT_START,
+      question: e,
+      supernovaId: l,
+      localMessageId: u
+    }), vn({
+      content: e,
+      vbid: i,
+      cfi: s,
+      sessionId: a ?? void 0,
+      chapterPath: c,
+      coachMeEnabled: t
+    }, {
+      onSession: e => {
+        n({
+          type: z.SET_SESSION_ID,
+          payload: e
+        });
+      },
+      onData: e => {
+        let t = e.response;
+        t && n({
+          type: z.CHAT_SUCCESS,
+          supernovaId: l,
+          answer: Bn(t)
+        });
+      },
+      onDone: (e, t) => {
+        t != null && n({
+          type: z.SET_ARTIFACT_ENTRY_ID,
+          payload: {
+            supernovaId: l,
+            artifactEntryId: t
+          }
+        });
+      },
+      onError: (e, t) => {
+        n({
+          type: z.CHAT_FAIL,
+          supernovaId: l
+        }), console.error(`ask-your-book error [${e}]: ${t}`);
+      }
+    }).then(() => (n(Jn()), {
+      ok: !0
+    })).catch(e => (n({
+      type: z.CHAT_FAIL,
+      supernovaId: l
+    }), {
+      ok: !1,
+      error: e?.message
+    }));
+  };
+}
+
+function zn() {
+  return function(e) {
+    e({
+      type: z.NEW_CHAT
+    });
+  };
+}
+
+function Bn(e) {
+  return {
+    ...e,
+    images: e.images || [],
+    definitions: e.definitions || {},
+    possible_responses: e.possible_responses || [],
+    data: e.data || {},
+    interaction: e.interaction?.map(e => ({
+      ...e,
+      sources: e.sources || []
+    })) || []
+  };
+}
+
+function Vn(e) {
+  let t = [], n = null, r = null;
+  for (let i of e) {
+    if (i.role === `user`) {
+      n !== null && t.push({
+        supernovaId: _(),
+        localMessageId: r,
+        question: n,
+        fromHistory: !0
+      }), n = i.content, r = _();
+    } else if (i.role === `assistant`) {
+      let e;
+      try {
+        e = Bn(JSON.parse(i.content));
+      } catch {
+        console.warn(`Failed to parse assistant artifact entry content`);
+      }
+      t.push({
+        supernovaId: _(),
+        localMessageId: r ?? _(),
+        question: n ?? ``,
+        answer: e,
+        artifactEntryId: i.id ?? null,
+        fromHistory: !0
+      }), n = null, r = null;
+    }
+  }
+  return n !== null && t.push({
+    supernovaId: _(),
+    localMessageId: r,
+    question: n,
+    fromHistory: !0
+  }), t;
+}
+
+function Hn(e, t) {
+  return function(n) {
+    n({
+      type: z.LOAD_CHAT,
+      payload: {
+        chatLog: Vn(e),
+        sessionId: t
+      }
+    });
+  };
+}
+
+function Un(e) {
+  return function(t, n) {
+    return t(In({
+      ...e,
+      vbid: M(n()),
+      service: gn()
+    }));
+  };
+}
+
+function Wn(e) {
+  return function(t) {
+    t(Ln({
+      ...e,
+      type: `score`,
+      name: `thumbs`,
+      service: gn()
+    }));
+  };
+}
+
+function Gn(e) {
+  return function(t) {
+    t(Ln({
+      ...e,
+      type: `event`,
+      name: `survey:feedback`,
+      value: 1,
+      service: gn()
+    }));
+  };
+}
+
+var Kn = j(N.AI_CHAT_INDEXED), qn = () => (e, t) => {
+  if (nn(t()) === i.WAITING) {
+    return e(Kn(M(t())));
+  }
+};
+
+function Jn() {
+  return async function(e, t) {
+    e({
+      type: z.LIST_SESSIONS_START
+    });
+    let n = M(t());
+    try {
+      let [t, r] = await Promise.all([ yn(`AskYourBook`, n), yn(`Simplify`, n) ]), i = [ ...t, ...r ];
+      return e({
+        type: z.LIST_SESSIONS_SUCCESS,
+        sessions: i
+      }), {
+        ok: !0,
+        data: i
+      };
+    } catch {
+      return e({
+        type: z.LIST_SESSIONS_FAIL
+      }), {
+        ok: !1
+      };
+    }
+  };
+}
+
+function Yn(e) {
+  return async function(t) {
+    t({
+      type: z.LOAD_SESSION_START,
+      sessionId: e
+    });
+    try {
+      let n = await bn(e);
+      if (n.artifacts.length > 0) {
+        let r = (await xn(n.artifacts[0].id)).entries.flatMap(e => {
+          let t = typeof e.value == `string` ? e.value : JSON.stringify(e.value);
+          try {
+            return [ {
+              ...JSON.parse(t),
+              id: e.id ?? null
+            } ];
+          } catch {
+            return console.warn(`Skipping unparseable artifact entry`, e.id), [];
+          }
+        }), i = n.selection;
+        n.mode === `Simplify` ? t(Fn(r, e, i)) : t(Hn(r, e));
+      } else {
+        n.mode === `Simplify` ? t(Fn([], e)) : t(Hn([], e));
+      }
+      return t({
+        type: z.LOAD_SESSION_END
+      }), {
+        ok: !0
+      };
+    } catch (e) {
+      return t({
+        type: z.LOAD_SESSION_END
+      }), {
+        ok: !1,
+        error: e?.message
+      };
+    }
+  };
+}
+
+function Xn(e, t) {
+  return async function(n) {
+    n({
+      type: z.UPDATE_SESSION_START,
+      sessionId: e,
+      summary: t
+    });
+    try {
+      return await Cn(e, t), n({
+        type: z.UPDATE_SESSION_SUCCESS,
+        sessionId: e,
+        summary: t
+      }), {
+        ok: !0
+      };
+    } catch {
+      return n({
+        type: z.UPDATE_SESSION_FAIL,
+        sessionId: e
+      }), {
+        ok: !1
+      };
+    }
+  };
+}
+
+function Zn(e) {
+  return async function(t) {
+    t({
+      type: z.DELETE_SESSION_START,
+      sessionId: e
+    });
+    try {
+      return await Sn(e), t({
+        type: z.DELETE_SESSION_SUCCESS,
+        sessionId: e
+      }), {
+        ok: !0
+      };
+    } catch {
+      return t({
+        type: z.DELETE_SESSION_FAIL,
+        sessionId: e
+      }), {
+        ok: !1
+      };
+    }
+  };
+}
+
+function Qn() {
+  let e = r().getProp(`BookshelfAI.enabled`), t = k(nn), n = k(tn), a = he();
+  return (0, F.useEffect)(() => {
+    e && a(qn());
+  }, [ e, a ]), {
+    isEnabled: e && n.indexed,
+    loadStatus: e ? t : i.OK
+  };
+}
+
+var V = n(), $n = g(), er = s(), tr = f(), nr = function(e) {
+  return e.ONBOARDING_DISABLED = `general-onboarding-disabled`, e.QR_CODE_ONBOARDING_DISABLED = `qr-code-onboarding-disabled`, 
+  e.COACH_ME_NUDGE_ALERT_VIEWED = `coach-me-nudge-alert-viewed`, e.HAS_SEEN_LATEST_BETA_FEATURE = `has-seen-latest-beta-feature`, 
+  e.HAS_SEEN_PAGINATION_FEATURE = `has-seen-pagination-feature`, e.AI_CHAT_COUNT = `ai-chat-count`, 
+  e.HAS_SEEN_KEYBOARD_SHORTCUTS = `has-seen-keyboard-shortcuts`, e;
+}({}), rr = function(e) {
+  return e.COACH_ME_ONBOARDING_DISABLED = `coach-me-onboarding-disabled`, e.COACH_ME_TAG_DISABLED = `coach-me-tag-disabled`, 
+  e.ERESOURCES_TOAST_DISABLED = `eresources-toast-disabled`, e.COACH_ME_PREFS_ALERT_VIEWED = `coach-me-prefs-alert-viewed`, 
+  e.COACH_ME_PUBLISHER_DEACTIVATED_ALERT_VIEWED = `coach-me-publisher-deactivated-alert-viewed`, 
+  e.COACH_ME_DISABLED = `coach-me-disabled`, e.COACH_ME_NUDGES_DISABLED = `coach-me-nudges-disabled`, 
+  e.COACH_ME_TOASTS_DISABLED = `coach-me-toasts-disabled`, e.TRANSLATE_LANGUAGE = `translate-language`, 
+  e.AI_ONBOARDING_COMPLETED = `ai-onboarding-completed`, e.STUDY_PLAN_UPCOMING_SECTION_COLLAPSED = `study-plan-upcoming-section-collapsed`, 
+  e.STUDY_PLAN_WELCOME_DISMISSED = `study-plan-welcome-dismissed`, e;
+}({});
+
+function ir(e) {
+  return typeof e == `object` && !!e && !Array.isArray(e) && Object.keys(e).length === 3 && typeof e.updatedAt == `string` && typeof e.version == `number` && Object.keys(e).indexOf(`value`) !== -1;
+}
+
+function ar(e, t = 0) {
+  return {
+    value: e,
+    version: t,
+    updatedAt: (new Date).toUTCString()
+  };
+}
+
+var or = `overleaf/decks/fetch`, sr = `overleaf/local/setSelectedDeckId`, cr = `overleaf/deck/fetch`, lr = `overleaf/deck/create`, ur = `overleaf/deck/update`, dr = `overleaf/deck/delete`, H = (e, t) => e({
+  name: t.body?.title,
+  code: t.status
+});
+
+function fr(e, t) {
+  for (var n = 0; n < t.length; n++) {
+    var r = t[n];
+    r.enumerable = r.enumerable || !1, r.configurable = !0, `value` in r && (r.writable = !0), 
+    Object.defineProperty(e, r.key, r);
+  }
+}
+
+function pr(e, t, n) {
+  return t && fr(e.prototype, t), n && fr(e, n), e;
+}
+
+function U() {
+  return U = Object.assign || function(e) {
+    for (var t = 1; t < arguments.length; t++) {
+      var n = arguments[t];
+      for (var r in n) {
+        Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r]);
+      }
+    }
+    return e;
+  }, U.apply(this, arguments);
+}
+
+function mr(e, t) {
+  e.prototype = Object.create(t.prototype), e.prototype.constructor = e, e.__proto__ = t;
+}
+
+function hr(e) {
+  return !!(e && typeof e.hasOwnProperty == `function` && (e.hasOwnProperty(`__ownerID`) || e._map && e._map.hasOwnProperty(`__ownerID`)));
+}
+
+function gr(e, t, n) {
+  return Object.keys(e).reduce(function(t, r) {
+    var i = `` + r;
+    return t.has(i) ? t.set(i, n(t.get(i), e[i])) : t;
+  }, t);
+}
+
+var _r = function(e) {
+  return function(t) {
+    return hr(t) ? t.get(e) : t[e];
+  };
+}, vr = function() {
+  function e(e, t, n) {
+    if (t === void 0 && (t = {}), n === void 0 && (n = {}), !e || typeof e != `string`) {
+      throw Error(`Expected a string key for Entity, but found ` + e + `.`);
+    }
+    var r = n, i = r.idAttribute, a = i === void 0 ? `id` : i, o = r.mergeStrategy, s = o === void 0 ? function(e, t) {
+      return U({}, e, t);
+    } : o, c = r.processStrategy, l = c === void 0 ? function(e) {
+      return U({}, e);
+    } : c, u = r.fallbackStrategy, d = u === void 0 ? function(e, t) {} : u;
+    this._key = e, this._getId = typeof a == `function` ? a : _r(a), this._idAttribute = a, 
+    this._mergeStrategy = s, this._processStrategy = l, this._fallbackStrategy = d, 
+    this.define(t);
+  }
+  var t = e.prototype;
+  return t.define = function(e) {
+    this.schema = Object.keys(e).reduce(function(t, n) {
+      var r, i = e[n];
+      return U({}, t, (r = {}, r[n] = i, r));
+    }, this.schema || {});
+  }, t.getId = function(e, t, n) {
+    return this._getId(e, t, n);
+  }, t.merge = function(e, t) {
+    return this._mergeStrategy(e, t);
+  }, t.fallback = function(e, t) {
+    return this._fallbackStrategy(e, t);
+  }, t.normalize = function(e, t, n, r, i, a) {
+    var o = this, s = this.getId(e, t, n), c = this.key;
+    if (c in a || (a[c] = {}), s in a[c] || (a[c][s] = []), a[c][s].some(function(t) {
+      return t === e;
+    })) {
+      return s;
+    }
+    a[c][s].push(e);
+    var l = this._processStrategy(e, t, n);
+    return Object.keys(this.schema).forEach(function(t) {
+      if (l.hasOwnProperty(t) && typeof l[t] == `object`) {
+        var n = o.schema[t], s = typeof n == `function` ? n(e) : n;
+        l[t] = r(l[t], l, t, s, i, a);
+      }
+    }), i(this, l, e, t, n), s;
+  }, t.denormalize = function(e, t) {
+    var n = this;
+    return hr(e) ? gr(this.schema, e, t) : (Object.keys(this.schema).forEach(function(r) {
+      if (e.hasOwnProperty(r)) {
+        var i = n.schema[r];
+        e[r] = t(e[r], i);
+      }
+    }), e);
+  }, pr(e, [ {
+    key: `key`,
+    get: function() {
+      return this._key;
+    }
+  }, {
+    key: `idAttribute`,
+    get: function() {
+      return this._idAttribute;
+    }
+  } ]), e;
+}(), yr = function() {
+  function e(e, t) {
+    t && (this._schemaAttribute = typeof t == `string` ? function(e) {
+      return e[t];
+    } : t), this.define(e);
+  }
+  var t = e.prototype;
+  return t.define = function(e) {
+    this.schema = e;
+  }, t.getSchemaAttribute = function(e, t, n) {
+    return !this.isSingleSchema && this._schemaAttribute(e, t, n);
+  }, t.inferSchema = function(e, t, n) {
+    if (this.isSingleSchema) {
+      return this.schema;
+    }
+    var r = this.getSchemaAttribute(e, t, n);
+    return this.schema[r];
+  }, t.normalizeValue = function(e, t, n, r, i, a) {
+    var o = this.inferSchema(e, t, n);
+    if (!o) {
+      return e;
+    }
+    var s = r(e, t, n, o, i, a);
+    return this.isSingleSchema || s == null ? s : {
+      id: s,
+      schema: this.getSchemaAttribute(e, t, n)
+    };
+  }, t.denormalizeValue = function(e, t) {
+    var n = hr(e) ? e.get(`schema`) : e.schema;
+    if (!this.isSingleSchema && !n) {
+      return e;
+    }
+    var r = this.isSingleSchema ? void 0 : hr(e) ? e.get(`id`) : e.id, i = this.isSingleSchema ? this.schema : this.schema[n];
+    return t(r || e, i);
+  }, pr(e, [ {
+    key: `isSingleSchema`,
+    get: function() {
+      return !this._schemaAttribute;
+    }
+  } ]), e;
+}(), br = function(e) {
+  mr(t, e);
+  function t(t, n) {
+    if (!n) {
+      throw Error(`Expected option "schemaAttribute" not found on UnionSchema.`);
+    }
+    return e.call(this, t, n) || this;
+  }
+  var n = t.prototype;
+  return n.normalize = function(e, t, n, r, i, a) {
+    return this.normalizeValue(e, t, n, r, i, a);
+  }, n.denormalize = function(e, t) {
+    return this.denormalizeValue(e, t);
+  }, t;
+}(yr), xr = function(e) {
+  mr(t, e);
+  function t() {
+    return e.apply(this, arguments) || this;
+  }
+  var n = t.prototype;
+  return n.normalize = function(e, t, n, r, i, a) {
+    var o = this;
+    return Object.keys(e).reduce(function(t, n, s) {
+      var c, l = e[n];
+      return l == null ? t : U({}, t, (c = {}, c[n] = o.normalizeValue(l, e, n, r, i, a), 
+      c));
+    }, {});
+  }, n.denormalize = function(e, t) {
+    var n = this;
+    return Object.keys(e).reduce(function(r, i) {
+      var a, o = e[i];
+      return U({}, r, (a = {}, a[i] = n.denormalizeValue(o, t), a));
+    }, {});
+  }, t;
+}(yr), Sr = function(e) {
+  if (Array.isArray(e) && e.length > 1) {
+    throw Error(`Expected schema definition to be a single schema, but found ` + e.length + `.`);
+  }
+  return e[0];
+}, Cr = function(e) {
+  return Array.isArray(e) ? e : Object.keys(e).map(function(t) {
+    return e[t];
+  });
+}, wr = function(e, t, n, r, i, a, o) {
+  return e = Sr(e), Cr(t).map(function(t, s) {
+    return i(t, n, r, e, a, o);
+  });
+}, Tr = function(e) {
+  mr(t, e);
+  function t() {
+    return e.apply(this, arguments) || this;
+  }
+  var n = t.prototype;
+  return n.normalize = function(e, t, n, r, i, a) {
+    var o = this;
+    return Cr(e).map(function(e, s) {
+      return o.normalizeValue(e, t, n, r, i, a);
+    }).filter(function(e) {
+      return e != null;
+    });
+  }, n.denormalize = function(e, t) {
+    var n = this;
+    return e && e.map ? e.map(function(e) {
+      return n.denormalizeValue(e, t);
+    }) : e;
+  }, t;
+}(yr), Er = function(e, t, n, r, i, a, o) {
+  var s = U({}, t);
+  return Object.keys(e).forEach(function(n) {
+    var r = e[n], c = typeof r == `function` ? r(t) : r, l = i(t[n], t, n, c, a, o);
+    l == null ? delete s[n] : s[n] = l;
+  }), s;
+}, Dr = function(e, t, n) {
+  if (hr(t)) {
+    return gr(e, t, n);
+  }
+  var r = U({}, t);
+  return Object.keys(e).forEach(function(t) {
+    r[t] != null && (r[t] = n(r[t], e[t]));
+  }), r;
+}, Or = function() {
+  function e(e) {
+    this.define(e);
+  }
+  var t = e.prototype;
+  return t.define = function(e) {
+    this.schema = Object.keys(e).reduce(function(t, n) {
+      var r, i = e[n];
+      return U({}, t, (r = {}, r[n] = i, r));
+    }, this.schema || {});
+  }, t.normalize = function() {
+    var e = [ ...arguments ];
+    return Er.apply(void 0, [ this.schema ].concat(e));
+  }, t.denormalize = function() {
+    var e = [ ...arguments ];
+    return Dr.apply(void 0, [ this.schema ].concat(e));
+  }, e;
+}(), kr = function e(t, n, r, i, a, o) {
+  return typeof t != `object` || !t ? t : typeof i == `object` && (!i.normalize || typeof i.normalize != `function`) ? (Array.isArray(i) ? wr : Er)(i, t, n, r, e, a, o) : i.normalize(t, n, r, e, a, o);
+}, Ar = function(e) {
+  return function(t, n, r, i, a) {
+    var o = t.key, s = t.getId(r, i, a);
+    o in e || (e[o] = {});
+    var c = e[o][s];
+    c ? e[o][s] = t.merge(c, n) : e[o][s] = n;
+  };
+}, jr = {
+  Array: Tr,
+  Entity: vr,
+  Object: Or,
+  Union: br,
+  Values: xr
+}, Mr = function(e, t) {
+  if (!e || typeof e != `object`) {
+    throw Error(`Unexpected input given to normalize. Expected type to be "object", found "` + (e === null ? `null` : typeof e) + `".`);
+  }
+  var n = {};
+  return {
+    entities: n,
+    result: kr(e, e, null, t, Ar(n), {})
+  };
+}, Nr = new jr.Entity(`cards`, {}, {
+  idAttribute: `uuid`,
+  processStrategy: (e, t, n) => ({
+    ...e,
+    confidenceLevel: l(e.proficiencies),
+    front: u(e.front),
+    back: u(e.back)
+  })
+}), Pr = new jr.Entity(`decks`, {
+  cards: [ Nr ]
+}, {
+  idAttribute: `uuid`
+}), Fr = new m, Ir = ({deck: e}) => Mr(e, Pr), Lr = ({decks: e}) => Mr(e, [ Pr ]), Rr = P(or, async (e, {rejectWithValue: t}) => (await Fr.getInstance()).Decks.all(e).then(Lr, H.bind(null, t))), zr = P(cr, async (e, {rejectWithValue: t}) => (await Fr.getInstance()).Decks.one(e).then(Ir, H.bind(null, t))), Br = P(lr, async (e, {rejectWithValue: t}) => (await Fr.getInstance()).Decks.create(e).then(Ir, H.bind(null, t))), Vr = P(ur, async (e, {rejectWithValue: t}) => (await Fr.getInstance()).Decks.update(e.uuid, e).then(Ir, H.bind(null, t))), Hr = P(dr, async (e, {rejectWithValue: t}) => (await Fr.getInstance()).Decks.delete(e).catch(H.bind(null, t))), Ur = Ae(sr), Wr = `overleaf/card/create`, Gr = `overleaf/card/update`, Kr = `overleaf/card/delete`, qr = new m, Jr = ({card: e}) => Mr(e, Nr), Yr = P(Wr, async (e, {rejectWithValue: t}) => (await qr.getInstance()).Cards.create(e.deckUUID, {
+  front: {
+    ...e.front,
+    content: e.front.type === c.IMAGE ? p(e.front.content) : e.front.content
+  },
+  back: {
+    ...e.back,
+    content: e.back.type === c.IMAGE ? p(e.back.content) : e.back.content
+  }
+}).then(Jr, H.bind(void 0, t))), Xr = P(Gr, async (e, {rejectWithValue: t}) => await (await qr.getInstance()).Cards.update(e.deckUUID, e.uuid, {
+  front: e.front,
+  back: e.back
+}).then(Jr, H.bind(void 0, t))), Zr = P(Kr, async ({deckUUID: e, id: t}, {rejectWithValue: n}) => !t || !e ? {} : (await qr.getInstance()).Cards.delete(e, t).catch(H.bind(void 0, n))), Qr = O(A.SEARCH_BOOK_CONTENT), $r = O(A.GO_TO_SEARCH_RESULT), ei = O(A.HIGHLIGHT_SEARCH_RESULTS), ti = O(A.UNHIGHLIGHT_SEARCH_RESULTS), ni = `searchAddRecent`, ri = e => ({
+  type: ni,
+  query: e
+}), ii = function(e) {
+  return e.FORMATIVE = `formative`, e.SUMMATIVE = `summative`, e;
+}({}), ai = function(e) {
+  return e.COMPLETE = `complete`, e.INCOMPLETE = `incomplete`, e.CORRECT = `correct`, 
+  e.INCORRECT = `incorrect`, e;
+}({}), oi = `enrichments/manifest/load`, si = `tightrope/init`, ci = `tightrope/enrichmentStatus/load`;
+
+function W(e) {
+  return e.enrichments;
+}
+
+function li(e) {
+  return W(e).enrichments;
+}
+
+function ui(e) {
+  return W(e).manifestLoadStatus.status;
+}
+
+function di(e) {
+  if (ui(e) === i.ERROR) {
+    return W(e).manifestLoadStatus.errorCode;
+  }
+}
+
+function fi(e) {
+  return di(e) === 403;
+}
+
+function pi(e) {
+  return W(e).servicesLoadStatus;
+}
+
+function mi(e) {
+  return W(e).enrichmentStatusLoadStatus;
+}
+
+function hi(e) {
+  return W(e).enrichmentStatus;
+}
+
+var gi = D(e => li(e), e => fe(e), e => pe(e), (e, t, n) => !t || n ? [] : vi(e, t).map(e => e.id)), _i = D(e => li(e), e => fe(e), e => pe(e), e => hi(e), (e, t, n, r) => !t || n ? [] : vi(e, t).map(e => ({
+  id: e.id,
+  cfi: e.cfi,
+  count: e.metadata.contents_count,
+  type: e.metadata.assessment_type,
+  status: r?.[e.id] ?? ai.INCOMPLETE
+}))), vi = (e, t) => {
+  let n = (0, I.parseCfi)(t);
+  return e.filter(e => {
+    let t = w(e.cfi)?.contentDoc;
+    return t ? I.CFI.equals(n, t, {
+      checkAssertions: !0
+    }) : !1;
+  });
+}, yi = () => (e, t) => {
+  if (ui(t()) === i.WAITING) {
+    return e(bi());
+  }
+}, bi = P(oi, async (e, {getState: t, rejectWithValue: n}) => {
+  let r = M(t());
+  return E().then(() => ee(r).then(e => e.data ? e.data : n({
+    errorCode: 404
+  }))).catch(e => n({
+    errorCode: e.status || 500
+  }));
+}, {
+  condition: (e, {getState: t}) => {
+    if (ui(t()) === i.FETCHING) {
+      return !1;
+    }
+  }
+}), xi = P(si, async (e, {getState: t}) => {
+  let n = M(t());
+  return te(e.sessionId, n);
+}, {
+  condition: (e, {getState: t}) => {
+    if (pi(t()) !== i.WAITING) {
+      return !1;
+    }
+  }
+}), Si = P(ci, async (e, {getState: t}) => re(e.enrichmentIds), {
+  condition: (e, {getState: t}) => {
+    if (mi(t()) === i.FETCHING) {
+      return !1;
+    }
+  }
+}), Ci = function(e) {
+  return e.SCORE = `score`, e.EVENT = `event`, e;
+}({}), wi = function(e) {
+  return e.THUMBS = `thumbs`, e.SURVEY_QUALITY = `survey:quality`, e.SURVEY_CONFIDENCE = `survey:confidence`, 
+  e.SURVEY_HELPFULNESS = `survey:helpfulness`, e.SURVEY_FEEDBACK = `survey:feedback`, 
+  e.CLICK_DEFINITION = `click-definition`, e.CREATE_FLASHCARDS = `create-flashcards`, 
+  e.CLICK_LINK = `click-link`, e.COPY = `copy`, e.SPEAK = `speak`, e.SAVE_AS_NOTE = `save-as-note`, 
+  e.SAY_IT_BACK = `say-it-back`, e;
+}({}), Ti = j(N.AI_CREATE_EVENT);
+
+function Ei({name: e, ...t}) {
+  return Ti({
+    ...t,
+    event: e
+  });
+}
+
+function Di(e, t) {
+  return function(n, r) {
+    if (!(!e.artifactEntryId || dn(e, t))) {
+      return n(Ei({
+        sessionId: $t(r()) ?? ``,
+        artifactEntryId: e.artifactEntryId,
+        type: `score`,
+        name: `thumbs`,
+        value: t
+      }));
+    }
+  };
+}
+
+function Oi(e, t, n) {
+  return function(r, i) {
+    if (e.artifactEntryId) {
+      return r(Ei({
+        sessionId: $t(i()) ?? ``,
+        artifactEntryId: e.artifactEntryId,
+        type: `event`,
+        name: t,
+        comment: n
+      }));
+    }
+  };
+}
+
+function ki(e) {
+  return function(t, n) {
+    let r = $t(n()), i = M(n()), a = e.answer?.data?.coachMe?.enrichmentId;
+    if (!(!r || !i || !a)) {
+      return t(Ti({
+        mode: `AskYourBook`,
+        event: `coach_me_started`,
+        vbid: i,
+        sessionId: r,
+        enrichmentId: a,
+        ...e.artifactEntryId ? {
+          artifactEntryId: e.artifactEntryId
+        } : {}
+      }));
+    }
+  };
+}
+
+var Ai = 200;
+
+function ji(e) {
+  if (e.some(e => e.wordCount === null)) {
+    return null;
+  }
+  let t = e.reduce((e, t) => e + (t.wordCount ?? 0), 0);
+  return Math.round(t / Ai);
+}
+
+function Mi(e) {
+  if (e === null) {
+    return null;
+  }
+  let t = Number(e);
+  return Number.isNaN(t) ? null : t;
+}
+
+function Ni(e) {
+  return e === null ? null : String(e);
+}
+
+function Pi(e) {
+  return e.reduce((e, t) => {
+    let n = Mi(t.printPageStart);
+    return n === null ? e : e + ((Mi(t.printPageEnd) ?? n) - n + 1);
+  }, 0);
+}
+
+var Fi = e => e.studyPlan, Ii = D(Fi, e => e.plan ? {
+  phase: e.phase,
+  artifactEntryId: e.artifactEntryId,
+  plan: {
+    ...e.plan,
+    plan: e.plan.plan.map(e => ({
+      ...e,
+      readingTime: ji(e.readings),
+      pageCount: Pi(e.readings),
+      readings: e.readings.map(e => ({
+        ...e,
+        printPageStart: Ni(e.printPageStart),
+        printPageEnd: Ni(e.printPageEnd)
+      }))
+    }))
+  }
+} : {
+  phase: e.phase,
+  errorCode: e.errorCode
+}), Li = `studyPlan/reset`, Ri = be(wn.GENERATE_STUDY_PLAN), zi = j(N.GET_STUDY_PLAN), Bi = j(N.DELETE_STUDY_PLAN), Vi = j(N.EDIT_STUDY_PLAN), Hi = () => ({
+  type: Li
+});
+
+function Ui(e, t) {
+  return (n, r) => n(Ri(e, {
+    vbid: M(r()),
+    ...t
+  }));
+}
+
+function Wi() {
+  return (e, t) => {
+    if (Fi(t()).phase === `uninitialized`) {
+      return e(zi({
+        vbid: M(t())
+      }));
+    }
+  };
+}
+
+function Gi() {
+  return (e, t) => e(Bi({
+    vbid: M(t())
+  }));
+}
+
+function Ki(e) {
+  return (t, n) => t(Vi({
+    vbid: M(n()),
+    operations: e
+  }));
+}
+
+function qi(e, t) {
+  return Ki([ {
+    type: `set_step_complete`,
+    stepId: e,
+    completed: t
+  } ]);
+}
+
+function Ji(e) {
+  return Ki([ {
+    type: `delete_step`,
+    stepId: e
+  } ]);
+}
+
+function Yi(e, t) {
+  let n = e.trim();
+  return n && n !== t ? n : null;
+}
+
+function Xi(e) {
+  return (t, n) => {
+    let r = Fi(n()).plan?.title, i = Yi(e, r);
+    i && t(Ki([ {
+      type: `set_title`,
+      title: i
+    } ]));
+  };
+}
+
+function Zi(e, t) {
+  return (n, r) => {
+    let i = Fi(r()).plan?.plan.find(t => t.id === e)?.label, a = Yi(t, i);
+    a && n(Ki([ {
+      type: `rename_step`,
+      stepId: e,
+      label: a
+    } ]));
+  };
+}
+
+function Qi(e) {
+  return (t, n) => {
+    let r = M(n()), i = Fi(n()).artifactEntryId;
+    return t(Ti({
+      mode: `StudyPlan`,
+      event: e,
+      vbid: r,
+      artifactEntryId: i
+    }));
+  };
+}
+
+var $i = function(e, t) {
+  return $i = Object.setPrototypeOf || {
+    __proto__: []
+  } instanceof Array && function(e, t) {
+    e.__proto__ = t;
+  } || function(e, t) {
+    for (var n in t) {
+      Object.prototype.hasOwnProperty.call(t, n) && (e[n] = t[n]);
+    }
+  }, $i(e, t);
+};
+
+function ea(e, t) {
+  if (typeof t != `function` && t !== null) {
+    throw TypeError(`Class extends value ` + String(t) + ` is not a constructor or null`);
+  }
+  $i(e, t);
+  function n() {
+    this.constructor = e;
+  }
+  e.prototype = t === null ? Object.create(t) : (n.prototype = t.prototype, new n);
+}
+
+var G = function() {
+  return G = Object.assign || function(e) {
+    for (var t, n = 1, r = arguments.length; n < r; n++) {
+      for (var i in t = arguments[n], t) {
+        Object.prototype.hasOwnProperty.call(t, i) && (e[i] = t[i]);
+      }
+    }
+    return e;
+  }, G.apply(this, arguments);
+};
+
+function ta(e, t, n) {
+  if (n || arguments.length === 2) {
+    for (var r = 0, i = t.length, a; r < i; r++) {
+      (a || !(r in t)) && (a ||= Array.prototype.slice.call(t, 0, r), a[r] = t[r]);
+    }
+  }
+  return e.concat(a || t);
+}
+
+var K = function(e, t) {
+  return Number(e.toFixed(t));
+}, na = function(e, t) {
+  return typeof e == `number` ? e : t;
+}, q = function(e, t, n) {
+  n && typeof n == `function` && n(e, t);
+}, ra = {
+  easeOut: function(e) {
+    return -Math.cos(e * Math.PI) / 2 + .5;
+  },
+  linear: function(e) {
+    return e;
+  },
+  easeInQuad: function(e) {
+    return e * e;
+  },
+  easeOutQuad: function(e) {
+    return e * (2 - e);
+  },
+  easeInOutQuad: function(e) {
+    return e < .5 ? 2 * e * e : -1 + (4 - 2 * e) * e;
+  },
+  easeInCubic: function(e) {
+    return e * e * e;
+  },
+  easeOutCubic: function(e) {
+    return --e * e * e + 1;
+  },
+  easeInOutCubic: function(e) {
+    return e < .5 ? 4 * e * e * e : (e - 1) * (2 * e - 2) * (2 * e - 2) + 1;
+  },
+  easeInQuart: function(e) {
+    return e * e * e * e;
+  },
+  easeOutQuart: function(e) {
+    return 1 - --e * e * e * e;
+  },
+  easeInOutQuart: function(e) {
+    return e < .5 ? 8 * e * e * e * e : 1 - 8 * --e * e * e * e;
+  },
+  easeInQuint: function(e) {
+    return e * e * e * e * e;
+  },
+  easeOutQuint: function(e) {
+    return 1 + --e * e * e * e * e;
+  },
+  easeInOutQuint: function(e) {
+    return e < .5 ? 16 * e * e * e * e * e : 1 + 16 * --e * e * e * e * e;
+  }
+}, ia = function(e) {
+  typeof e == `number` && cancelAnimationFrame(e);
+}, J = function(e) {
+  e.mounted && (ia(e.animation), e.animate = !1, e.animation = null, e.velocity = null);
+};
+
+function aa(e, t, n, r) {
+  if (e.mounted) {
+    var i = (new Date).getTime(), a = 1;
+    J(e), e.animation = function() {
+      if (!e.mounted) {
+        return ia(e.animation);
+      }
+      var o = (new Date).getTime() - i, s = o / n, c = ra[t], l = c(s);
+      o >= n ? (r(a), e.animation = null) : e.animation && (r(l), requestAnimationFrame(e.animation));
+    }, requestAnimationFrame(e.animation);
+  }
+}
+
+function Y(e, t, n, r) {
+  var i = oa(t);
+  if (!(!e.mounted || !i)) {
+    var a = e.setTransformState, o = e.transformState, s = o.scale, c = o.positionX, l = o.positionY, u = t.scale - s, d = t.positionX - c, f = t.positionY - l;
+    n === 0 ? a(t.scale, t.positionX, t.positionY) : aa(e, r, n, function(e) {
+      a(s + u * e, c + d * e, l + f * e);
+    });
+  }
+}
+
+function oa(e) {
+  var t = e.scale, n = e.positionX, r = e.positionY;
+  return !(isNaN(t) || isNaN(n) || isNaN(r));
+}
+
+function sa(e, t, n) {
+  var r = e.offsetWidth, i = e.offsetHeight, a = t.offsetWidth, o = t.offsetHeight, s = a * n, c = o * n;
+  return {
+    wrapperWidth: r,
+    wrapperHeight: i,
+    newContentWidth: s,
+    newDiffWidth: r - s,
+    newContentHeight: c,
+    newDiffHeight: i - c
+  };
+}
+
+var ca = function(e, t, n, r, i, a, o) {
+  var s = e > t ? n * (o ? 1 : .5) : 0, c = r > i ? a * (o ? 1 : .5) : 0;
+  return {
+    minPositionX: e - t - s,
+    maxPositionX: s,
+    minPositionY: r - i - c,
+    maxPositionY: c
+  };
+}, la = function(e, t) {
+  var n = e.wrapperComponent, r = e.contentComponent, i = e.setup.centerZoomedOut;
+  if (!n || !r) {
+    throw Error(`Components are not mounted`);
+  }
+  var a = sa(n, r, t), o = a.wrapperWidth, s = a.wrapperHeight, c = a.newContentWidth, l = a.newDiffWidth, u = a.newContentHeight, d = a.newDiffHeight;
+  return ca(o, c, l, s, u, d, !!i);
+}, X = function(e, t) {
+  var n = la(e, t);
+  return e.bounds = n, n;
+};
+
+function ua(e, t, n, r, i, a, o) {
+  var s = n.minPositionX, c = n.minPositionY, l = n.maxPositionX, u = n.maxPositionY, d = 0, f = 0;
+  return o && (d = i, f = a), {
+    x: da(e, s - d, l + d, r),
+    y: da(t, c - f, u + f, r)
+  };
+}
+
+var da = function(e, t, n, r) {
+  return K(r ? e < t ? t : e > n ? n : e : e, 2);
+};
+
+function fa(e, t, n, r, i, a) {
+  var o = e.transformState, s = o.scale, c = o.positionX, l = o.positionY, u = r - s;
+  return typeof t != `number` || typeof n != `number` ? (console.error(`Mouse X and Y position were not provided!`), 
+  {
+    x: c,
+    y: l
+  }) : ua(c - t * u, l - n * u, i, a, 0, 0, null);
+}
+
+function pa(e, t, n, r, i) {
+  var a = t - (i ? r : 0);
+  return !isNaN(n) && e >= n ? n : !isNaN(t) && e <= a ? a : e;
+}
+
+var ma = function(e, t) {
+  var n = e.setup.panning.excluded, r = e.isInitialized, i = e.wrapperComponent, a = t.target, o = i?.contains(a);
+  return !(!(r && a && o) || $a(a, n));
+}, ha = function(e) {
+  var t = e.isInitialized, n = e.isPanning, r = e.setup.panning.disabled;
+  return !!(t && n && !r);
+}, ga = function(e, t) {
+  var n = e.transformState, r = n.positionX, i = n.positionY;
+  e.isPanning = !0;
+  var a = t.clientX, o = t.clientY;
+  e.startCoords = {
+    x: a - r,
+    y: o - i
+  };
+}, _a = function(e, t) {
+  var n = t.touches, r = e.transformState, i = r.positionX, a = r.positionY;
+  if (e.isPanning = !0, n.length === 1) {
+    var o = n[0].clientX, s = n[0].clientY;
+    e.startCoords = {
+      x: o - i,
+      y: s - a
+    };
+  }
+};
+
+function va(e) {
+  var t = e.transformState, n = t.positionX, r = t.positionY, i = t.scale, a = e.setup, o = a.disabled, s = a.limitToBounds, c = a.centerZoomedOut, l = e.wrapperComponent;
+  if (!(o || !l || !e.bounds)) {
+    var u = e.bounds, d = u.maxPositionX, f = u.minPositionX, p = u.maxPositionY, m = u.minPositionY, h = n > d || n < f, g = r > p || r < m, _ = fa(e, n > d ? l.offsetWidth : e.setup.minPositionX || 0, r > p ? l.offsetHeight : e.setup.minPositionY || 0, i, e.bounds, s || c), v = _.x, y = _.y;
+    return {
+      scale: i,
+      positionX: h ? v : n,
+      positionY: g ? y : r
+    };
+  }
+}
+
+function ya(e, t, n, r, i) {
+  var a = e.setup.limitToBounds, o = e.wrapperComponent, s = e.bounds, c = e.transformState, l = c.scale, u = c.positionX, d = c.positionY;
+  if (!(!o || t === u || n === d || !s)) {
+    var f = ua(t, n, s, a, r, i, o), p = f.x, m = f.y;
+    e.setTransformState(l, p, m);
+  }
+}
+
+var ba = function(e, t, n) {
+  var r = e.startCoords, i = e.transformState, a = e.setup.panning, o = a.lockAxisX, s = a.lockAxisY, c = i.positionX, l = i.positionY;
+  if (!r) {
+    return {
+      x: c,
+      y: l
+    };
+  }
+  var u = t - r.x, d = n - r.y;
+  return {
+    x: o ? c : u,
+    y: s ? l : d
+  };
+}, xa = function(e, t) {
+  var n = e.setup, r = e.transformState.scale, i = n.minScale;
+  return t > 0 && r >= i ? t : 0;
+}, Sa = function(e) {
+  var t = e.mounted, n = e.setup, r = n.disabled, i = n.velocityAnimation, a = e.transformState.scale;
+  return !!(!i.disabled || a > 1 || !r || t);
+}, Ca = function(e) {
+  var t = e.mounted, n = e.velocity, r = e.bounds, i = e.setup, a = i.disabled, o = i.velocityAnimation, s = e.transformState.scale;
+  return !(!(!o.disabled || s > 1 || !a || t) || !n || !r);
+};
+
+function wa(e, t) {
+  var n = e.setup.velocityAnimation, r = n.equalToMove, i = n.animationTime, a = n.sensitivity;
+  return r ? i * t * a : i;
+}
+
+function Ta(e, t, n, r, i, a, o, s, c, l) {
+  if (i) {
+    if (t > o && n > o) {
+      var u = o + (e - o) * l;
+      return u > c ? c : u < o ? o : u;
+    }
+    if (t < a && n < a) {
+      var u = a + (e - a) * l;
+      return u < s ? s : u > a ? a : u;
+    }
+  }
+  return r ? t : da(e, a, o, i);
+}
+
+function Ea(e, t) {
+  var n = 1;
+  return t ? Math.min(n, e.offsetWidth / window.innerWidth) : n;
+}
+
+function Da(e, t) {
+  if (Sa(e)) {
+    var n = e.lastMousePosition, r = e.velocityTime, i = e.setup, a = e.wrapperComponent, o = i.velocityAnimation.equalToMove, s = Date.now();
+    if (n && r && a) {
+      var c = Ea(a, o), l = t.x - n.x, u = t.y - n.y, d = l / c, f = u / c, p = s - r, m = l * l + u * u;
+      e.velocity = {
+        velocityX: d,
+        velocityY: f,
+        total: Math.sqrt(m) / p
+      };
+    }
+    e.lastMousePosition = t, e.velocityTime = s;
+  }
+}
+
+function Oa(e) {
+  var t = e.velocity, n = e.bounds, r = e.setup, i = e.wrapperComponent;
+  if (!(!Ca(e) || !t || !n || !i)) {
+    var a = t.velocityX, o = t.velocityY, s = t.total, c = n.maxPositionX, l = n.minPositionX, u = n.maxPositionY, d = n.minPositionY, f = r.limitToBounds, p = r.alignmentAnimation, m = r.zoomAnimation, h = r.panning, g = h.lockAxisY, _ = h.lockAxisX, v = m.animationType, y = p.sizeX, b = p.sizeY, x = p.velocityAlignmentTime, S = wa(e, s), C = Math.max(S, x), w = xa(e, y), ee = xa(e, b), T = w * i.offsetWidth / 100, E = ee * i.offsetHeight / 100, te = c + T, ne = l - T, re = u + E, ie = d - E, ae = e.transformState, oe = (new Date).getTime();
+    aa(e, v, C, function(t) {
+      var n = e.transformState, r = n.scale, i = n.positionX, s = n.positionY, m = ((new Date).getTime() - oe) / x, h = ra[p.animationType], v = 1 - h(Math.min(1, m)), y = 1 - t, b = i + a * y, S = s + o * y, C = Ta(b, ae.positionX, i, _, f, l, c, ne, te, v), w = Ta(S, ae.positionY, s, g, f, d, u, ie, re, v);
+      (i !== b || s !== S) && e.setTransformState(r, C, w);
+    });
+  }
+}
+
+function ka(e, t) {
+  var n = e.transformState.scale;
+  J(e), X(e, n), t.touches ? _a(e, t) : ga(e, t);
+}
+
+function Aa(e, t, n) {
+  var r = e.startCoords, i = e.setup.alignmentAnimation, a = i.sizeX, o = i.sizeY;
+  if (r) {
+    var s = ba(e, t, n), c = s.x, l = s.y, u = xa(e, a), d = xa(e, o);
+    Da(e, {
+      x: c,
+      y: l
+    }), ya(e, c, l, u, d);
+  }
+}
+
+function ja(e) {
+  if (e.isPanning) {
+    var t = e.setup.panning.velocityDisabled, n = e.velocity, r = e.wrapperComponent, i = e.contentComponent;
+    e.isPanning = !1, e.animate = !1, e.animation = null;
+    var a = r?.getBoundingClientRect(), o = i?.getBoundingClientRect(), s = a?.width || 0, c = a?.height || 0, l = o?.width || 0, u = o?.height || 0, d = s < l || c < u;
+    !t && n && n?.total > .1 && d ? Oa(e) : Ma(e);
+  }
+}
+
+function Ma(e) {
+  var t = e.transformState.scale, n = e.setup, r = n.minScale, i = n.alignmentAnimation, a = i.disabled, o = i.sizeX, s = i.sizeY, c = i.animationTime, l = i.animationType;
+  if (!(a || t < r || !o && !s)) {
+    var u = va(e);
+    u && Y(e, u, c, l);
+  }
+}
+
+function Na(e, t, n) {
+  var r = e.transformState.scale, i = e.wrapperComponent, a = e.setup, o = a.minScale, s = a.limitToBounds, c = a.zoomAnimation, l = c.disabled, u = c.animationTime, d = c.animationType, f = l || r >= o;
+  if ((r >= 1 || s) && Ma(e), !(f || !i || !e.mounted)) {
+    var p = Pa(e, o, t || i.offsetWidth / 2, n || i.offsetHeight / 2);
+    p && Y(e, p, u, d);
+  }
+}
+
+function Pa(e, t, n, r) {
+  var i = e.setup, a = i.minScale, o = i.maxScale, s = i.limitToBounds, c = pa(K(t, 2), a, o, 0, !1), l = fa(e, n, r, c, X(e, c), s);
+  return {
+    scale: c,
+    positionX: l.x,
+    positionY: l.y
+  };
+}
+
+var Z = {
+  previousScale: 1,
+  scale: 1,
+  positionX: 0,
+  positionY: 0
+}, Fa = G(G({}, Z), {
+  setComponents: function() {},
+  contextInstance: null
+}), Ia = {
+  disabled: !1,
+  minPositionX: null,
+  maxPositionX: null,
+  minPositionY: null,
+  maxPositionY: null,
+  minScale: 1,
+  maxScale: 8,
+  limitToBounds: !0,
+  centerZoomedOut: !1,
+  centerOnInit: !1,
+  wheel: {
+    step: .2,
+    disabled: !1,
+    wheelDisabled: !1,
+    touchPadDisabled: !1,
+    activationKeys: [],
+    excluded: []
+  },
+  panning: {
+    disabled: !1,
+    velocityDisabled: !1,
+    lockAxisX: !1,
+    lockAxisY: !1,
+    activationKeys: [],
+    excluded: []
+  },
+  pinch: {
+    step: 5,
+    disabled: !1,
+    excluded: []
+  },
+  doubleClick: {
+    disabled: !1,
+    step: .7,
+    mode: `zoomIn`,
+    animationType: `easeOut`,
+    animationTime: 200,
+    excluded: []
+  },
+  zoomAnimation: {
+    disabled: !1,
+    size: .4,
+    animationTime: 200,
+    animationType: `easeOut`
+  },
+  alignmentAnimation: {
+    disabled: !1,
+    sizeX: 100,
+    sizeY: 100,
+    animationTime: 200,
+    velocityAlignmentTime: 400,
+    animationType: `easeOut`
+  },
+  velocityAnimation: {
+    disabled: !1,
+    sensitivity: 1,
+    animationTime: 400,
+    animationType: `easeOut`,
+    equalToMove: !0
+  }
+}, La = function(e) {
+  return {
+    previousScale: e.initialScale ?? Z.scale,
+    scale: e.initialScale ?? Z.scale,
+    positionX: e.initialPositionX ?? Z.positionX,
+    positionY: e.initialPositionY ?? Z.positionY
+  };
+}, Ra = function(e) {
+  var t = G({}, Ia);
+  return Object.keys(e).forEach(function(n) {
+    var r = e[n] !== void 0;
+    if (Ia[n] !== void 0 && r) {
+      var i = Object.prototype.toString.call(Ia[n]);
+      t[n] = i === `[object Object]` ? G(G({}, Ia[n]), e[n]) : i === `[object Array]` ? ta(ta([], Ia[n]), e[n]) : e[n];
+    }
+  }), t;
+}, za = function(e, t, n) {
+  var r = e.transformState.scale, i = e.wrapperComponent, a = e.setup, o = a.maxScale, s = a.minScale, c = a.zoomAnimation.size;
+  if (!i) {
+    throw Error(`Wrapper is not mounted`);
+  }
+  return pa(K(r * Math.exp(t * n), 3), s, o, c, !1);
+};
+
+function Ba(e, t, n, r, i) {
+  var a = e.wrapperComponent, o = e.transformState, s = o.scale, c = o.positionX, l = o.positionY;
+  if (!a) {
+    return console.error(`No WrapperComponent found`);
+  }
+  var u = a.offsetWidth, d = a.offsetHeight, f = (u / 2 - c) / s, p = (d / 2 - l) / s, m = Pa(e, za(e, t, n), f, p);
+  if (!m) {
+    return console.error(`Error during zoom event. New transformation state was not calculated.`);
+  }
+  Y(e, m, r, i);
+}
+
+function Va(e, t, n) {
+  var r = e.setup, i = e.wrapperComponent, a = r.limitToBounds, o = La(e.props), s = e.transformState, c = s.scale, l = s.positionX, u = s.positionY;
+  if (i) {
+    var d = la(e, o.scale), f = ua(o.positionX, o.positionY, d, a, 0, 0, i), p = {
+      scale: o.scale,
+      positionX: f.x,
+      positionY: f.y
+    };
+    (c !== o.scale || l !== o.positionX || u !== o.positionY) && Y(e, p, t, n);
+  }
+}
+
+function Ha(e, t, n) {
+  var r = e.wrapperComponent, i = e.setup, a = i.limitToBounds, o = i.minScale, s = i.maxScale;
+  if (!r) {
+    return Z;
+  }
+  var c = r.getBoundingClientRect(), l = Ua(t), u = l.x, d = l.y, f = t.offsetWidth, p = t.offsetHeight, m = r.offsetWidth / f, h = r.offsetHeight / p, g = pa(n || Math.min(m, h), o, s, 0, !1), _ = (c.width - f * g) / 2, v = (c.height - p * g) / 2, y = ua((c.left - u) * g + _, (c.top - d) * g + v, la(e, g), a, 0, 0, r);
+  return {
+    positionX: y.x,
+    positionY: y.y,
+    scale: g
+  };
+}
+
+function Ua(e) {
+  for (var t = e, n = 0, r = 0; t; ) {
+    n += t.offsetLeft, r += t.offsetTop, t = t.offsetParent;
+  }
+  return {
+    x: n,
+    y: r
+  };
+}
+
+function Wa(e) {
+  return e ? e?.offsetWidth === void 0 || e?.offsetHeight === void 0 ? (console.error(`Zoom node is not valid - it must contain offsetWidth and offsetHeight`), 
+  !1) : !0 : (console.error(`Zoom node not found`), !1);
+}
+
+var Ga = function(e) {
+  return function(t, n, r) {
+    t === void 0 && (t = .5), n === void 0 && (n = 300), r === void 0 && (r = `easeOut`), 
+    Ba(e, 1, t, n, r);
+  };
+}, Ka = function(e) {
+  return function(t, n, r) {
+    t === void 0 && (t = .5), n === void 0 && (n = 300), r === void 0 && (r = `easeOut`), 
+    Ba(e, -1, t, n, r);
+  };
+}, qa = function(e) {
+  return function(t, n, r, i, a) {
+    i === void 0 && (i = 300), a === void 0 && (a = `easeOut`);
+    var o = e.transformState, s = o.positionX, c = o.positionY, l = o.scale, u = e.wrapperComponent, d = e.contentComponent;
+    e.setup.disabled || !u || !d || Y(e, {
+      positionX: isNaN(t) ? s : t,
+      positionY: isNaN(n) ? c : n,
+      scale: isNaN(r) ? l : r
+    }, i, a);
+  };
+}, Ja = function(e) {
+  return function(t, n) {
+    t === void 0 && (t = 200), n === void 0 && (n = `easeOut`), Va(e, t, n);
+  };
+}, Ya = function(e) {
+  return function(t, n, r) {
+    n === void 0 && (n = 200), r === void 0 && (r = `easeOut`);
+    var i = e.transformState, a = e.wrapperComponent, o = e.contentComponent;
+    a && o && Y(e, no(t || i.scale, a, o), n, r);
+  };
+}, Xa = function(e) {
+  return function(t, n, r, i) {
+    r === void 0 && (r = 600), i === void 0 && (i = `easeOut`), J(e);
+    var a = e.wrapperComponent, o = typeof t == `string` ? document.getElementById(t) : t;
+    a && Wa(o) && o && a.contains(o) && Y(e, Ha(e, o, n), r, i);
+  };
+}, Q = function(e) {
+  return {
+    instance: e,
+    state: e.transformState,
+    zoomIn: Ga(e),
+    zoomOut: Ka(e),
+    setTransform: qa(e),
+    resetTransform: Ja(e),
+    centerView: Ya(e),
+    zoomToElement: Xa(e)
+  };
+}, Za = !1;
+
+function Qa() {
+  try {
+    return {
+      get passive() {
+        return Za = !0, !1;
+      }
+    };
+  } catch {
+    return Za = !1, Za;
+  }
+}
+
+var $a = function(e, t) {
+  var n = e.tagName.toUpperCase();
+  return !!(t.find(function(e) {
+    return e.toUpperCase() === n;
+  }) || t.find(function(t) {
+    return e.classList.contains(t);
+  }));
+}, eo = function(e) {
+  e && clearTimeout(e);
+}, to = function(e, t, n) {
+  return `translate3d(` + e + `px, ` + t + `px, 0) scale(` + n + `)`;
+}, no = function(e, t, n) {
+  var r = n.offsetWidth * e, i = n.offsetHeight * e;
+  return {
+    scale: e,
+    positionX: (t.offsetWidth - r) / 2,
+    positionY: (t.offsetHeight - i) / 2
+  };
+}, ro = function(e, t) {
+  var n = e.setup.wheel, r = n.disabled, i = n.wheelDisabled, a = n.touchPadDisabled, o = n.excluded, s = e.isInitialized, c = e.isPanning, l = t.target;
+  return !(!(s && !c && !r && l) || i && !t.ctrlKey || a && t.ctrlKey || $a(l, o));
+};
+
+function io(e, t) {
+  return na(t, e ? e.deltaY < 0 ? 1 : -1 : 0);
+}
+
+function ao(e, t, n) {
+  var r = t.getBoundingClientRect(), i = 0, a = 0;
+  if (`clientX` in e) {
+    i = (e.clientX - r.left) / n, a = (e.clientY - r.top) / n;
+  } else {
+    var o = e.touches[0];
+    i = (o.clientX - r.left) / n, a = (o.clientY - r.top) / n;
+  }
+  return (isNaN(i) || isNaN(a)) && console.error(`No mouse or touch offset found`), 
+  {
+    x: i,
+    y: a
+  };
+}
+
+var oo = function(e, t, n, r, i) {
+  var a = e.transformState.scale, o = e.wrapperComponent, s = e.setup, c = s.maxScale, l = s.minScale, u = s.zoomAnimation, d = u.size, f = u.disabled;
+  if (!o) {
+    throw Error(`Wrapper is not mounted`);
+  }
+  var p = a + t * (a - a * n) * n;
+  if (i) {
+    return p;
+  }
+  var m = !r && !f;
+  return pa(K(p, 3), l, c, d, m);
+}, so = function(e, t) {
+  var n = e.previousWheelEvent, r = e.transformState.scale, i = e.setup, a = i.maxScale, o = i.minScale;
+  return n ? r < a || r > o || Math.sign(n.deltaY) !== Math.sign(t.deltaY) || n.deltaY > 0 && n.deltaY < t.deltaY || n.deltaY < 0 && n.deltaY > t.deltaY || Math.sign(n.deltaY) !== Math.sign(t.deltaY) : !1;
+}, co = function(e, t) {
+  var n = e.setup.pinch, r = n.disabled, i = n.excluded, a = e.isInitialized, o = t.target;
+  return !(!(a && !r && o) || $a(o, i));
+}, lo = function(e) {
+  var t = e.setup.pinch.disabled, n = e.isInitialized, r = e.pinchStartDistance;
+  return !!(n && !t && r);
+}, uo = function(e, t, n) {
+  var r = n.getBoundingClientRect(), i = e.touches, a = K(i[0].clientX - r.left, 5), o = K(i[0].clientY - r.top, 5), s = K(i[1].clientX - r.left, 5), c = K(i[1].clientY - r.top, 5);
+  return {
+    x: (a + s) / 2 / t,
+    y: (o + c) / 2 / t
+  };
+}, fo = function(e) {
+  return Math.sqrt((e.touches[0].pageX - e.touches[1].pageX) ** 2 + (e.touches[0].pageY - e.touches[1].pageY) ** 2);
+}, po = function(e, t) {
+  var n = e.pinchStartScale, r = e.pinchStartDistance, i = e.setup, a = i.maxScale, o = i.minScale, s = i.zoomAnimation, c = s.size, l = s.disabled;
+  if (!n || r === null || !t) {
+    throw Error(`Pinch touches distance was not provided`);
+  }
+  return t < 0 ? e.transformState.scale : pa(K(t / r * n, 2), o, a, c, !l);
+}, mo = 160, ho = 100, go = function(e, t) {
+  var n = e.props, r = n.onWheelStart, i = n.onZoomStart;
+  e.wheelStopEventTimer || (J(e), q(Q(e), t, r), q(Q(e), t, i));
+}, _o = function(e, t) {
+  var n = e.props, r = n.onWheel, i = n.onZoom, a = e.contentComponent, o = e.setup, s = e.transformState.scale, c = o.limitToBounds, l = o.centerZoomedOut, u = o.zoomAnimation, d = o.wheel, f = u.size, p = u.disabled, m = d.step;
+  if (!a) {
+    throw Error(`Component not mounted`);
+  }
+  t.preventDefault(), t.stopPropagation();
+  var h = oo(e, io(t, null), m, !t.ctrlKey);
+  if (s !== h) {
+    var g = X(e, h), _ = ao(t, a, s), v = c && (p || f === 0 || l), y = fa(e, _.x, _.y, h, g, v), b = y.x, x = y.y;
+    e.previousWheelEvent = t, e.setTransformState(h, b, x), q(Q(e), t, r), q(Q(e), t, i);
+  }
+}, vo = function(e, t) {
+  var n = e.props, r = n.onWheelStop, i = n.onZoomStop;
+  eo(e.wheelAnimationTimer), e.wheelAnimationTimer = setTimeout(function() {
+    e.mounted && (Na(e, t.x, t.y), e.wheelAnimationTimer = null);
+  }, ho), so(e, t) && (eo(e.wheelStopEventTimer), e.wheelStopEventTimer = setTimeout(function() {
+    e.mounted && (e.wheelStopEventTimer = null, q(Q(e), t, r), q(Q(e), t, i));
+  }, mo));
+}, yo = function(e, t) {
+  var n = fo(t);
+  e.pinchStartDistance = n, e.lastDistance = n, e.pinchStartScale = e.transformState.scale, 
+  e.isPanning = !1, J(e);
+}, bo = function(e, t) {
+  var n = e.contentComponent, r = e.pinchStartDistance, i = e.transformState.scale, a = e.setup, o = a.limitToBounds, s = a.centerZoomedOut, c = a.zoomAnimation, l = c.disabled, u = c.size;
+  if (!(r === null || !n)) {
+    var d = uo(t, i, n);
+    if (!(!isFinite(d.x) || !isFinite(d.y))) {
+      var f = fo(t), p = po(e, f);
+      if (p !== i) {
+        var m = X(e, p), h = o && (l || u === 0 || s), g = fa(e, d.x, d.y, p, m, h), _ = g.x, v = g.y;
+        e.pinchMidpoint = d, e.lastDistance = f, e.setTransformState(p, _, v);
+      }
+    }
+  }
+}, xo = function(e) {
+  var t = e.pinchMidpoint;
+  e.velocity = null, e.lastDistance = null, e.pinchMidpoint = null, e.pinchStartScale = null, 
+  e.pinchStartDistance = null, Na(e, t?.x, t?.y);
+};
+
+function So(e, t) {
+  var n = e.setup.doubleClick, r = n.disabled, i = n.mode, a = n.step, o = n.animationTime, s = n.animationType;
+  if (!r) {
+    if (i === `reset`) {
+      return Va(e, o, s);
+    }
+    var c = e.transformState.scale, l = e.contentComponent;
+    if (!l) {
+      return console.error(`No ContentComponent found`);
+    }
+    var u = za(e, i === `zoomOut` ? -1 : 1, a), d = ao(t, l, c), f = Pa(e, u, d.x, d.y);
+    if (!f) {
+      return console.error(`Error during zoom event. New transformation state was not calculated.`);
+    }
+    Y(e, f, o, s);
+  }
+}
+
+var Co = function(e, t) {
+  var n = e.isInitialized, r = e.setup, i = e.wrapperComponent, a = r.doubleClick, o = a.disabled, s = a.excluded, c = t.target, l = i?.contains(c), u = n && c && l && !o;
+  return !(!u || $a(c, s) || !u);
+}, wo = F.createContext(Fa), To = function(e) {
+  ea(t, e);
+  function t() {
+    var t = e !== null && e.apply(this, arguments) || this;
+    return t.mounted = !0, t.transformState = La(t.props), t.setup = Ra(t.props), t.wrapperComponent = null, 
+    t.contentComponent = null, t.isInitialized = !1, t.bounds = null, t.previousWheelEvent = null, 
+    t.wheelStopEventTimer = null, t.wheelAnimationTimer = null, t.isPanning = !1, t.startCoords = null, 
+    t.lastTouch = null, t.distance = null, t.lastDistance = null, t.pinchStartDistance = null, 
+    t.pinchStartScale = null, t.pinchMidpoint = null, t.velocity = null, t.velocityTime = null, 
+    t.lastMousePosition = null, t.animate = !1, t.animation = null, t.maxBounds = null, 
+    t.pressedKeys = {}, t.handleInitializeWrapperEvents = function(e) {
+      var n = Qa();
+      e.addEventListener(`wheel`, t.onWheelZoom, n), e.addEventListener(`dblclick`, t.onDoubleClick, n), 
+      e.addEventListener(`touchstart`, t.onTouchPanningStart, n), e.addEventListener(`touchmove`, t.onTouchPanning, n), 
+      e.addEventListener(`touchend`, t.onTouchPanningStop, n);
+    }, t.handleInitialize = function() {
+      var e = t.setup.centerOnInit;
+      t.applyTransformation(), t.forceUpdate(), e && (setTimeout(function() {
+        t.mounted && t.setCenter();
+      }, 50), setTimeout(function() {
+        t.mounted && t.setCenter();
+      }, 100), setTimeout(function() {
+        t.mounted && t.setCenter();
+      }, 200));
+    }, t.onWheelZoom = function(e) {
+      t.setup.disabled || ro(t, e) && t.isPressingKeys(t.setup.wheel.activationKeys) && (go(t, e), 
+      _o(t, e), vo(t, e));
+    }, t.onPanningStart = function(e) {
+      var n = t.setup.disabled, r = t.props.onPanningStart;
+      n || ma(t, e) && t.isPressingKeys(t.setup.panning.activationKeys) && (e.preventDefault(), 
+      e.stopPropagation(), J(t), ka(t, e), q(Q(t), e, r));
+    }, t.onPanning = function(e) {
+      var n = t.setup.disabled, r = t.props.onPanning;
+      n || ha(t) && t.isPressingKeys(t.setup.panning.activationKeys) && (e.preventDefault(), 
+      e.stopPropagation(), Aa(t, e.clientX, e.clientY), q(Q(t), e, r));
+    }, t.onPanningStop = function(e) {
+      var n = t.props.onPanningStop;
+      t.isPanning && (ja(t), q(Q(t), e, n));
+    }, t.onPinchStart = function(e) {
+      var n = t.setup.disabled, r = t.props, i = r.onPinchingStart, a = r.onZoomStart;
+      n || co(t, e) && (yo(t, e), J(t), q(Q(t), e, i), q(Q(t), e, a));
+    }, t.onPinch = function(e) {
+      var n = t.setup.disabled, r = t.props, i = r.onPinching, a = r.onZoom;
+      n || lo(t) && (e.preventDefault(), e.stopPropagation(), bo(t, e), q(Q(t), e, i), 
+      q(Q(t), e, a));
+    }, t.onPinchStop = function(e) {
+      var n = t.props, r = n.onPinchingStop, i = n.onZoomStop;
+      t.pinchStartScale && (xo(t), q(Q(t), e, r), q(Q(t), e, i));
+    }, t.onTouchPanningStart = function(e) {
+      var n = t.setup.disabled, r = t.props.onPanningStart;
+      if (!n && ma(t, e)) {
+        if (t.lastTouch && +new Date - t.lastTouch < 200 && e.touches.length === 1) {
+          t.onDoubleClick(e);
+        } else {
+          t.lastTouch = +new Date, J(t);
+          var i = e.touches, a = i.length === 1, o = i.length === 2;
+          a && (J(t), ka(t, e), q(Q(t), e, r)), o && t.onPinchStart(e);
+        }
+      }
+    }, t.onTouchPanning = function(e) {
+      var n = t.setup.disabled, r = t.props.onPanning;
+      if (t.isPanning && e.touches.length === 1) {
+        if (n || !ha(t)) {
+          return;
+        }
+        e.preventDefault(), e.stopPropagation();
+        var i = e.touches[0];
+        Aa(t, i.clientX, i.clientY), q(Q(t), e, r);
+      } else {
+        e.touches.length > 1 && t.onPinch(e);
+      }
+    }, t.onTouchPanningStop = function(e) {
+      t.onPanningStop(e), t.onPinchStop(e);
+    }, t.onDoubleClick = function(e) {
+      t.setup.disabled || Co(t, e) && So(t, e);
+    }, t.clearPanning = function(e) {
+      t.isPanning && t.onPanningStop(e);
+    }, t.setKeyPressed = function(e) {
+      t.pressedKeys[e.key] = !0;
+    }, t.setKeyUnPressed = function(e) {
+      t.pressedKeys[e.key] = !1;
+    }, t.isPressingKeys = function(e) {
+      return !e.length || !!e.find(function(e) {
+        return t.pressedKeys[e];
+      });
+    }, t.setComponents = function(e, n) {
+      t.wrapperComponent = e, t.contentComponent = n, X(t, t.transformState.scale), t.handleInitializeWrapperEvents(e), 
+      t.handleInitialize(), t.handleRef(), t.isInitialized = !0, q(Q(t), void 0, t.props.onInit);
+    }, t.setTransformState = function(e, n, r) {
+      !isNaN(e) && !isNaN(n) && !isNaN(r) ? (e !== t.transformState.scale && (t.transformState.previousScale = t.transformState.scale, 
+      t.transformState.scale = e), t.transformState.positionX = n, t.transformState.positionY = r, 
+      t.applyTransformation()) : console.error(`Detected NaN set state values`);
+    }, t.setCenter = function() {
+      if (t.wrapperComponent && t.contentComponent) {
+        var e = no(t.transformState.scale, t.wrapperComponent, t.contentComponent);
+        t.setTransformState(e.scale, e.positionX, e.positionY);
+      }
+    }, t.applyTransformation = function() {
+      if (!(!t.mounted || !t.contentComponent)) {
+        var e = t.transformState, n = e.scale, r = e.positionX, i = e.positionY, a = to(r, i, n);
+        t.contentComponent.style.transform = a, t.handleRef();
+      }
+    }, t.handleRef = function() {
+      t.props.setRef(Q(t));
+    }, t;
+  }
+  return t.prototype.componentDidMount = function() {
+    var e = Qa();
+    window.addEventListener(`mousedown`, this.onPanningStart, e), window.addEventListener(`mousemove`, this.onPanning, e), 
+    window.addEventListener(`mouseup`, this.onPanningStop, e), document.addEventListener(`mouseleave`, this.clearPanning, e), 
+    window.addEventListener(`keyup`, this.setKeyUnPressed, e), window.addEventListener(`keydown`, this.setKeyPressed, e), 
+    this.handleRef();
+  }, t.prototype.componentWillUnmount = function() {
+    var e = Qa();
+    window.removeEventListener(`mousedown`, this.onPanningStart, e), window.removeEventListener(`mousemove`, this.onPanning, e), 
+    window.removeEventListener(`mouseup`, this.onPanningStop, e), window.removeEventListener(`keyup`, this.setKeyUnPressed, e), 
+    window.removeEventListener(`keydown`, this.setKeyPressed, e), J(this);
+  }, t.prototype.componentDidUpdate = function(e) {
+    e !== this.props && (X(this, this.transformState.scale), this.setup = Ra(this.props));
+  }, t.prototype.render = function() {
+    var e = Q(this), t = this.props.children, n = typeof t == `function` ? t(e) : t;
+    return F.createElement(wo.Provider, {
+      value: G(G({}, this.transformState), {
+        setComponents: this.setComponents,
+        contextInstance: this
+      })
+    }, n);
+  }, t;
+}(F.Component), Eo = F.forwardRef(function(e, t) {
+  var n = (0, F.useState)(null), r = n[0], i = n[1];
+  return (0, F.useImperativeHandle)(t, function() {
+    return r;
+  }, [ r ]), F.createElement(To, G({}, e, {
+    setRef: i
+  }));
+});
+
+function Do(e, t) {
+  t === void 0 && (t = {});
+  var n = t.insertAt;
+  if (!(!e || typeof document > `u`)) {
+    var r = document.head || document.getElementsByTagName(`head`)[0], i = document.createElement(`style`);
+    i.type = `text/css`, n === `top` && r.firstChild ? r.insertBefore(i, r.firstChild) : r.appendChild(i), 
+    i.styleSheet ? i.styleSheet.cssText = e : i.appendChild(document.createTextNode(e));
+  }
+}
+
+var Oo = `.transform-component-module_wrapper__1_Fgj {\n  position: relative;\n  width: -moz-fit-content;\n  width: fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  overflow: hidden;\n  -webkit-touch-callout: none; /* iOS Safari */\n  -webkit-user-select: none; /* Safari */\n  -khtml-user-select: none; /* Konqueror HTML */\n  -moz-user-select: none; /* Firefox */\n  -ms-user-select: none; /* Internet Explorer/Edge */\n  user-select: none;\n  margin: 0;\n  padding: 0;\n}\n.transform-component-module_content__2jYgh {\n  display: flex;\n  flex-wrap: wrap;\n  width: -moz-fit-content;\n  width: fit-content;\n  height: -moz-fit-content;\n  height: fit-content;\n  margin: 0;\n  padding: 0;\n  transform-origin: 0% 0%;\n}\n.transform-component-module_content__2jYgh img {\n  pointer-events: none;\n}\n`, ko = {
+  wrapper: `transform-component-module_wrapper__1_Fgj`,
+  content: `transform-component-module_content__2jYgh`
+};
+
+Do(Oo);
+
+var Ao = function(e) {
+  var t = e.children, n = e.wrapperClass, r = n === void 0 ? `` : n, i = e.contentClass, a = i === void 0 ? `` : i, o = e.wrapperStyle, s = e.contentStyle, c = (0, 
+  F.useContext)(wo).setComponents, l = (0, F.useRef)(null), u = (0, F.useRef)(null);
+  return (0, F.useEffect)(function() {
+    var e = l.current, t = u.current;
+    e !== null && t !== null && c && c(e, t);
+  }, []), F.createElement(`div`, {
+    ref: l,
+    className: `react-transform-wrapper ` + ko.wrapper + ` ` + r,
+    style: o
+  }, F.createElement(`div`, {
+    ref: u,
+    className: `react-transform-component ` + ko.content + ` ` + a,
+    style: s
+  }, t));
+}, jo = {
+  OuterContainer: y.div`
+    position: relative;
+  `,
+  ClampedContainer: y.div`
+    ${e => !e.isExpanded && ce(e.lines)};
+  `,
+  HiddenContent: y.div.attrs({
+    "aria-hidden": !0
+  })`
+    pointer-events: none;
+    height: 0;
+    opacity: 0;
+  `
+}, Mo = ({isExpanded: e, numLines: t, onExpandableStatus: n, className: r, children: i}) => {
+  let a = (0, F.useRef)(null), o = (0, F.useRef)(), s = (0, F.useCallback)(je(300, () => {
+    let e = a.current;
+    if (e) {
+      let t = e.scrollHeight > e.offsetHeight;
+      o.current !== t && (o.current = t, n(t));
+    }
+  }), [ n ]);
+  return (0, F.useLayoutEffect)(s, [ s ]), (0, F.useEffect)(() => {
+    let e = a.current;
+    if (!e) {
+      return;
+    }
+    let t = new ResizeObserver(() => requestAnimationFrame(s));
+    return t.observe(e), () => t.disconnect();
+  }, [ s ]), (0, V.jsxs)(jo.OuterContainer, {
+    className: r,
+    children: [ (0, V.jsx)(jo.HiddenContent, {
+      children: (0, V.jsx)(jo.ClampedContainer, {
+        lines: t,
+        ref: a,
+        isExpanded: !1,
+        children: i
+      })
+    }), (0, V.jsx)(jo.ClampedContainer, {
+      lines: t,
+      isExpanded: e,
+      children: i
+    }) ]
+  });
+};
+
+v();
+
+var No = (0, $n.createThemedComponent)(er.Button, {
+  Button_paddingHorizontal_medium: `0px`,
+  Button_minHeight_medium: `0px`
+}), $ = {
+  Dialog: y(Me)`
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+  `,
+  MainContent: y.div`
+    width: 100%;
+    height: 100%;
+  `,
+  Image: y.img`
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.1s 0.01s;
+    background-color: white;
+  `,
+  Header: y.div`
+    touch-action: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    min-height: 72px;
+
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    color: white;
+
+    transition: transform 200ms, opacity 200ms;
+    opacity: ${e => +!!e.open};
+    transform: translateY(${e => e.open ? 0 : `-100%`});
+  `,
+  Footer: y.div`
+    touch-action: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    padding: 16px 0;
+
+    svg {
+      transform: scale(1.3);
+    }
+
+    & > * {
+      position: relative;
+      &:first-child {
+        left: 50%;
+        transform: translateX(-100%);
+      }
+      &:last-child {
+        left: 50%;
+        transform: translateX(-100%);
+      }
+    }
+    transition: transform 200ms, opacity 200ms;
+    opacity: ${e => +!!e.open};
+    transform: translateY(${e => e.open ? 0 : `100%`});
+  `,
+  Truncator: y(Mo)`
+    width: 100%;
+    padding: 16px 80px 30px 32px;
+  `,
+  MoreLessButton: y(No)`
+    position: absolute;
+    bottom: 8px;
+    right: 80px;
+  `,
+  CloseButton: y(ue)`
+    position: absolute;
+    top: 6px;
+    right: 14px;
+  `
+}, Po = 2, Fo = !0, Io = !1, Lo = !1, Ro = 1, zo = 8;
+
+function Bo({src: e, open: t, onRequestClose: n, description: r}) {
+  let i = (0, F.useRef)(), a = (0, F.useRef)(null), [s, c] = (0, F.useState)(Po), l = oe(), [u, f] = (0, 
+  F.useState)(Fo), [p, m] = (0, F.useState)(Io), [h, g] = (0, F.useState)(Lo), [_, v] = (0, 
+  F.useState)(Ro), [y, b] = (0, F.useState)(!1), x = we();
+  function S() {
+    return a.current.closest(`.react-transform-wrapper`);
+  }
+  (0, F.useEffect)(() => {
+    if (t) {
+      let e = window.setInterval(() => {
+        let e = i.current?.state?.scale || 1;
+        v(e);
+      }, 100);
+      return () => clearTimeout(e);
+    }
+  }, [ t ]), (0, F.useEffect)(() => {
+    t || (c(Po), f(Fo), m(Io), g(Lo));
+  }, [ t ]);
+  let C = (0, F.useCallback)(() => {
+    let e = a.current;
+    if (e) {
+      let t = e.naturalWidth / e.naturalHeight, n = S();
+      t > n.offsetWidth / n.offsetHeight ? c(0) : c(1);
+    }
+  }, []), w = (0, F.useCallback)(() => {
+    C();
+  }, [ C ]);
+  (0, F.useEffect)(() => {
+    if (t) {
+      let e = je(200, () => {
+        C(), i.current && i.current.centerView(1, 0);
+      });
+      return window.addEventListener(`resize`, e), () => window.removeEventListener(`resize`, e);
+    }
+  }, [ C, t ]);
+  let ee = (0, F.useCallback)(() => {
+    if (o()) {
+      let e = () => {
+        f(e => !e);
+      };
+      return S().addEventListener(`click`, e), () => S().removeEventListener(`click`, e);
+    }
+  }, []), T = (0, F.useCallback)((e, t) => {
+    let n = i.current, r = a.current;
+    if (n && r && r.complete) {
+      let {positionX: i, positionY: a, scale: o} = n.state, s = S().offsetWidth, c = S().offsetHeight, l = r.offsetWidth * o, u = r.offsetHeight * o, d = i, f = a;
+      l > s && (d = de(i + e, s - l, 0)), u > c && (f = de(a + t, c - u, 0)), n.setTransform(d, f);
+    }
+  }, []);
+  (0, F.useEffect)(() => {
+    if (t) {
+      let e = je(200, e => {
+        e.key === `ArrowRight` ? T(-100, 0) : e.key === `ArrowLeft` ? T(100, 0) : e.key === `ArrowUp` ? T(0, 100) : e.key === `ArrowDown` && T(0, -100);
+      });
+      return window.addEventListener(`keydown`, e), () => window.removeEventListener(`keydown`, e);
+    }
+  }, [ t, T ]), (0, F.useLayoutEffect)(() => {
+    a.current && (s !== 2 && a.current.naturalHeight ? (a.current.style.opacity = `1`, 
+    i.current.centerView(1, 0)) : a.current.style.opacity = `0`);
+  }, [ s ]);
+  let E = {};
+  return s === 1 ? (E.height = `100%`, E.flexDirection = `row`) : s === 0 && (E.width = `100%`, 
+  E.flexDirection = `column`), (0, V.jsx)($.Dialog, {
+    type: Oe.FullScreen,
+    open: t,
+    label: l.formatMessage({
+      id: `imageZoom.title`
+    }),
+    onRequestClose: n,
+    children: (0, V.jsx)(Eo, {
+      initialScale: 1,
+      centerOnInit: !0,
+      ref: i,
+      onInit: ee,
+      minScale: Ro,
+      maxScale: zo,
+      onPanningStart: () => b(!0),
+      onPanningStop: () => b(!1),
+      children: (0, V.jsxs)($.MainContent, {
+        onFocus: () => f(!0),
+        onClick: e => {
+          e.target.tagName.toLowerCase() === `button` && f(!0);
+        },
+        onMouseEnter: o() ? void 0 : () => f(!0),
+        onMouseLeave: o() ? void 0 : () => f(!1),
+        children: [ (0, V.jsxs)($.Header, {
+          open: u,
+          children: [ (0, V.jsx)($.Truncator, {
+            isExpanded: p,
+            numLines: x ? 4 : 2,
+            onExpandableStatus: e => g(e),
+            children: r
+          }), (0, V.jsx)($.CloseButton, {
+            onClick: n,
+            label: l.formatMessage({
+              id: `base.close`
+            }),
+            icon: (0, V.jsx)(tr.XLarge, {})
+          }), h && (0, V.jsx)($.MoreLessButton, {
+            naked: !0,
+            onClick: () => m(!p),
+            children: l.formatMessage({
+              id: p ? `base.less` : `base.more`
+            })
+          }) ]
+        }), (0, V.jsx)(Ao, {
+          wrapperStyle: {
+            width: `100%`,
+            height: `100%`,
+            cursor: y ? `grabbing` : `default`
+          },
+          contentStyle: E,
+          children: (0, V.jsx)($.Image, {
+            src: e,
+            alt: ``,
+            onLoad: w,
+            ref: a,
+            style: E
+          })
+        }), (0, V.jsxs)($.Footer, {
+          open: u,
+          children: [ (0, V.jsx)(ue, {
+            onClick: () => {
+              i.current.zoomOut();
+            },
+            label: d(l.formatMessage({
+              id: `format.zoomOut`
+            })),
+            disabled: _ === Ro,
+            icon: (0, V.jsx)(tr.ZoomOut, {})
+          }), (0, V.jsx)(ue, {
+            onClick: () => {
+              i.current.zoomIn();
+            },
+            label: d(l.formatMessage({
+              id: `format.zoomIn`
+            })),
+            disabled: _ === zo,
+            icon: (0, V.jsx)(tr.ZoomIn, {})
+          }) ]
+        }) ]
+      })
+    }, t ? e : void 0)
+  });
+}
+
+function Vo(e) {
+  return {
+    set: (t, n) => r => {
+      r(e({
+        [t]: ar(n)
+      }));
+    },
+    delete: t => n => n(e({
+      [t]: {}
+    }))
+  };
+}
+
+var {set: Ho, delete: Uo} = Vo(j(N.UPDATE_USER_PREFS)), {set: Wo, delete: Go} = Vo(O(A.UPDATE_USER_BOOK_PREFS));
+
+function Ko(e) {
+  return (t, n) => t.preferences[e][n]?.value;
+}
+
+var qo = Ko(`user`), Jo = Ko(`book`);
+
+function Yo(e) {
+  let t = (0, F.useRef)(e);
+  return (0, F.useEffect)(() => {
+    t.current = e;
+  }, [ e ]), t;
+}
+
+function Xo({get: e, set: t, del: n}, r) {
+  let i = k(t => e(t, r)), a = Yo(i), o = he(), s = (0, F.useCallback)(e => {
+    typeof e == `function` && (e = e(a.current)), o(t(r, e));
+  }, [ o, t, r, a ]), c = (0, F.useCallback)(() => {
+    o(n(r));
+  }, [ o, n, r ]);
+  return (0, F.useMemo)(() => ({
+    currentVal: i,
+    setVal: s,
+    removeVal: c
+  }), [ i, s, c ]);
+}
+
+var Zo = {
+  get: qo,
+  set: Ho,
+  del: Uo
+};
+
+function Qo(e) {
+  return Xo(Zo, e);
+}
+
+var $o = {
+  get: Jo,
+  set: Wo,
+  del: Go
+};
+
+function es(e) {
+  return Xo($o, e);
+}
+
+async function ts(e) {
+  if (!e) {
+    return Promise.reject();
+  }
+  try {
+    return await navigator.clipboard.writeText(e);
+  } catch {
+    return ns(e) ? Promise.resolve() : Promise.reject();
+  }
+}
+
+function ns(e) {
+  if (rs() && e.length > 0) {
+    let t = document.createElement(`div`);
+    t.setAttribute(`aria-hidden`, `true`), t.style.background = `transparent`, t.innerHTML = e, 
+    document.body.appendChild(t);
+    let n = document.createRange();
+    n.selectNode(t);
+    let r = window.getSelection();
+    return r && (r.removeAllRanges(), r.addRange(n), document.execCommand(`copy`)), 
+    t.parentNode && t.parentNode.removeChild(t), !!r;
+  }
+  return !1;
+}
+
+function rs() {
+  try {
+    return document.queryCommandEnabled(`copy`) || document.queryCommandSupported(`copy`);
+  } catch {
+    return !1;
+  }
+}
+
+async function is(e) {
+  let t = h(e);
+  try {
+    let n = new ClipboardItem({
+      "text/html": new Blob([ e ], {
+        type: `text/html`
+      }),
+      "text/plain": new Blob([ t ], {
+        type: `text/plain`
+      })
+    });
+    return await navigator.clipboard.write([ n ]);
+  } catch {
+    return ts(t);
+  }
+}
+
+async function as(e, t, n) {
+  try {
+    return await t(), n?.(!0), e.formatMessage({
+      id: `base.copied`
+    });
+  } catch {
+    return n?.(!1), e.formatMessage({
+      id: `base.copyFailed`
+    });
+  }
+}
+
+v();
+
+var os = function(e) {
+  return e[e.visuallyHidden = 0] = `visuallyHidden`, e[e.opacityHidden = 1] = `opacityHidden`, 
+  e;
+}({}), ss = {
+  Button: y.button`
+    text-decoration: underline;
+    border-radius: 4px;
+    color: ${le(6)};
+    font-size: 1.3rem;
+    z-index: 9999;
+    padding: 8px;
+    text-align: center;
+    ${({layout: e}) => e === 0 ? b`
+            position: absolute;
+            :not(:focus) {
+              ${se}
+            }
+          ` : b`
+            :not(:focus) {
+              opacity: 0;
+            }
+          `}
+    background-color: white;
+    outline: none;
+    border: 2px solid ${le(6)};
+  `
+}, cs = ({layout: e = 0, children: t, ...n}) => (0, V.jsx)(ss.Button, {
+  layout: e,
+  ...n,
+  children: t
+});
+
+export { Rr as $, kt as $t, bi as A, z as At, ai as B, qt as Bt, Ci as C, Dn as Ct, Ei as D, mn as Dt, Di as E, _n as Et, _i as F, un as Ft, Qr as G, zt as Gt, $r as H, Ut as Ht, ui as I, $t as It, Zr as J, Nt as Jt, ti as K, It as Kt, pi as L, sn as Lt, li as M, Xt as Mt, gi as N, ln as Nt, xi as O, dn as Ot, hi as P, Qt as Pt, zr as Q, jt as Qt, fi as R, Yt as Rt, wi as S, En as St, ki as T, wn as Tt, ei as U, Gt as Ut, ni as V, Vt, ri as W, Kt as Wt, Br as X, Lt as Xt, Xr as Y, Ft as Yt, Hr as Z, Tt as Zt, Zi as _, Ue as _n, Mn as _t, as as a, mt as an, ar as at, Xi as b, Ie as bn, Nn as bt, Yo as c, st as cn, Rn as ct, Li as d, ct as dn, Yn as dt, At as en, Ur as et, Ji as f, ot as fn, Gn as ft, Qi as g, He as gn, Un as gt, Ui as h, We as hn, zn as ht, ts as i, St as in, nr as it, yi as j, on as jt, Si as k, hn as kt, Bo as l, rt as ln, Zn as lt, Wi as m, Ge as mn, Xn as mt, os as n, Ot as nn, sr as nt, es as o, ht as on, ir as ot, Gi as p, Ye as pn, Wn as pt, Yr as q, Pt as qt, is as r, xt as rn, rr as rt, Qo as s, Xe as sn, Qn as st, cs as t, wt as tn, Vr as tt, Mo as u, it as un, Jn as ut, Hi as v, Ve as vn, An as vt, Oi as w, Tn as wt, Ii as x, Fe as xn, On as xt, qi as y, Le as yn, jn as yt, ii as z, Jt as zt };
+//# sourceMappingURL=AccessibilityButton-CaUTVKSa.js.map
+//# sourceMappingURL=AccessibilityButton-CaUTVKSa.js.map

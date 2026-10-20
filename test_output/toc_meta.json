@@ -1,0 +1,32 @@
+{
+  "count": 497,
+  "sample": [
+    {
+      "title": "Table of Contents and Preface",
+      "path": "/OPS/s9ml/chapter01/cover_page.xhtml#data-uuid-2048187231b7458595d9bf2b164e0cd6",
+      "level": 1,
+      "cfi": "/6/2[data-uuid-19013d6b752642239cdcc06da7db1da9]",
+      "kind": "document_container",
+      "page": "iii",
+      "data": []
+    },
+    {
+      "title": "Cover Page",
+      "path": "/OPS/s9ml/chapter01/cover_page.xhtml#data-uuid-2048187231b7458595d9bf2b164e0cd6",
+      "level": 2,
+      "cfi": "/6/2[data-uuid-19013d6b752642239cdcc06da7db1da9]",
+      "kind": "document",
+      "page": "iii",
+      "data": []
+    },
+    {
+      "title": "Title Page",
+      "path": "/OPS/s9ml/chapter01/title_page.xhtml#data-uuid-6fbb37be060246fb80f01917e2879705",
+      "level": 2,
+      "cfi": "/6/4[data-uuid-6fbb37be060246fb80f01917e2879705]",
+      "kind": "document",
+      "page": "iii",
+      "data": []
+    }
+  ]
+}

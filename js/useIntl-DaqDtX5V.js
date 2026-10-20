@@ -1,0 +1,2 @@
+import{a as e}from"./rolldown-runtime-B0Z9INg1.js";import{i as t}from"./jsx-runtime-DU6_sasz.js";import{t as n,u as r}from"./injectIntl-AqYQwB7i.js";var i=e(t());function a(){var e=i.useContext(n);return r(e),e}export{a as t};
+//# sourceMappingURL=useIntl-DaqDtX5V.js.map

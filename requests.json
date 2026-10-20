@@ -1,0 +1,860 @@
+[
+  {
+    "url": "https://bc.vitalsource.com/books/9781266431227?bc_token=61bfec10-aae6-013f-f189-1eb286fc39a0&relaunch_vbid=9781266431227&course_dash_relaunch=true",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/auth/redirects/A24V6CMA7SBAEM9YXRCXZGU7THAMS7TRBP5DNQKCXR676TGMFC",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null
+  },
+  {
+    "url": "https://login.vitalsource.com/redirect?redirect_uri=https%3A%2F%2Fcapella.vitalsource.com%2Fbooks%2F9781266607752%3Fcontext_token%3D61bfec10-aae6-013f-f189-1eb286fc39a0&verified_data=IntcImFjY2Vzc190b2tlblwiOlwiYjEwNjk5NWFmZDVmNDllNzNiYjU4ZGUxMDVlMjJiOWNcIixcImd1aWRcIjpcIkJZQlNBVVIzVkI3WEJQS1ZVUVpCXCIsXCJlbWFpbFwiOlwiTWFnaWNrMTIyMkBnbWFpbC5jb21cIixcImVtYWlsX3ZlcmlmaWNhdGlvbl9yZXF1aXJlZFwiOmZhbHNlLFwiZW1haWxfdmVyaWZpY2F0aW9uX2NvbXBsZXRlZFwiOnRydWUsXCJzc29fc2Vzc2lvblwiOnRydWUsXCJqaWdzYXdfYnJhbmRcIjpudWxsLFwiZXVsYV9hY2NlcHRlZFwiOnRydWUsXCJldWxhX2FjY2VwdGVkX2F0XCI6XCIyMDI2LTEwLTE1VDA5OjQ3OjU1LjAwMFpcIixcImxvY2FsZVwiOlwiZW5cIixcImVtYWlsX2xvY2tlZFwiOmZhbHNlLFwibGFzdF9icmFuZF9hY2Nlc3NlZFwiOlwiY2FwZWxsYS52aXRhbHNvdXJjZS5jb21cIixcIm5lZWRzX3Bhc3N3b3JkX3VwZGF0ZVwiOmZhbHNlLFwicmVmZXJlbmNlX3VzZXJcIjpmYWxzZSxcIm1hc3F1ZXJhZGVcIjpudWxsLFwiZXhwXCI6MTc5MjA4NDQ5Nn0i--4cecc87ed3b2f1bbb0985aa1c00b4594ceee88a530933e6d7052a6d5c67e126d&brand=capella.vitalsource.com&auth_host=jigsaw.vitalsource.com&auth_protocol=https://",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/auth/redirects/TCKJNKYK4SJVFSP866U2MFRFFZUDV3D8EWKEPC7R6BSYYPZU8Z?jwt=aloha",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/books/9781266607752?context_token=61bfec10-aae6-013f-f189-1eb286fc39a0",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/?context_token=61bfec10-aae6-013f-f189-1eb286fc39a0",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/assets/v1/jigsaw/box.js?v=1785420149171",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://explore-services.vitalsource.com/assets/v1/bridge.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://admin-services.vitalsource.com/assets/v1/explore.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://flashcards.vitalsource.com/js/v2/app.js?v=1785420149171",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/cookiecat/script.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/assets/main-DCwFNOQR.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/assets/main-BZGdEBXv.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/assets/roboto-v15-latin-regular-CJgdpARq.woff2",
+    "method": "GET",
+    "resourceType": "font",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/secure-token",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/cdn-cgi/challenge-platform/scripts/jsd/main.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/cdn-cgi/challenge-platform/h/b/scripts/jsd/d2d3316b729e/main.js?",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://chameleon.vitalsource.com/api/brands/capella.vitalsource.com/fraction",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/socket?xdm_e=https%3A%2F%2Fcapella.vitalsource.com&xdm_c=default2899&xdm_p=1",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/cdn-cgi/challenge-platform/h/b/jsd/oneshot/d2d3316b729e/0.9151107293759511:1792080023:jIgQjq4eiArsPVUPIhK0gJ_a8rTKKTtiN7Kc_HXbJj8/a4b06f3bf92c9435",
+    "method": "POST",
+    "resourceType": "xhr",
+    "postData": "VFKmuzB02LeYYoIdGwyoyrGxvlWHYRocs-b0Csse0rw$+S5W4Bx4EkMLbqYpnxN$JG9A23prXELx7fq0r48v7GnIQjEnUQMSD83JeofAlSzSxYtWQMXEAn0uXywCgHftJY9NDrUCQ7qg73uEGoP1XWshSfBqRpO7vYh8e94-qB0H2K4dvbgbmxTfq5f6rWjVtaNJTN1zeOGcyEv7$+eTxcF74DP8+nWJtkuwLxoBGH3jxqj9RA8PCu9q13mIvTenwtMsNJfnInDLZ$TJgBWt7ZrwbpgDV1QdvNf55IpB0o$tF2GUYnW7p3gjJh70PRpE0oTZZksgFVu+0BtZ8SvSWUPUa3vXsh4KZ1glqwAtG0rkgBR1$KNTtg-ZRbR55O$dfpE7WqzH5kW1aCCfPTbWRG+IVrLu8eLYaM4PBkp6w8TnwCAjYJk3MnIdSTTyB1W0TeeI-YyDmWClqbgzL7f+BMMvfj7k+xAbFcLao5LRdD9+$ufZD1RRfTSuSy1RJ5DrHZIqhCdlnUv$3H73FzK1Py8j2BxV6tMZ7ZpfLnA-L6P0FqcL75srxEITm33Co$26aldPHMlgn3lhVct31MDT$mdY+vmuhmjctgyLDcIIp$yp3odGaS4eBwwDl1wQMl+DR8G2fh7xCsnCd0$66djQJkqZCuhuJ6u0tssaBlqv3MXALGQ2lNYQOMBcf7uagf5IoX+Wdc5$x6O90dozK2+XQ9ox6aSER3B5zsL5m2wdRtaQHbjkFyOqqoJX5Sqm9eJd-tw5-ZeTCmsbYX45cgOOsvh0VBYQrIWJxPF4VLATO9cxBAev9p59ud6l+SRFbS+21pV$zud6lU5RcV8rIYRxwg0VwX4GwDVo2SfyCshWgSeyd1v+2Sw-C7ty3F7ElgfzMjF6vQ9WgnNFVEFfMX0WX6DusFCK$p7k9$TpopN7JugV7q54PKOdST33RgazM6M0EHDsRPpI07QmaoW7rqX3PrV$v1z44lv6vn3YJt3l8aefzto$oDXptjvOs0ON3EyM9B4sroTNxyXl4wLcszpKySVXgt2p6TR9gKFX-0aL0LB-XUUrQwB3Ro0$Tg91avJ2x35-k+YIFNAkW3-NqVNTBm+XtJ7kks-p8trwk-82r-ZoxJvn28eajMcU9AQ6$CVc32ZdPOpXvLybhOH6j70VmQU6hOz4Qo0Ze4vB-FfHw-7a$BgOQNHlXYFfxXN1bQXlff7urzCURp-+R4OjtEpchsz-se47gzEOl3-ew2HCmzHZzSOQKT83EREScwSW+YPblV+dO3wne63y6qr8aC55SPoQIuZRKlbq87cyjcqdWaA4KPrPfQ1kJrlSyf8W5WV2w2C9mC0N0jyGBWcCPtFuJgMl2buj7nEETow1F0W86FudZMbCKnKQNTgDWKqhxVJtAvfJt19JdttDM8O5-vezLEmAxeKdgjc05MWcAZIPvP1QFwS$ylXZ5tN2Ol1CkstnzkmGuP0HS9j7eHWMKkYZJ6u2RYcsSZcfB4b7gYzZ9SkX8GRJkIuWKq$uGjlK48QU7R+HWmTb+Y9JbdG+qH5Wvu30k2rsers+XIzeGRm0aJD+weTwqA-osNvGM6hpURNZ5w1MKCrIKaS-gBRgjdlxMf8j5j8zvW$aXOJ6RxUQ19seC9tNLRy9W3z+qEAoPnEvzeZXIq0Ao8qmYUJ74$oA3d3J7IN7LvPRGR7bQNjpF24eBypLnz81mNUTNdo3PeJJyglvllI7PsUEcpek7oWZMAVPrZyaMA7cccu4uM3SWbZnhK+VMQJtyEtAE$bNC9fj-9OpZqtVc48F0Mk3Rb$+afsWaDGA8c4BHjpClxZLDqvDpSf$dGTGvsROEmJIU8XPpkEztosk52lo-KJYTwuf8xML-T+qCWSCpSeK4NrxhHM-oF8EU75WhHIrFO$33mqno+20jVZFqD9JlcusnNWPCuWnVRgplD$cJTSoY9vjplSKnb7gfHy7Was$+F9RKpnOJRgVQww5lOgKl99D"
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/assets/v1/jigsaw/puzzle_pieces/index-c451e4e862d2413a0762d4b5e520e2c79d6cbf6069d8d28d0137537a98a2e056.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/assets/application-1677fc488898d350308f83929276aaee08a3db6a7dc8c98d1049823e4ce9f47a.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/assets/application-e1606d8e2c45d8b01666307dc4655ed8a9c56aeef74382775cf5038d1841b473.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/cdn-cgi/challenge-platform/scripts/jsd/main.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/fingerprint.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/cdn-cgi/challenge-platform/h/b/scripts/jsd/d2d3316b729e/main.js?",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/user/languages",
+    "method": "GET",
+    "resourceType": "xhr",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/cdn-cgi/challenge-platform/h/b/jsd/oneshot/d2d3316b729e/0.9151107293759511:1792080023:jIgQjq4eiArsPVUPIhK0gJ_a8rTKKTtiN7Kc_HXbJj8/a4b06f863c499435",
+    "method": "POST",
+    "resourceType": "xhr",
+    "postData": "VFKmuzB02LeYYoIdGwyoywLkvVWHYRocs-b0Csse0rw$+S5W4Bx4EkMLbqYpnxN$JG9A23prXELx7fq0r48v7GnIQjEnUQMSD83JeofAlSzSxYtWQMXEAn0uXywCgHftJY9NDrUCQ7qg73uEGoP1XWshSfBqRpO7vYh8e94-qB0H2K4dvbgbmxTfq5f6rWjVtaNJTN1zeOGcyEv7$+eTxcF74DP8+nWJtkuwLxoBGH3jxqj9RA8PCu9q13mIvTenwtMsNJfnInDLZ$TJgBWt7ZrwbpgDV1QdvNf55IpB0o$tF2GUYnW7p3gjJh70PRpE0oTZZksgFVu+0BtZ8SvSWUPUa3vXsh4KZ1glqwAtG0rkgBR1$KNTtg-ZRbR55O$dfpE7WqzH5kW1aCCfPTbWRG+IVrLu8eLYaM4PBkp6w8TnwCAjYJk3MnIdSTTyB1W0TeeI-YyDmWClqbgzL7f+BMMvfj7k+xAbFcLao5LRdD9+$ufZD1RRfTSuSy1RJ5DrHZIqhCdlnUv$3H73FzK1Py8j2BxV6tMZ7ZpfLnA-L6P0FqcL75srxEITm33Co$26aldPHMlgn3lhVct31MDT$mdY+vmuhmjctgyLDcIIp$yp3odGaS4eBwwDl1wQMl+DR8G2fh7xCsnCd0$66djQJkqZCuhuJ6u0tssaBlqv3MXALGQ2lNYQOMBcf7uagf5IoX+Wdc5$x6O90dozK2+XQ9ox6aSER3B5zsL5m2wdRtaQHbjkFyOqqoJX5Sqm9eJd-tw5-ZeTCmsbYX45cgOOsvh0VBYQrIWJxPF4VLATO9cxBAev9p59ud6l+SRFbS+21pV$zud6lU5RcV8rIYRxwg0VwX4GwDVo2SfyCshWgSeyd1v+2Sw-C7ty3F7ElgfzMjF6vQ9WgnNFVEFfMX0WX6DusFCK$p7k9$TpopN7JugV7q54PKOdST33RgazM6M0EHDsRPpI07QmaoW7rqX3PrV$v1z44lv6vn3YJt3l8aefzto$oDXptjvOs0ON3EyM9B4sroTNxyXl4wLcszpKySVXgt2p6TR9gKFX-0aL0LB-XUUrQwB3Ro0$Tg91avJ2x35-k+YIFNAkW3-NqVNTBm+XtJ7kks-p8trwk-82r-ZoxJvn28eajMcU9AQ6$CVc32ZdPOpXvLybhOH6j70VmQU6hOz4Qo0Ze4vB-FfHw-7a$BgOQNHlXYFfxXN1bQXlff7urzCURp-+R4OjtEpchsz-se47gzEOl3-ew2HCmzHZzSOQKT83EREScwSW+YPblV+dO3wne63y6qr8aC55SPoQIuZRKlbq87cyjcqdWaA4KPrPfQ1kJrlSyf8W5WV2w2C9mC0N0jyGBWcCPtFuJgMl2buj7nEETow1F0W86FudZMbCKnKQNTgDWKqhxVJtAvfJt19JdttDM8O5-vezLEmAxeKdgjc05MWcAZIPvP1QFwS$ylXZ5tN2Ol1CkstnzkmGuP0HS9j7eHWMKkYZJ6u2RYcsSZcfB4b7gYzZ9SkX8GRJkIuWKq$uGjlK48QU7R+HWmTb+Y9JbdG+qH5Wvu30k2rsers+XIzeGRm0aJD+weTwqA-osNvGM6hpURNZ5w1MKCrIKaS-gBRgjdlxMf8j5j8zvW$aXOJ6RxUQ19seC9tNLRy9W3z+qEAoPnEvzeZXIq0Ao8qmYUJ74$oA3d3J7IN7LvPRGR7bQNjpF24eBypLnz81mNUTNdo3PeJJyglvllI7PsUEcpek7oWZMAVPrZyaMA7cccu4uM3SWbZnhK+VMQJtyEtAE$bNC9fj-9OpZqtVc48F0Mk3Rb$+afsWaDGA8c4BHjpClxZLDqvDpSf$dGTGvsROEmJIU8XPpkEztosk52lo-KJYTwuf8xML-T+qCWSCpSeK4NrxhHM-oF8EU75WhHIrFO$33mqno+20jVZFqD9JlcusnNWPCuWnVRgplD$cJTSoY9vjplSKnb7gfHy7Was$+F9RKpnOJRgVQww5lOgKl99D"
+  },
+  {
+    "url": "https://capella.vitalsource.com/locales/en.json?_=1792084206087",
+    "method": "GET",
+    "resourceType": "xhr",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/user",
+    "method": "GET",
+    "resourceType": "xhr",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/user/verify",
+    "method": "POST",
+    "resourceType": "fetch",
+    "postData": "{\"visitor_id\":\"c6c2ce447fafa55383f081fe8af5fd14\",\"components\":{\"fonts\":{\"value\":[],\"duration\":30},\"domBlockers\":{\"duration\":4},\"fontPreferences\":{\"value\":{\"default\":0,\"apple\":0,\"serif\":0,\"sans\":0,\"mono\":0,\"min\":0,\"system\":0},\"duration\":32},\"audio\":{\"value\":124.04347605905059,\"duration\":140},\"screenFrame\":{\"value\":[0,0,0,0],\"duration\":1},\"osCpu\":{\"duration\":0},\"languages\":{\"value\":[[\"en-US\"]],\"duration\":0},\"colorDepth\":{\"value\":24,\"duration\":0},\"deviceMemory\":{\"value\":4,\"duration\":0},\"screenResolution\":{\"value\":[800,1280],\"duration\":1},\"hardwareConcurrency\":{\"value\":2,\"duration\":0},\"timezone\":{\"value\":\"UTC\",\"duration\":112},\"sessionStorage\":{\"value\":true,\"duration\":0},\"localStorage\":{\"value\":true,\"duration\":0},\"indexedDB\":{\"value\":true,\"duration\":3},\"openDatabase\":{\"value\":false,\"duration\":0},\"cpuClass\":{\"duration\":0},\"platform\":{\"value\":\"Linux x86_64\",\"duration\":0},\"plugins\":{\"value\":[],\"duration\":0},\"canvas\":{\"value\":{\"winding\":true,\"geometry\":\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAABuCAYAAADoHgdpAAAQAElEQVR4AexdCZhcVZX+76vqzjoBAgEdtpCEEIGYpQ2igAFlUcCE0SHKgKMZQ4Of38CggogLuAA6A6IyLiAKbkgUWRQ+jOwQBmRNiCghC+mQBUhCQjq9pJe68/+vql5tr95SXUuTpPued7dzzz33/u/u771y0MA/O8GOIp1ox9tP2XH2Ytrfp/070iN0LyO1Z2hZJmw+/eIR7yfdtJShItifPz/O/vSp2fa6Zy4h/dZe9/SjpEWkZaS1pC0kmyG5FaY48Txqr3/6ZtKX7PXPzpIsyZxg7SjSieOt/dQ4ay+m/X3avyM9QvcyUnuGlmXC5tMvHvF+UmlJoySr0VR3oAnUBIL2X7Tvh8VGpLCA9o2siCtpn0f7dNIxdE8gjczQhEzYHPrPg+2+Er2bbkLX6gXoWrrZvvuZPjzSswIbzB2AvZz0cfIfTZpCUtp/pr0bKWvkVpjixHM05Z5BuqLNpu68sbdnxZk3PNPn3LF0c+qx1Qvssk03Yuv2Ky1wHgW4+tE9gTQyQ5JzDN1zSOIR700pYAH9G3kT3Ec6nzeB+Cii/qbmQNvTbYIt71iCezVpKStzGYt5De33k5roDje2B+h5FehaDmxbTHqB7lUM20Da5mClTeBuirmG9D3Sn0mMpnw6gg3BwF/JcgXpeNL7Sd8iPd5vE32vU/YLzONBCrvlb8AvmfefqcNi6tLZS65wQ6BVxg+Q83t0LyPgSwn4VWzpM0+31JsR9TA1A9peZh073n4Sz2AFUniQhfkcaSIpoukHejcS0KUEdgmwfS3Q9yYba19weibBQrLcQPouidiANUxXgVHQbQw5lvRvpJ+RXiYFmm7mvZo6/JW6/OZ54K6XgKXMsJe6BiYsiJzIvD/PG+yhZ4DlBPysy6ytGQ7ZnGuSAVvwLPwKi1nBNzGjA0nRTX870L0SaF9Eu43gbouetphzMwN+T/pfEu8XXl1zP6+nkC4kETJ"
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752",
+    "method": "GET",
+    "resourceType": "xhr",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/books/9781266607752",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/cookiecat/script.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/index-maEWt9hW.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/rolldown-runtime-B0Z9INg1.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/jsx-runtime-DU6_sasz.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/monitoring-fZj7Xvdu.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/index-Cxrnf_uc.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/ReaderMain-B9TAVXtz.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/LocaleProvider-DoP-dlkE.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/en-BaQz-p4Y.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/GlobalStyleProvider-BWhTP2MU.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/uuid-DwkZyVS8.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/MosaicProvider-AuGlbFtG.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/styled-components.browser.esm-BcYycfu6.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/injectIntl-AqYQwB7i.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/useIntl-DaqDtX5V.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/LocaleProvider-BQqibgn0.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/bookshelfLink-TIla8vSe.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/useQueryParams-CiCdBZeh.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/enrichments-DzDQ_toR.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/array-BlXv2BOg.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/StaticLoader-LtUItV9i.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/actions-B2bqznsY.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/PageAreaReporter-C9x7kiiE.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/Tooltip-DA2Rdtm3.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/AccessibilityButton-CaUTVKSa.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://js-agent.newrelic.com/nr-spa-1208.min.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://bam.nr-data.net/1/2285d4559b?a=867840890&sa=1&v=1208.49599aa&t=Unnamed%20Transaction&rst=1474&ck=0&ref=https://capella.vitalsource.com/reader/books/9781266607752&be=268&fe=1078&dc=747&af=err,xhr,stn,ins,spa&perf=%7B%22timing%22:%7B%22of%22:1792084214391,%22n%22:0,%22u%22:172,%22ue%22:172,%22f%22:9,%22dn%22:9,%22dne%22:9,%22c%22:9,%22ce%22:9,%22rq%22:16,%22rp%22:117,%22rpe%22:165,%22dl%22:217,%22di%22:306,%22ds%22:747,%22de%22:751,%22dc%22:1077,%22l%22:1077,%22le%22:1088%7D,%22navigation%22:%7B%7D%7D&fp=404&jsonp=NREUM.setToken",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/mosaic.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://bam.nr-data.net/events/1/2285d4559b?a=867840890&sa=1&v=1208.49599aa&t=Unnamed%20Transaction&rst=3172&ck=0&ref=https://capella.vitalsource.com/reader/books/9781266607752",
+    "method": "POST",
+    "resourceType": "xhr",
+    "postData": "bel.7;1,1,,u8,u8,6,'initialPageLoad,'https://capella.vitalsource.com/reader/books/9781266607752,1,1,,,!!!!'b85fb31b-51a1-456f-9d3f-5180a630cc64,'1,b8,!;5,'vbid,'9781266607752;b,4s,!,!-4j,,,,!,7,2t,1c,1g,2h,c9,4,92,,b"
+  },
+  {
+    "url": "https://chameleon.vitalsource.com/api/brands/capella.vitalsource.com/mosaic",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/secure-token",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/provider.html",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null
+  },
+  {
+    "url": "https://chameleon.vitalsource.com/api/brands/capella.vitalsource.com/supernova",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/provider.4b5740a9db71f1c6fadd.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://print.vitalsource.com/js/app.js?v=1792084218579",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://search.vitalsource.com/js/app.js?v=1792084218579",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/user",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/roboto-v18-latin-regular-Ct7gR90z.woff2",
+    "method": "GET",
+    "resourceType": "font",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/wrapper.html?uuid=4603a496-e8a4-4e79-e461-31ac07417c9e&type=book",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/user",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/wrapper.0101e38bb6341c7f5665.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://js-agent.newrelic.com/nr-spa-1208.min.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/base64font",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/info/books.json?reload_license=true&isbns=9781266607752",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://bam.nr-data.net/1/2285d4559b?a=971971472&sa=1&v=1208.49599aa&t=Unnamed%20Transaction&rst=3260&ck=0&ref=https://jigsaw.vitalsource.com/mosaic/wrapper.html&be=189&fe=2936&dc=2563&af=err,xhr,stn,ins,spa&perf=%7B%22timing%22:%7B%22of%22:1792084219637,%22n%22:0,%22f%22:3,%22dn%22:3,%22dne%22:3,%22c%22:3,%22ce%22:3,%22rq%22:7,%22rp%22:102,%22rpe%22:122,%22dl%22:136,%22di%22:237,%22ds%22:2562,%22de%22:2563,%22dc%22:2934,%22l%22:2934,%22le%22:2948%7D,%22navigation%22:%7B%7D%7D&jsonp=NREUM.setToken",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/pages/recent?brand=vitalsource&create=true",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/epub/cfi/6/12!/4/2/2?brand=vitalsource&create=true",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null
+  },
+  {
+    "url": "https://bam.nr-data.net/events/1/2285d4559b?a=971971472&sa=1&v=1208.49599aa&t=Unnamed%20Transaction&rst=4297&ck=0&ref=https://jigsaw.vitalsource.com/mosaic/wrapper.html",
+    "method": "POST",
+    "resourceType": "xhr",
+    "postData": "bel.7;1,1,,29w,29w,2,'initialPageLoad,'https://jigsaw.vitalsource.com/mosaic/wrapper.html,1,1,,,!!!!'fb926f3a-cbbd-43b4-b4dd-998a1811d98b,'1,!!;5,'isbn,'9781266607752;b,!!!!3,,,,!,4,2n,k,e,2t,1sl,1,ab,,e"
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/info/books.json?isbns=9781266607752",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/pagebreaks",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/pages.json",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/highlights",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/epub/OPS/s9ml/chapter01/move_beyond.xhtml",
+    "method": "GET",
+    "resourceType": "document",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/user/verify",
+    "method": "POST",
+    "resourceType": "fetch",
+    "postData": "{\"visitor_id\":\"3329d1f252cd124530cc7b7604e20be9\",\"components\":{\"fonts\":{\"value\":[],\"duration\":264},\"domBlockers\":{\"duration\":3},\"fontPreferences\":{\"value\":{\"default\":149.3125,\"apple\":149.3125,\"serif\":149.3125,\"sans\":144.015625,\"mono\":133.0625,\"min\":9.34375,\"system\":162},\"duration\":30},\"audio\":{\"value\":124.04347605905059,\"duration\":69},\"screenFrame\":{\"value\":[0,0,0,0],\"duration\":4},\"osCpu\":{\"duration\":0},\"languages\":{\"value\":[[\"en-US\"]],\"duration\":1},\"colorDepth\":{\"value\":24,\"duration\":0},\"deviceMemory\":{\"value\":4,\"duration\":0},\"screenResolution\":{\"value\":[800,1280],\"duration\":0},\"hardwareConcurrency\":{\"value\":2,\"duration\":0},\"timezone\":{\"value\":\"UTC\",\"duration\":1},\"sessionStorage\":{\"value\":true,\"duration\":1},\"localStorage\":{\"value\":true,\"duration\":0},\"indexedDB\":{\"value\":true,\"duration\":0},\"openDatabase\":{\"value\":false,\"duration\":0},\"cpuClass\":{\"duration\":0},\"platform\":{\"value\":\"Linux x86_64\",\"duration\":0},\"plugins\":{\"value\":[],\"duration\":1},\"canvas\":{\"value\":{\"winding\":true,\"geometry\":\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHoAAABuCAYAAADoHgdpAAAQAElEQVR4AexdCZhcVZX+76vqzjoBAgEdtpCEEIGYpQ2igAFlUcCE0SHKgKMZQ4Of38CggogLuAA6A6IyLiAKbkgUWRQ+jOwQBmRNiCghC+mQBUhCQjq9pJe68/+vql5tr95SXUuTpPued7dzzz33/u/u771y0MA/O8GOIp1ox9tP2XH2Ytrfp/070iN0LyO1Z2hZJmw+/eIR7yfdtJShItifPz/O/vSp2fa6Zy4h/dZe9/SjpEWkZaS1pC0kmyG5FaY48Txqr3/6ZtKX7PXPzpIsyZxg7SjSieOt/dQ4ay+m/X3avyM9QvcyUnuGlmXC5tMvHvF+UmlJoySr0VR3oAnUBIL2X7Tvh8VGpLCA9o2siCtpn0f7dNIxdE8gjczQhEzYHPrPg+2+Er2bbkLX6gXoWrrZvvuZPjzSswIbzB2AvZz0cfIfTZpCUtp/pr0bKWvkVpjixHM05Z5BuqLNpu68sbdnxZk3PNPn3LF0c+qx1Qvssk03Yuv2Ky1wHgW4+tE9gTQyQ5JzDN1zSOIR700pYAH9G3kT3Ec6nzeB+Cii/qbmQNvTbYIt71iCezVpKStzGYt5De33k5roDje2B+h5FehaDmxbTHqB7lUM20Da5mClTeBuirmG9D3Sn0mMpnw6gg3BwF/JcgXpeNL7Sd8iPd5vE32vU/YLzONBCrvlb8AvmfefqcNi6tLZS65wQ6BVxg+Q83t0LyPgSwn4VWzpM0+31JsR9TA1A9peZh073n4Sz2AFUniQhfkcaSIpoukHejcS0KUEdgmwfS3Q9yYba19weibBQrLcQPouidiANUxXgVHQbQw5lvRvpJ+RXiYFmm7mvZo6/JW6/OZ54K6XgKXMsJe6BiYsiJzIvD/PG+yhZ4DlBPysy6ytGQ7ZnGuSAVvwLPwKi1nBNzGjA0nRTX870L0S"
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/default-D-F7PsUs.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/InlineErrorBoundary-BQmEUuh3.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/figureOrImage-Bfd0a5pO.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/useScript-DOuL-OUT.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/UnsafeHtml-CULNzw5Z.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/UnsafeHtml-BvW5_BKQ.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/TocBody-BaGRGZ2R.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/ContentLoader-uPJQemMC.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/ContextMenu-DLVogInV.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/ContextMenu-CCWDpu_B.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/default-BF4nkMPU.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/cookiecat/info?app=supernova",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/epub/OPS/s9ml/chapter01/move_beyond.xhtml?favre=brett",
+    "method": "POST",
+    "resourceType": "document",
+    "postData": "b64=PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIHhtbG5zOmVwdWI9Imh0dHA6Ly93d3cuaWRwZi5vcmcvMjAwNy9vcHMiIGxhbmc9ImVuIiBpZD0iZGF0YS11dWlkLTBiYzg4YmY3MTE4OTRjZWQ4ZWUyMTI0YzU2YWU1M2Q5IiBkYXRhLWVudW1lcmF0aW9uPSIiIGRhdGEtZGVzaWduYXRpb249IiI%2BCiAgICA8aGVhZD4KICAgICAgICA8c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCIgaWQ9InZzdC1oZWFkLWphdmFzY3JpcHQiIGNsYXNzPSJ2c3QtaWdub3JlIHZzdC1za2lwIj52YXIgVlNUID0gcGFyZW50LlZTVDsgdmFyIEVQVUIgPSB7IEVkdWNhdGlvbjogeyByZXRyaWV2ZTogZnVuY3Rpb24ocmVxLCBjYikgeyByZXR1cm4gVlNULkJvb2sucmV0cmlldmVBY3Rpdml0eURhdGEocmVxLCBjYik7IH0sIHNlbmQ6IGZ1bmN0aW9uKHJlcSwgY2IpIHsgcmV0dXJuIFZTVC5Cb29rLnNlbmRBY3Rpdml0eURhdGEocmVxLCBjYik7IH0gfSB9Ozwvc2NyaXB0PjxzdHlsZSBjbGFzcz0iZndpY2phb2IiIHR5cGU9InRleHQvY3NzIj5ib2R5e3Zpc2liaWxpdHk6aGlkZGVuICFpbXBvcnRhbnQ7fTwvc3R5bGU%2BPHNjcmlwdCBjbGFzcz0ic2pkcHdsdGkiPmV2YWwoZnVuY3Rpb24ocCxhLGMsayxlLGQpe2U9ZnVuY3Rpb24oYyl7cmV0dXJuIGMudG9TdHJpbmcoMzYpfTtpZighJycucmVwbGFjZSgvXi8sU3RyaW5nKSl7d2hpbGUoYy0tKXtkW2MudG9TdHJpbmcoYSldPWtbY118fGMudG9TdHJpbmcoYSl9az1bZnVuY3Rpb24oZSl7cmV0dXJuIGRbZV19XTtlPWZ1bmN0aW9uKCl7cmV0dXJuJ1xcdysnfTtjPTF9O3doaWxlKGMtLSl7aWYoa1tjXSl7cD1wLnJlcGxhY2UobmV3IFJlZ0V4cCgnXFxiJytlKGMpKydcXGInLCdnJyksa1tjXSl9fXJldHVybiBwfSgnYSg5KCl7OCAzPTQuMihcJ2JcJyk7YyhkKXszWzBdLjYuNSgzWzBdKX00LjIoXCc3XCcpWzBdLjYuNSg0LjIoXCc3XCcpWzBdKX0sMSknLDE0LDE0LCd8fGdldEVsZW1lbnRzQnlDbGFzc05hbWV8bnRyc3xkb2N1bWVudHxyZW1vdmVDaGlsZHxwYXJlbnROb2RlfHNqZHB3bHRpfHZhcnxmdW5jdGlvbnxzZXRUaW1lb3V0fGZ3aWNqYW9ifGlmfFZTVCcuc3BsaXQoJ3wnKSwwLHt9KSk8L3NjcmlwdD48bWV0YSBjaGFyc2V0PSJVVEYtOCIvPgogICAgICAgIDx0aXRsZT5BYm91dCBMaXZpbmcgd2l0aCBBcnQ8L3RpdGxlPgogICAgICAgIAogICAgICAgIDxsaW5rIGhyZWY9Ii4uLy4uL2Fzc2V0cy9tb2R1bGVzL21oZS5taGhlLWJsazIvY3NzL2Jsay1iYXNlLXBhZ2UuY3NzIiByZWw9InN0eWxlc2hlZXQiIHR5cGU9InRleHQvY3NzIi8%2BCiAgICAgICAgPGxpbmsgaHJlZj0iLi4vLi4vYXNzZXRzL2Nzcy9kcGctY3VzdG9tLmNzcyIgcmVsPSJzdHlsZXNoZWV0IiB0eXBlPSJ0ZXh0L2NzcyIvPgogICAgPC9oZWFkPgogICAgPGJvZHkgY2xhc3M9ImZtdGhldHdlbGZ0aGVkaXRpb24iPgogICAgICAgID"
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/public/readium/before.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/public/readium/default.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/public/readium/after.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/public/readium/fonts.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/epub/OPS/assets/modules/mhe.mhhe-blk2/css/blk-base-page.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/epub/OPS/assets/css/dpg-custom.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/epub/OPS/img/chapter01/get94856_fm01a.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/epub/OPS/img/chapter01/get94856_fm01b.png",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/epub/OPS/assets/js/habitat_platform.js",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/epub/OPS/assets/modules/mhe.mhhe-blk2/fonts/nimbus/nimbusromdot-reg.woff",
+    "method": "GET",
+    "resourceType": "font",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/epub/OPS/assets/modules/mhe.acme-common/v0/fonts/proxima-nova/proxima-nova-bold.woff",
+    "method": "GET",
+    "resourceType": "font",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/epub/OPS/assets/modules/mhe.mhhe-blk2/fonts/nimbus/nimbusromdot-regita.woff",
+    "method": "GET",
+    "resourceType": "font",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/epub/OPS/assets/modules/mhe.acme-common/v0/fonts/proxima-nova/proxima-nova-regular.woff",
+    "method": "GET",
+    "resourceType": "font",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/epub/OPS/assets/modules/mhe.mhhe-blk2/fonts/nimbus/nimbusromdot-bol.woff",
+    "method": "GET",
+    "resourceType": "font",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/pages",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://bam.nr-data.net/events/1/2285d4559b?a=867840890&sa=1&v=1208.49599aa&t=Unnamed%20Transaction&rst=12068&ck=0&ref=https://capella.vitalsource.com/reader/books/9781266607752",
+    "method": "POST",
+    "resourceType": "xhr",
+    "postData": "bel.6;e,'fp,b8,2;5,'vbid,'9781266607752;5,'userId,'VTJGc2RHVmtYMTl1VDJkc2RVTjNiNytvanY2KzJZM2YxS1BoUDVaSXlMNzlqdWRXQVlkMzE0OHF0a1A4CkVzcnEK;e,'load,ty,2;5,1,2;5,3,4"
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/highlights",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/logs/bookmark",
+    "method": "POST",
+    "resourceType": "fetch",
+    "postData": "{\"log\":{\"page\":\"xiii\",\"insecure\":false,\"cfi\":\"/6/12[data-uuid-0bc88bf711894ced8ee2124c56ae53d9]!/4/2[data-uuid-d503f4358a1f4e0aa2c217aa094bc79e]/2[data-uuid-2b73ad4c739d4ff7ba49732617ce4b79]/2[Page+xiii]/1:2[,ge ]\"}}"
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/public/readium/before.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/public/readium/default.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/public/readium/after.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/mosaic/public/readium/fonts.css",
+    "method": "GET",
+    "resourceType": "stylesheet",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/roboto-v18-latin-500-Cp_c0CUW.woff2",
+    "method": "GET",
+    "resourceType": "font",
+    "postData": null
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/roboto-v18-latin-300-DYKUYHEm.woff2",
+    "method": "GET",
+    "resourceType": "font",
+    "postData": null
+  },
+  {
+    "url": "https://flashcards.vitalsource.com/js/v2/app.js?v=1792084216113",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://covers.vitalsource.com/vbid/9781266607752/width/120?style=preview",
+    "method": "GET",
+    "resourceType": "image",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/smartauthor/enrichments_service/manifests/9781266607752",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/user",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://print.vitalsource.com/js/app.js?v=1792084221589",
+    "method": "GET",
+    "resourceType": "script",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/toc",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/bookmarks",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/ancillaries/code",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/user",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/tokens/print",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://bam.nr-data.net/events/1/2285d4559b?a=971971472&sa=1&v=1208.49599aa&t=Unnamed%20Transaction&rst=15393&ck=0&ref=https://jigsaw.vitalsource.com/mosaic/wrapper.html",
+    "method": "POST",
+    "resourceType": "xhr",
+    "postData": "bel.6;e,'load,29k,1;5,'isbn,'9781266607752"
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/user",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://lumberjack-cfw.vitalsource.com/track",
+    "method": "POST",
+    "resourceType": "fetch",
+    "postData": "{\"frequency\":0,\"tolerance\":0,\"duration\":2687,\"isbn\":\"9781266607752\",\"device\":\"ONLINE\",\"userAgent\":\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36\",\"viewerUUID\":\"4603a496-e8a4-4e79-e461-31ac07417c9e\",\"type\":\"view\",\"issuer\":\"Mosaic\",\"target\":\"xiii\",\"targetName\":\"page\",\"targetId\":\"4603a496-e8a4-4e79-e461-31ac07417c9e\",\"version\":\"v1.0.0\",\"brand\":\"capella\",\"identifier\":\"VTJGc2RHVmtYMTl1VDJkc2RVTjNiNytvanY2KzJZM2YxS1BoUDVaSXlMNzlqdWRXQVlkMzE0OHF0a1A4CkVzcnEK\",\"sessionId\":\"0591d623c4f483f3b23356b009e29294\"}"
+  },
+  {
+    "url": "https://capella.vitalsource.com/reader/assets/roboto-v18-latin-700-nq4Um7Vn.woff2",
+    "method": "GET",
+    "resourceType": "font",
+    "postData": null
+  },
+  {
+    "url": "https://lumberjack-cfw.vitalsource.com/track",
+    "method": "POST",
+    "resourceType": "fetch",
+    "postData": "{\"frequency\":0,\"tolerance\":0,\"duration\":3031,\"isbn\":\"9781266607752\",\"device\":\"ONLINE\",\"userAgent\":\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36\",\"viewerUUID\":\"4603a496-e8a4-4e79-e461-31ac07417c9e\",\"type\":\"view\",\"issuer\":\"Mosaic\",\"target\":\"xiv\",\"targetName\":\"page\",\"targetId\":\"4603a496-e8a4-4e79-e461-31ac07417c9e\",\"version\":\"v1.0.0\",\"brand\":\"capella\",\"identifier\":\"VTJGc2RHVmtYMTl1VDJkc2RVTjNiNytvanY2KzJZM2YxS1BoUDVaSXlMNzlqdWRXQVlkMzE0OHF0a1A4CkVzcnEK\",\"sessionId\":\"0591d623c4f483f3b23356b009e29294\"}"
+  },
+  {
+    "url": "https://lumberjack-cfw.vitalsource.com/track",
+    "method": "POST",
+    "resourceType": "fetch",
+    "postData": "{\"frequency\":10,\"tolerance\":10,\"duration\":2594,\"isbn\":\"9781266607752\",\"device\":\"ONLINE\",\"userAgent\":\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36\",\"viewerUUID\":\"4603a496-e8a4-4e79-e461-31ac07417c9e\",\"type\":\"view\",\"issuer\":\"Mosaic\",\"target\":\"xiv\",\"targetName\":\"page\",\"targetId\":\"4603a496-e8a4-4e79-e461-31ac07417c9e\",\"version\":\"v1.0.0\",\"brand\":\"capella\",\"identifier\":\"VTJGc2RHVmtYMTl1VDJkc2RVTjNiNytvanY2KzJZM2YxS1BoUDVaSXlMNzlqdWRXQVlkMzE0OHF0a1A4CkVzcnEK\",\"sessionId\":\"0591d623c4f483f3b23356b009e29294\"}"
+  },
+  {
+    "url": "https://jigsaw.vitalsource.com/books/9781266607752/logs/bookmark",
+    "method": "POST",
+    "resourceType": "fetch",
+    "postData": "{\"log\":{\"page\":\"xiii\",\"insecure\":false,\"cfi\":\"/6/12[data-uuid-0bc88bf711894ced8ee2124c56ae53d9]!/4/2[data-uuid-d503f4358a1f4e0aa2c217aa094bc79e]/2[data-uuid-2b73ad4c739d4ff7ba49732617ce4b79]\"}}"
+  },
+  {
+    "url": "https://print.vitalsource.com/print/9781266607752/limits?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJqaWdzYXciLCJleHAiOjE3OTIwODQyNzUsIm5iZiI6MTc5MjA4NDIzNSwiYWNjZXNzX3Rva2VuIjoiYjEwNjk5NWFmZDVmNDllNzNiYjU4ZGUxMDVlMjJiOWMiLCJraXZ1a28iOiIzMzI5ZDFmMjUyY2QxMjQ1MzBjYzdiNzYwNGUyMGJlOSIsImlkZW50aWZpZXIiOiJWVEpHYzJSSFZtdFlNVGwxVkRKa2MyUlZUak5pTnl0dmFuWTJLekpaTTJZeFMxQm9VRFZhU1hsTU56bHFkV1JYUVZsa016RTBPSEYwYTFBNENrVnpjbkVLIn0.l639Ez65A8NKtC0Zuh8gSKzQsWmvqNWfW92qrEWG9c8",
+    "method": "GET",
+    "resourceType": "fetch",
+    "postData": null
+  },
+  {
+    "url": "https://flashcards.vitalsource.com/v2/auth/0591d623c4f483f3b23356b009e29294",
+    "method": "POST",
+    "resourceType": "fetch",
+    "postData": null
+  }
+]

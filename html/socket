@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html style="height:100%; width:100%;">
+<head>
+  <title>Jigsaw</title>
+  <link rel="stylesheet" href="/assets/application-1677fc488898d350308f83929276aaee08a3db6a7dc8c98d1049823e4ce9f47a.css" media="all" />
+  <script src="/assets/application-e1606d8e2c45d8b01666307dc4655ed8a9c56aeef74382775cf5038d1841b473.js"></script>
+  <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="aepbYijukFLIdZEy0o7dHUXBcOrPXDeqecnudw_05mvN9A7mL1iLffSA3Qsss8poqqZpmvV-lVIm_3bIJLOB5Q" />
+    <script src="/assets/v1/jigsaw/puzzle_pieces/index-c451e4e862d2413a0762d4b5e520e2c79d6cbf6069d8d28d0137537a98a2e056.js"></script>
+
+  <style>
+
+
+html {
+  -ms-touch-action: none; /* Direct all pointer events to JavaScript code. */
+  touch-action: none;
+}
+  </style>
+
+  <script type="text/javascript">
+   if(typeof VST !== 'undefined'){
+     VST.brand                 = "capella";
+     VST.pageViewFlags         = {"dash":true,"epub":true,"pbk":true};
+     VST.requestReferer        = "capella.vitalsource.com";
+     VST.pageViewDuration      = 3000;
+     VST.pageViewFlushInterval = 90000
+   }
+  </script>
+</head>
+<body style="height:100%; width:100%; padding:0; margin:0;">
+  
+
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4b06f863c499435',t:'MTc5MjA4NDIwOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var url = "/mosaic/fingerprint.js",
+      target = document.head,
+      fingerprint = document.createElement("script");
+
+    fingerprint.src = url;
+    fingerprint.type = "text/javascript"
+    target.appendChild(fingerprint);
+  });
+</script>
+
+  
+<script>
+function swReady() {
+  if (typeof renderViewer !== "undefined") {
+    renderViewer();
+  }
+}
+if ("serviceWorker" in navigator) {
+  var swUrl = "/cachesw.js";
+  navigator.serviceWorker.getRegistrations().then(
+    function(registrations){
+      for (var i = 0; i < registrations.length; i++){
+        var registration = registrations[i];
+        if (registration.active && registration.active.scriptURL !== window.location.origin + swUrl) {
+          registration.unregister();
+        }
+      }
+    }
+  );  
+  
+    swReady();
+    navigator.serviceWorker.getRegistrations().then(
+      function(registrations){
+        for (var i = 0; i < registrations.length; i++){
+          registrations[i].unregister();
+        }
+      }
+    );
+} else {
+  swReady();
+}
+</script>
+
+</html>

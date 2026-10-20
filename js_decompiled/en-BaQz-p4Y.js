@@ -1,0 +1,204 @@
+import { t as e } from "./rolldown-runtime-B0Z9INg1.js";
+
+var t = e((e, t) => {
+  var n = typeof Symbol == `function` && typeof Symbol.iterator == `symbol` ? function(e) {
+    return typeof e;
+  } : function(e) {
+    return e && typeof Symbol == `function` && e.constructor === Symbol && e !== Symbol.prototype ? `symbol` : typeof e;
+  }, r = function(e, t) {
+    var n = (e + ``).split(`.`), r = !n[1], i = +n[0] == e, a = i && n[0].slice(-1), o = i && n[0].slice(-2);
+    return t ? a == 1 && o != 11 ? `one` : a == 2 && o != 12 ? `two` : a == 3 && o != 13 ? `few` : `other` : e == 1 && r ? `one` : `other`;
+  }, i = function(e, t, n, r, i) {
+    if ({}.hasOwnProperty.call(r, e)) {
+      return r[e];
+    }
+    t && (e -= t);
+    var a = n(e, i);
+    return a in r ? r[a] : r.other;
+  }, a = {
+    number: function(e, t, n) {
+      var r = n && n.split(`:`) || [], i = {
+        integer: {
+          maximumFractionDigits: 0
+        },
+        percent: {
+          style: `percent`
+        },
+        currency: {
+          style: `currency`,
+          currency: r[1] && r[1].trim() || `USD`,
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2
+        }
+      };
+      return new Intl.NumberFormat(t, i[r[0]] || {}).format(e);
+    }
+  };
+  (function(r, i) {
+    typeof define == `function` && define.amd ? define(i) : (e === void 0 ? `undefined` : n(e)) === `object` ? t.exports = i : r.vstuiLocaleData = i;
+  })(void 0, {
+    locale: `en`,
+    direction: `ltr`,
+    messages: {
+      button: {
+        newWindowWarning: function(e) {
+          return e.link + ` (opens in a new window)`;
+        },
+        clearButton: function() {
+          return `Clear`;
+        },
+        deleteButton: function() {
+          return `Delete`;
+        },
+        searchButton: function() {
+          return `Search`;
+        },
+        hidePasswordButton: function() {
+          return `Hide Password`;
+        },
+        showPasswordButton: function() {
+          return `Show Password`;
+        },
+        doneButton: function() {
+          return `Done`;
+        },
+        loadingIcon: function() {
+          return `Loading Icon`;
+        },
+        loadingButtonLabel: function(e) {
+          return e.label + ` - processing`;
+        },
+        hiddenLoadingStatus: function() {
+          return `Loading - please wait`;
+        },
+        scrollForward: function() {
+          return `Scroll Forward`;
+        },
+        scrollBack: function() {
+          return `Scroll Back`;
+        }
+      },
+      dialog: {
+        closeButton: function() {
+          return `Close`;
+        }
+      },
+      form: {
+        badInputDatetime: function() {
+          return `Please enter a valid value. The field is incomplete or has an invalid date.`;
+        },
+        badInputNumber: function() {
+          return `Please enter a valid number.`;
+        },
+        badLength: function(e) {
+          return e.changeCharacters + ` (` + e.currentlyUsingCharacters + `).`;
+        },
+        missingCheckbox: function() {
+          return `Please check this box if you want to proceed.`;
+        },
+        missingEmail: function() {
+          return `Please enter an email address.`;
+        },
+        missingFile: function() {
+          return `Please select a file.`;
+        },
+        missingNumber: function() {
+          return `Please enter a number.`;
+        },
+        missingPassword: function() {
+          return `Please enter a password.`;
+        },
+        missingRadio: function() {
+          return `Please select one of these options.`;
+        },
+        missingSelect: function() {
+          return `Please select an item in the list.`;
+        },
+        missingTel: function() {
+          return `Please enter a telephone number.`;
+        },
+        missingText: function() {
+          return `Please fill out this field.`;
+        },
+        missingUrl: function() {
+          return `Please enter a URL.`;
+        },
+        patternMismatch: function() {
+          return `Please match the requested format.`;
+        },
+        rangeOverflow: function(e) {
+          return `Value must be less than or equal to ` + a.number(e.max, `en`) + `.`;
+        },
+        rangeOverflowDatetime: function(e) {
+          return `Value must be ` + e.date + ` or earlier.`;
+        },
+        rangeUnderflow: function(e) {
+          return `Value must be greater than or equal to ` + a.number(e.min, `en`) + `.`;
+        },
+        rangeUnderflowDatetime: function(e) {
+          return `Value must be ` + e.date + ` or later.`;
+        },
+        stepMismatch: function(e) {
+          return `Please enter a valid value. The two nearest valid values are ` + e.value1 + ` and ` + e.value2 + `.`;
+        },
+        stepMismatchOneValue: function(e) {
+          return `Please enter a valid value. The nearest valid value is ` + e.value + `.`;
+        },
+        typeMismatchEmail: function() {
+          return `Please enter a valid email address.`;
+        },
+        typeMismatchUrl: function() {
+          return `Please enter a valid URL.`;
+        },
+        shortenCharacters: function(e) {
+          return i(e.quantity, 0, r, {
+            one: `Please shorten this text to ` + a.number(e.quantity, `en`, `integer`) + ` character or less`,
+            other: `Please shorten this text to ` + a.number(e.quantity, `en`, `integer`) + ` characters or less`
+          });
+        },
+        lengthenCharacters: function(e) {
+          return i(e.quantity, 0, r, {
+            one: `Please use at least ` + a.number(e.quantity, `en`, `integer`) + ` character`,
+            other: `Please use at least ` + a.number(e.quantity, `en`, `integer`) + ` characters`
+          });
+        },
+        currentlyUsingCharacters: function(e) {
+          return i(e.quantity, 0, r, {
+            one: `you are currently using ` + a.number(e.quantity, `en`, `integer`) + ` character`,
+            other: `you are currently using ` + a.number(e.quantity, `en`, `integer`) + ` characters`
+          });
+        }
+      },
+      filter: {
+        itemsSelected: function(e) {
+          return i(e.quantity, 0, r, {
+            one: a.number(e.quantity, `en`, `integer`) + ` item selected`,
+            other: a.number(e.quantity, `en`, `integer`) + ` items selected`
+          });
+        },
+        checkYourSpelling: function() {
+          return `Check your spelling or try a different search term.`;
+        },
+        noResults: function() {
+          return `No results`;
+        },
+        all: function() {
+          return `All`;
+        }
+      },
+      table: {
+        sortedAscending: function(e) {
+          return `Sorted in ascending order by ` + e.columnHeader;
+        },
+        sortedDescending: function(e) {
+          return `Sorted in descending order by ` + e.columnHeader;
+        }
+      }
+    },
+    version: `4.0.0-beta.12.0.3`
+  });
+});
+
+export { t };
+//# sourceMappingURL=en-BaQz-p4Y.js.map
+//# sourceMappingURL=en-BaQz-p4Y.js.map

@@ -1,0 +1,244 @@
+const { chromium } = require('playwright');
+const fs = require('fs');
+const path = require('path');
+const { PDFDocument } = require('pdf-lib');
+
+const BOOKISBN = '9781266607752';
+const OUTPUT_DIR = `/root/vitalsource_captures/output_${BOOKISBN}`;
+const PAGE_PDF_DIR = path.join(OUTPUT_DIR, 'page_pdfs');
+
+// Helper to extract secure token from browser context
+async function getSecureToken(context) {
+  try {
+    const resp = await context.request.get('https://jigsaw.vitalsource.com/secure-token', {
+      headers: {
+        'x-vitalsource-brand': 'capella',
+        'x-requested-with': 'XMLHttpRequest'
+      }
+    });
+    if (resp.ok()) {
+      const body = await resp.text();
+      const match = body.match(/Jigsaw\.setupSecureToken\(['"]([^'"]+)['"]\)/);
+      if (match) return match[1];
+    }
+  } catch {}
+  return null;
+}
+
+(async () => {
+  const bookInfo = JSON.parse(fs.readFileSync(`${OUTPUT_DIR}/bookInfo.json`, 'utf8'));
+  const tocData = JSON.parse(fs.readFileSync(`${OUTPUT_DIR}/toc.json`, 'utf8'));
+  const pagesData = JSON.parse(fs.readFileSync(`${OUTPUT_DIR}/pages.json`, 'utf8'));
+
+  const book = bookInfo.books[0];
+  console.log(`Book: ${book.title} by ${book.author}`);
+
+  // Filter main content pages
+  const mainPages = pagesData.filter(p => {
+    return !p.path.includes('accessibility') &&
+           !p.path.includes('index.xhtml') &&
+           p.linear !== false;
+  });
+  console.log(`Content pages: ${mainPages.length}`);
+
+  const browser = await chromium.launch({ headless: true });
+  const context = await browser.newContext({
+    viewport: { width: 1200, height: 1600 }
+  });
+  const page = await context.newPage();
+
+  // Authenticate
+  console.log('Authenticating...');
+  const bcUrl = `https://bc.vitalsource.com/books/9781266431227?bc_token=61bfec10-aae6-013f-f189-1eb286fc39a0&relaunch_vbid=9781266431227&course_dash_relaunch=true`;
+  await page.goto(bcUrl, { timeout: 60000, waitUntil: 'networkidle' });
+  await page.waitForTimeout(15000);
+
+  // Get secure token
+  let secureToken = await getSecureToken(context);
+  console.log(`Secure token: ${secureToken ? 'obtained' : 'NOT FOUND'}`);
+
+  if (!secureToken) {
+    console.log('Attempting to extract token from page...');
+    secureToken = await page.evaluate(() => {
+      // Look for JWT in cookies
+      const cookies = document.cookie.split(';');
+      for (const c of cookies) {
+        const [name, value] = c.trim().split('=');
+        if (name.includes('aloha') || name.includes('token') || name.includes('jwt')) {
+          return value;
+        }
+      }
+      return null;
+    });
+    console.log(`Cookie token: ${secureToken ? 'found' : 'NOT FOUND'}`);
+  }
+
+  // Build auth headers for API requests
+  const authHeaders = {
+    'x-vitalsource-brand': 'capella',
+    'x-vitalsource-sed': 'secure',
+    'x-requested-with': 'XMLHttpRequest'
+  };
+  if (secureToken) {
+    authHeaders['x-vitalsource-secure-token'] = secureToken;
+  }
+
+  // Test auth
+  console.log('Testing API auth...');
+  const testResp = await context.request.get(
+    `https://jigsaw.vitalsource.com/books/${BOOKISBN}/pages.json`,
+    { headers: authHeaders }
+  );
+  console.log(`Auth test: ${testResp.status()}`);
+
+  if (!testResp.ok()) {
+    console.log('API auth failed, continuing with page.goto() approach...');
+  }
+
+  // Generate TOC
+  console.log('Generating TOC...');
+  const tocHtml = `
+    <html><head>
+      <style>
+        @page { margin: 0.5in; size: A4; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; line-height: 1.4; }
+        .cover { text-align: center; padding: 2in 1in; page-break-after: always; }
+        .title { font-size: 2.5em; margin: 0.5em 0; }
+        .author { font-size: 1.5em; margin: 0.25em 0; color: #555; }
+        h2 { border-bottom: 2px solid #333; padding-bottom: 0.5em; margin-top: 1.5em; }
+        .toc-item { margin: 0.2em 0; border-bottom: 1px dotted #ccc; font-size: 0.9em; }
+      </style>
+    </head><body>
+      <div class="cover">
+        <h1 class="title">${book.title}</h1>
+        <p class="author">by ${book.author}</p>
+        <p style="font-size: 1.2em; color: #666;">${book.edition}th Edition</p>
+        <p style="font-size: 1em; color: #666;">ISBN: ${book.isbn}</p>
+      </div>
+      <h2>Table of Contents</h2>
+      ${tocData.map(item => `
+        <div class="toc-item" style="margin-left: ${(item.level || 1) * 0.5}em;">
+          ${item.title}
+          <span style="float: right;">${item.page || ''}</span>
+        </div>
+      `).join('')}
+      <div style="page-break-after: always;"></div>
+    </body></html>
+  `;
+  await page.setContent(tocHtml, { timeout: 30000 });
+  await page.waitForTimeout(500);
+  await page.pdf({
+    path: path.join(OUTPUT_DIR, 'toc.pdf'),
+    format: 'A4',
+    printBackground: true,
+    margin: { top: '0.5in', right: '0.5in', bottom: '0.5in', left: '0.5in' }
+  });
+  console.log('TOC PDF generated');
+
+  // Re-authenticate for content pages
+  console.log('Re-authenticating...');
+  await page.goto(bcUrl, { timeout: 60000, waitUntil: 'networkidle' });
+  await page.waitForTimeout(15000);
+
+  fs.mkdirSync(PAGE_PDF_DIR, { recursive: true });
+
+  let success = 0;
+  let failed = 0;
+
+  // Generate individual page PDFs using page.goto
+  for (let i = 0; i < mainPages.length; i++) {
+    const p = mainPages[i];
+    const fullUrl = `https://jigsaw.vitalsource.com${p.absoluteURL}`;
+    const pdfPath = path.join(PAGE_PDF_DIR, `page_${String(i + 1).padStart(3, '0')}.pdf`);
+
+    try {
+      await page.goto(fullUrl, { timeout: 30000, waitUntil: 'domcontentloaded' });
+      await page.waitForTimeout(500);
+
+      // Inject page header using single-argument evaluate
+      await page.evaluate((data) => {
+        const body = document.querySelector('body');
+        if (!body) return;
+        
+        const header = document.createElement('div');
+        header.id = 'pdf-page-header';
+        header.style.cssText = `
+          position: fixed;
+          top: 10px;
+          left: 0;
+          right: 0;
+          text-align: center;
+          font-size: 12px;
+          color: #666;
+          border-bottom: 1px solid #ccc;
+          padding-bottom: 5px;
+          z-index: 9999;
+        `;
+        header.textContent = data.title + ' (p. ' + data.pageNum + ')';
+        body.insertBefore(header, body.firstChild);
+        body.style.marginTop = '40px';
+      }, { title: p.chapterTitle, pageNum: p.page });
+
+      await page.pdf({
+        path: pdfPath,
+        format: 'A4',
+        printBackground: true,
+        margin: { top: '0.5in', right: '0.5in', bottom: '0.5in', left: '0.5in' }
+      });
+      success++;
+    } catch (e) {
+      console.log(`Failed: ${p.chapterTitle} - ${e.message}`);
+      failed++;
+    }
+
+    if ((i + 1) % 20 === 0) {
+      console.log(`Progress: ${i + 1}/${mainPages.length} - Success: ${success}, Failed: ${failed}`);
+      console.log('Refreshing auth...');
+      await page.goto(bcUrl, { timeout: 60000, waitUntil: 'networkidle' });
+      await page.waitForTimeout(10000);
+    }
+  }
+
+  await browser.close();
+
+  // Merge all PDFs
+  console.log(`\nMerging PDFs (${success} successful pages)...`);
+  const mergedPdf = await PDFDocument.create();
+  mergedPdf.setTitle(book.title);
+  mergedPdf.setAuthor(book.author);
+  mergedPdf.setSubject(`${book.title} - ${book.edition}th Edition`);
+  mergedPdf.setCreator('VitalSource Book PDF Generator');
+  mergedPdf.setProducer('Kilo PDF Generator');
+
+  const pdfOrder = [path.join(OUTPUT_DIR, 'toc.pdf')];
+  for (let i = 0; i < mainPages.length; i++) {
+    pdfOrder.push(path.join(PAGE_PDF_DIR, `page_${String(i + 1).padStart(3, '0')}.pdf`));
+  }
+
+  for (const pdfPath of pdfOrder) {
+    if (fs.existsSync(pdfPath)) {
+      try {
+        const existingPdf = await PDFDocument.load(fs.readFileSync(pdfPath));
+        const copiedPages = await mergedPdf.copyPages(existingPdf, existingPdf.getPageIndices());
+        copiedPages.forEach(pg => mergedPdf.addPage(pg));
+      } catch (e) {
+        console.log(`Merge failed: ${path.basename(pdfPath)}`);
+      }
+    }
+  }
+
+  const finalPdfPath = path.join(OUTPUT_DIR, `Living_with_Art_Complete_${BOOKISBN}.pdf`);
+  const pdfBytes = await mergedPdf.save();
+  fs.writeFileSync(finalPdfPath, pdfBytes);
+
+  const stats = fs.statSync(finalPdfPath);
+  console.log(`\n=== Book PDF Complete ===`);
+  console.log(`File: ${finalPdfPath}`);
+  console.log(`Size: ${(stats.size / 1024 / 1024).toFixed(2)} MB`);
+  console.log(`Total PDF pages: ${mergedPdf.getPageCount()}`);
+
+  // Cleanup
+  fs.unlinkSync(path.join(OUTPUT_DIR, 'toc.pdf'));
+  fs.rmSync(PAGE_PDF_DIR, { recursive: true, force: true });
+  console.log('Temporary files cleaned up');
+})();

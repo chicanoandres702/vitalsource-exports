@@ -1,0 +1,5 @@
+import{a as e}from"./rolldown-runtime-B0Z9INg1.js";import{i as t,t as n}from"./jsx-runtime-DU6_sasz.js";import{o as r,r as i}from"./styled-components.browser.esm-BcYycfu6.js";var a=e(t()),o=`pageview.pageAreaEvent`;r();var s=n(),c={top:-1e4,left:-1e4,width:50,height:50},l={...c},u={Container:i.div`
+    width: 100%;
+    height: 100%;
+  `},d=class extends a.Component{constructor(...e){super(...e),this.onResize=()=>{this.container&&this.handleRectUpdate({top:this.container.offsetTop,left:this.container.offsetLeft,width:this.container.offsetWidth,height:this.container.offsetHeight}),this.frameId=requestAnimationFrame(this.onResize)}}componentDidMount(){this.frameId=requestAnimationFrame(()=>this.onResize())}componentWillUnmount(){this.frameId&&(cancelAnimationFrame(this.frameId),this.handleRectUpdate(c))}handleRectUpdate(e){Object.keys(e).reduce((t,n)=>e[n]===l[n]&&t,!0)||(l={...e},document.dispatchEvent(new CustomEvent(o,{detail:{...e}})))}render(){return(0,s.jsx)(u.Container,{ref:e=>this.container=e})}};export{l as n,o as r,d as t};
+//# sourceMappingURL=PageAreaReporter-C9x7kiiE.js.map

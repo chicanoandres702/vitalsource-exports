@@ -1,0 +1,182 @@
+[
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/rolldown-runtime-B0Z9INg1.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/jsx-runtime-DU6_sasz.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/monitoring-fZj7Xvdu.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/index-Cxrnf_uc.css",
+    "rel": "stylesheet",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/ReaderMain-B9TAVXtz.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/LocaleProvider-DoP-dlkE.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/en-BaQz-p4Y.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/GlobalStyleProvider-BWhTP2MU.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/uuid-DwkZyVS8.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/MosaicProvider-AuGlbFtG.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/styled-components.browser.esm-BcYycfu6.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/injectIntl-AqYQwB7i.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/useIntl-DaqDtX5V.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/LocaleProvider-BQqibgn0.css",
+    "rel": "stylesheet",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/bookshelfLink-TIla8vSe.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/useQueryParams-CiCdBZeh.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/enrichments-DzDQ_toR.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/array-BlXv2BOg.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/StaticLoader-LtUItV9i.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/actions-B2bqznsY.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/PageAreaReporter-C9x7kiiE.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/Tooltip-DA2Rdtm3.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/AccessibilityButton-CaUTVKSa.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://storage.googleapis.com/vst-chameleon-prod/multipart-1538505751-197793758657532-3",
+    "rel": "icon",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/default-D-F7PsUs.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/index-maEWt9hW.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/InlineErrorBoundary-BQmEUuh3.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/figureOrImage-Bfd0a5pO.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/useScript-DOuL-OUT.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/UnsafeHtml-CULNzw5Z.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/UnsafeHtml-BvW5_BKQ.css",
+    "rel": "stylesheet",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/TocBody-BaGRGZ2R.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/ContentLoader-uPJQemMC.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/ContextMenu-DLVogInV.js",
+    "rel": "modulepreload",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/ContextMenu-CCWDpu_B.css",
+    "rel": "stylesheet",
+    "type": ""
+  },
+  {
+    "href": "https://capella.vitalsource.com/reader/assets/default-BF4nkMPU.css",
+    "rel": "stylesheet",
+    "type": ""
+  }
+]

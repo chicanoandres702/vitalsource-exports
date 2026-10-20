@@ -1,0 +1,44 @@
+{
+  "count": 250,
+  "sample": [
+    {
+      "path": "/OPS/s9ml/chapter01/cover_page.xhtml",
+      "absoluteURL": "/books/9781266607752/epub/OPS/s9ml/chapter01/cover_page.xhtml",
+      "cfi": "/6/2[data-uuid-19013d6b752642239cdcc06da7db1da9]",
+      "cfiWithoutAssertions": "/6/2",
+      "linear": true,
+      "page": "iii",
+      "chapterTitle": "Table of Contents and Preface",
+      "layout": null,
+      "spread": null,
+      "orientation": null,
+      "pageSpread": null
+    },
+    {
+      "path": "/OPS/s9ml/chapter01/title_page.xhtml",
+      "absoluteURL": "/books/9781266607752/epub/OPS/s9ml/chapter01/title_page.xhtml",
+      "cfi": "/6/4[data-uuid-6fbb37be060246fb80f01917e2879705]",
+      "cfiWithoutAssertions": "/6/4",
+      "linear": true,
+      "page": "iii",
+      "chapterTitle": "Title Page",
+      "layout": null,
+      "spread": null,
+      "orientation": null,
+      "pageSpread": null
+    },
+    {
+      "path": "/OPS/s9ml/chapter01/copyright_page.xhtml",
+      "absoluteURL": "/books/9781266607752/epub/OPS/s9ml/chapter01/copyright_page.xhtml",
+      "cfi": "/6/6[data-uuid-2e5b468f1fcb4e30968676a08c548663]",
+      "cfiWithoutAssertions": "/6/6",
+      "linear": true,
+      "page": "iv",
+      "chapterTitle": "Copyright Page",
+      "layout": null,
+      "spread": null,
+      "orientation": null,
+      "pageSpread": null
+    }
+  ]
+}
