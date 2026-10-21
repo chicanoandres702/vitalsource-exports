@@ -303,6 +303,17 @@ async function initBrowser(url, cookies = []) {
   await getToc();
   await getPages();
   console.log(`Loaded TOC: ${tocData.length} entries, Pages: ${pagesData.length}`);
+  // Save cookies after successful init for future use
+  try {
+    const freshCookies = await context.cookies();
+    const vitalSourceCookies = freshCookies.filter(c => c.domain.includes('vitalsource'));
+    const cookiesPath = path.join(path.dirname(new URL(import.meta.url).pathname), 'cookies_full.json');
+    fs.writeFileSync(cookiesPath, JSON.stringify(vitalSourceCookies, null, 2));
+    console.log(`Saved ${vitalSourceCookies.length} cookies to cookies_full.json`);
+  } catch(e) {
+    console.error('Failed to save cookies:', e.message);
+  }
+
   console.log('Browser initialized and ready.');
 }
 
@@ -399,213 +410,259 @@ async function handleApiExport(req, res) {
     return;
   }
 
-   const totalPages = pagesData ? pagesData.length : 0;
+  const totalPages = pagesData ? pagesData.length : 0;
   const startTime = Date.now();
 
   if (totalPages === 0) {
     console.error('Export error: pagesData is empty - book not initialized properly');
-      exportState = { inProgress: false, completed: 0, total: totalPages, ready: false, error: 'Book not initialized', html: null, startTime };
+    exportState = { inProgress: false, completed: 0, total: totalPages, ready: false, error: 'Book not initialized', html: null, startTime };
     res.writeHead(422, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify({ status: 'error', error: 'Book not initialized. Call /vs/api/init first.' }));
     return;
   }
 
-  // Start export in background
-    exportState = { inProgress: true, completed: 0, total: totalPages, html: null, error: null, startTime };
-  console.log(`Starting background export of ${totalPages} pages...`);
+  const PARALLEL_WORKERS = 1;
+
+  exportState = { inProgress: true, completed: 0, total: totalPages, html: null, error: null, startTime };
+  console.log(`Starting background export of ${totalPages} pages with ${PARALLEL_WORKERS} worker (CFI-direct)...`);
 
   res.writeHead(202, { 'Content-Type': 'application/json' });
   res.end(JSON.stringify({ status: 'started', total: totalPages }));
 
-    (async () => {
+  (async () => {
+    const allResults = [];
+    const workers = [];
+
     try {
-      const pages = [];
-      const PARALLEL_WORKERS = 3;
+      // CFI-direct navigation: each worker navigates directly to pages via epubcfi URLs
+      // This eliminates sequential Next clicks entirely
 
-      console.log(`Starting background export of ${totalPages} pages with ${PARALLEL_WORKERS} parallel workers...`);
-
-      // Strategy: Use multiple pages in the SAME authenticated context
-      // Each page loads the reader, then uses Next clicks to reach its target pages
-      // Pages share cookies so each can authenticate properly
-
-      async function initWorkerPage(workerId, startPageIndex) {
-        const newPage = await context.newPage();
+      async function initWorkerPage(workerId) {
+        const workerPage = await context.newPage();
         const readerUrl = `https://capella.vitalsource.com/reader/books/${ISBN}`;
 
-        console.log(`[PARALLEL] Worker ${workerId}: loading reader...`);
-        await newPage.goto(readerUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
-        await newPage.waitForTimeout(10000);
+        console.log(`[WORKER] ${workerId}: loading reader...`);
+        await workerPage.goto(readerUrl, { waitUntil: 'domcontentloaded', timeout: 60000 });
+        await workerPage.waitForTimeout(5000);
 
-        // Verify content frame exists
-        let frame = null;
+        let frame = findContentFrame(context);
         let waitStart = Date.now();
-        while (!frame && Date.now() - waitStart < 20000) {
-          await new Promise(r => setTimeout(r, 500));
+        while (!frame && Date.now() - waitStart < 30000) {
+          await new Promise(r => setTimeout(r, 300));
           frame = findContentFrame(context);
         }
 
         if (!frame) {
-          console.log(`[PARALLEL] Worker ${workerId}: no content frame after init`);
-          await newPage.close();
+          console.log(`[WORKER] ${workerId}: no content frame after init - closing`);
+          await workerPage.close();
           return null;
         }
 
-        // Go to first page
-        const firstBtn = await newPage.$('button[aria-label="Go to First Page"]');
-        if (firstBtn) {
-          await firstBtn.click();
-          await new Promise(r => setTimeout(r, 3000));
-        }
-
-        // Navigate to startPageIndex
-        if (startPageIndex > 0) {
-          console.log(`[PARALLEL] Worker ${workerId}: navigating to page ${startPageIndex + 1}...`);
-          for (let i = 0; i < startPageIndex; i++) {
-            const nextBtn = await newPage.$('button[aria-label="Next"]');
-            if (!nextBtn) {
-              console.log(`[PARALLEL] Worker ${workerId}: Next button not found at page ${i}`);
-              await newPage.close();
-              return null;
-            }
-            await nextBtn.click();
-            await new Promise(r => setTimeout(r, 250));
-          }
-          await new Promise(r => setTimeout(r, 1000));
-        }
-
-      console.log(`[EXPORT] Worker ${workerId}: at page ${startPageIndex + 1}, ready for extraction`);
-      return { page: newPage, currentPageIndex: startPageIndex };
-    }
-
-    async function extractAndAdvance(worker) {
-      const idx = worker.currentPageIndex;
-
-      let content = null;
-      let frame = null;
-      let waitStart = Date.now();
-      while (!frame && Date.now() - waitStart < 5000) {
-        for (const f of worker.page.frames()) {
-          if (f.url().includes('epub/OPS')) { frame = f; break; }
-        }
-        if (!frame) await new Promise(r => setTimeout(r, 300));
+        console.log(`[WORKER] ${workerId}: ready`);
+        return workerPage;
       }
-      if (!frame) return { idx, content: null };
 
-      for (let attempt = 0; attempt < 3; attempt++) {
-        try {
-          content = await frame.evaluate(() => {
-            const body = document.body;
-            if (!body || !body.innerHTML) return null;
-            Array.from(document.images).forEach(img => { img.setAttribute('src', img.src); });
-            Array.from(document.querySelectorAll('source')).forEach(src => {
-              if (src.srcset) src.setAttribute('srcset', src.srcset);
+      async function extractWorkerPage(worker, workerId) {
+        let frame = null;
+        const frames = worker.frames();
+        for (const f of frames) {
+          if (f.url().includes('epub/OPS') && !f.url().endsWith('OPS/')) {
+            frame = f;
+            break;
+          }
+        }
+        if (!frame) {
+          console.log(`[WORKER] ${workerId}: no content frame found`);
+          return null;
+        }
+
+        let content = null;
+        for (let attempt = 0; attempt < 5; attempt++) {
+          try {
+            content = await frame.evaluate(() => {
+              const body = document.body;
+              if (!body || !body.innerHTML || body.innerHTML.length < 50) return null;
+              Array.from(document.images).forEach(img => { img.setAttribute('src', img.src); });
+              Array.from(document.querySelectorAll('source')).forEach(src => {
+                if (src.srcset) src.setAttribute('srcset', src.srcset);
+              });
+              const html = body.innerHTML;
+              const text = body.innerText || '';
+              const cssLinks = Array.from(document.querySelectorAll('link[rel="stylesheet"]')).map(l => l.href);
+              const images = Array.from(document.querySelectorAll('img')).map(img => img.src);
+              const frameUrl = window.location.href;
+              let cfi = '';
+              const cfiMatch = frameUrl.match(/#cfi=([^!]+)/);
+              if (cfiMatch) cfi = decodeURIComponent(cfiMatch[1]);
+              const firstLines = text.split('\n').filter(l => l.trim()).slice(0, 3);
+              return { html, text: text.substring(0, 500), paragraphs: document.querySelectorAll('p').length, images, cssLinks, frameUrl, cfi, firstLines, chapterPath: window.location.pathname };
             });
-            const html = body.innerHTML;
-            const text = body.innerText || '';
-            const cssLinks = Array.from(document.querySelectorAll('link[rel="stylesheet"]')).map(l => l.href);
-            const images = Array.from(document.querySelectorAll('img')).map(img => img.src);
-            const frameUrl = window.location.href;
-            let cfi = '';
-            const cfiMatch = frameUrl.match(/#cfi=([^!]+)/);
-            if (cfiMatch) cfi = decodeURIComponent(cfiMatch[1]);
-            const firstLines = text.split('\n').filter(l => l.trim()).slice(0, 3);
-            return { html, text: text.substring(0, 500), paragraphs: document.querySelectorAll('p').length, images, cssLinks, frameUrl, cfi, firstLines, chapterPath: window.location.pathname };
-          });
-          if (content) break;
-        } catch(e) {
-          console.log(`[PARALLEL] Worker ${worker.id}: extract attempt ${attempt + 1} failed: ${e.message}`);
-        }
-        await new Promise(r => setTimeout(r, 300));
-      }
-
-      let nextOk = true;
-      if (idx < totalPages - 1) {
-        try {
-          const nextBtn = await worker.page.$('button[aria-label="Next"]');
-          if (nextBtn) {
-            await nextBtn.click();
-            await new Promise(r => setTimeout(r, 300));
-          } else {
-            nextOk = false;
+            if (content && content.html && content.html.length > 50) break;
+          } catch(e) {
+            if (attempt === 0) console.log(`[WORKER] ${workerId}: extract failed: ${e.message}`);
           }
-        } catch(e) {
-          nextOk = false;
+          await new Promise(r => setTimeout(r, 500));
         }
+        return content;
       }
 
-      worker.currentPageIndex = idx + 1;
-      return { idx, content, nextOk, workerId: worker.id };
-    }
+      async function navigateWorkerToCFI(worker, workerId, cfi, pageNum) {
+        // Use epubcfi URL format: /reader/books/{ISBN}/epubcfi/{cfi}
+        const cfiEncoded = encodeURIComponent(cfi);
+        const navUrl = `https://capella.vitalsource.com/reader/books/${ISBN}/epubcfi/${cfiEncoded}`;
 
-    // Initialize parallel workers
-    const workers = [];
-    for (let i = 0; i < PARALLEL_WORKERS; i++) {
-      const startIdx = i * Math.ceil(totalPages / PARALLEL_WORKERS);
-      const worker = await initWorkerPage(i + 1, startIdx);
-      if (worker) {
-        worker.id = i + 1;
-        workers.push(worker);
-      }
-    }
+        console.log(`[WORKER] ${workerId}: navigating to page ${pageNum + 1}, cfi: ${cfi.substring(0, 40)}...`);
 
-    if (workers.length === 0) {
-      throw new Error('Failed to initialize any parallel workers');
-    }
-    console.log(`[PARALLEL] ${workers.length} workers active. Starting parallel extraction...`);
+        try {
+          await worker.goto(navUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
+        } catch(e) {
+          // Timeout is ok - reader handles navigation via JS
+        }
 
-    // Run workers in parallel - each navigates through sequential pages
-    const allResults = [];
-    const activeWorkers = new Map(); // worker.id -> {worker, promise}
-
-    for (const w of workers) {
-      const run = (async () => {
-        while (w.currentPageIndex < totalPages) {
-          const result = await extractAndAdvance(w);
-          if (result.content) {
-            allResults.push({ pageIndex: result.idx, content: result.content });
-            pages[result.idx] = result.content;
-            exportState.completed = allResults.length;
-            if (allResults.length % 10 === 0) {
-              console.log(`[PARALLEL] Progress: ${allResults.length}/${totalPages} pages`);
+        // Wait for content frame to load with actual content (not just OPS/ base)
+        let waitStart = Date.now();
+        while (Date.now() - waitStart < 20000) {
+          const frames = worker.frames();
+          for (const f of frames) {
+            const frameUrl = f.url();
+            if (frameUrl.includes('epub/OPS') && !frameUrl.endsWith('OPS/')) {
+              try {
+                await f.waitForLoadState('domcontentloaded', { timeout: 5000 }).catch(() => {});
+              } catch(e) {}
+              await new Promise(r => setTimeout(r, 1000));
+              console.log(`[WORKER] ${workerId}: frame ready at ${frameUrl.substring(0, 80)}`);
+              return true;
             }
           }
-          if (!result.nextOk && result.idx < totalPages - 1) break;
-          await new Promise(r => setTimeout(r, 100));
+          await new Promise(r => setTimeout(r, 200));
         }
-      })();
-      activeWorkers.set(w.id, { worker: w, promise: run });
-    }
+        console.log(`[WORKER] ${workerId}: timeout waiting for frame on page ${pageNum + 1}`);
+        return false;
+      }
 
-    await Promise.all(Array.from(activeWorkers.values()).map(v => v.promise));
+      // Initialize workers
+      for (let i = 0; i < PARALLEL_WORKERS; i++) {
+        const workerPage = await initWorkerPage(i + 1);
+        if (workerPage) {
+          workers.push({ page: workerPage, id: i + 1, assignedPages: [] });
+        }
+      }
 
-    console.log(`[PARALLEL] Extraction complete. ${allResults.length} pages extracted.`);
+      if (workers.length === 0) {
+        throw new Error('Failed to initialize any parallel workers');
+      }
 
-    // Process results (inline CSS + build HTML) concurrently
-    console.log(`[PARALLEL] Processing ${allResults.length} pages...`);
-    const processPromises = allResults.map(async ({ pageIndex, content }) => {
-      if (!content) return null;
-      const processed = await inlineCss(content);
-      const pageHtml = buildFullHtml(processed);
-      return {
-        page: pageIndex + 1,
-        cfi: processed.cfi,
-        title: processed.firstLines ? processed.firstLines[0] : '',
-        html: pageHtml,
-      };
-    });
+      // Assign pages to workers (round-robin for even distribution)
+      for (let i = 0; i < totalPages; i++) {
+        const workerIdx = i % workers.length;
+        workers[workerIdx].assignedPages.push(i);
+      }
+      console.log(`[PARALLEL] ${workers.length} workers active, pages distributed round-robin.`);
 
-    const processedPages = await Promise.all(processPromises);
-    const validPages = [];
-    processedPages.filter(p => p !== null).forEach(p => {
-      validPages[p.page - 1] = p;
-    });
+      // Run extraction with CFI-direct navigation and retry support
+      const failedPages = [];
+      const workerPromises = workers.map(async (worker) => {
+        for (const pageIdx of worker.assignedPages) {
+          const pageData = pagesData[pageIdx];
+          let success = false;
+          for (let retry = 0; retry < 3 && !success; retry++) {
+            try {
+              const ok = await navigateWorkerToCFI(worker.page, worker.id, pageData.cfi, pageIdx);
+              if (!ok && retry < 2) {
+                console.log(`[WORKER] ${worker.id}: retry ${retry + 1}/2 for page ${pageIdx + 1}`);
+                await worker.page.waitForTimeout(2000);
+                continue;
+              }
+              if (!ok) {
+                failedPages.push(pageIdx);
+                continue;
+              }
 
-    console.log(`[PARALLEL] Processing complete. ${validPages.length}/${totalPages} pages ready.`);
-    if (validPages.length < totalPages) {
-      console.log(`WARNING: ${totalPages - validPages.length} pages failed extraction`);
-    }
+              const content = await extractWorkerPage(worker.page, worker.id);
+              if (content) {
+                allResults.push({ pageIndex: pageIdx, content });
+                exportState.completed = allResults.length;
+                if (allResults.length % 20 === 0) {
+                  console.log(`[PARALLEL] Progress: ${allResults.length}/${totalPages} pages`);
+                }
+                success = true;
+              } else {
+                if (retry < 2) {
+                  console.log(`[WORKER] ${worker.id}: content extraction retry ${retry + 1}/2 for page ${pageIdx + 1}`);
+                  await worker.page.waitForTimeout(2000);
+                }
+              }
+            } catch(e) {
+              console.error(`[WORKER] ${worker.id}: error on page ${pageIdx + 1} (retry ${retry + 1}): ${e.message}`);
+              if (retry < 2) await worker.page.waitForTimeout(2000);
+            }
+          }
+          if (!success) {
+            failedPages.push(pageIdx);
+            allResults.push({ pageIndex: pageIdx, content: null });
+          }
+          await new Promise(r => setTimeout(r, 50));
+        }
+      });
 
-    let allHtml = validPages.map(p => p.html.replace(/<!DOCTYPE html>[\s\S]*<body>/, '').replace(/<\/body>[\s\S]*<\/html>/, '').replace(/<\/div>\s*$/, '')).join('\n');
+      await Promise.all(workerPromises);
+
+      // Secondary pass for failed pages - re-navigate the main page
+      if (failedPages.length > 0) {
+        console.log(`[PARALLEL] ${failedPages.length} pages failed - attempting secondary recovery...`);
+        for (const pageIdx of failedPages) {
+          const pageData = pagesData[pageIdx];
+          try {
+            const cfiEncoded = encodeURIComponent(pageData.cfi);
+            const navUrl = `https://capella.vitalsource.com/reader/books/${ISBN}/epubcfi/${cfiEncoded}`;
+            console.log(`[RECOVERY] Retrying page ${pageIdx + 1}...`);
+            await page.goto(navUrl, { waitUntil: 'domcontentloaded', timeout: 30000 }).catch(() => {});
+            await page.waitForTimeout(2000);
+
+            const frame = findContentFrame();
+            if (frame && frame.url().endsWith('OPS/') === false) {
+              await frame.waitForLoadState('domcontentloaded', { timeout: 10000 }).catch(() => {});
+              await page.waitForTimeout(1500);
+              const content = await extractFrameContentSafe();
+              if (content && content.html && content.html.length > 50) {
+                allResults[pageIdx] = { pageIndex: pageIdx, content };
+                console.log(`[RECOVERY] Page ${pageIdx + 1} succeeded`);
+              }
+            }
+          } catch(e) {
+            console.error(`[RECOVERY] Failed page ${pageIdx + 1}: ${e.message}`);
+          }
+        }
+      }
+
+      console.log(`[PARALLEL] Extraction complete. ${allResults.filter(r => r.content).length}/${totalPages} pages extracted.`);
+
+      // Process results (inline CSS + build HTML) concurrently
+      console.log(`[PARALLEL] Processing pages...`);
+      const processPromises = allResults.map(async ({ pageIndex, content }) => {
+        if (!content) return null;
+        const processed = await inlineCss(content);
+        const pageHtml = buildFullHtml(processed);
+        return {
+          page: pageIndex + 1,
+          cfi: processed.cfi,
+          title: processed.firstLines ? processed.firstLines[0] : '',
+          html: pageHtml,
+        };
+      });
+
+      const processedPages = await Promise.all(processPromises);
+      const validPages = [];
+      processedPages.filter(p => p !== null).forEach(p => {
+        validPages[p.page - 1] = p;
+      });
+
+      console.log(`[PARALLEL] Processing complete. ${validPages.length}/${totalPages} pages ready.`);
+      if (validPages.length < totalPages) {
+        console.log(`WARNING: ${totalPages - validPages.length} pages failed extraction`);
+      }
+
+      let allHtml = validPages.map(p => p.html.replace(/<!DOCTYPE html>[\s\S]*<body>/, '').replace(/<\/body>[\s\S]*<\/html>/, '').replace(/<\/div>\s*$/, '')).join('\n');
       allHtml = allHtml.replace(/src="https?:\/\/jigsaw\.vitalsource\.com([^"]*)"/g, 'src="/vs/image$1"');
 
       const fullExport = `<!DOCTYPE html>
@@ -627,21 +684,20 @@ ${allHtml}
 </body>
 </html>`;
 
-       exportState.html = fullExport;
-       exportState.completed = totalPages;
-       console.log(`Export complete. ${validPages.length} pages. Took ${(Date.now() - startTime)/1000}s`);
+      exportState.html = fullExport;
+      exportState.completed = totalPages;
+      console.log(`Export complete. ${validPages.length} pages. Took ${(Date.now() - startTime)/1000}s`);
     } catch(e) {
       console.error('Export error:', e);
       exportState.error = e.message;
     } finally {
-      // Cleanup worker pages
       for (const w of workers) {
         try { await w.page.close(); } catch(e) {}
       }
       console.log('[PARALLEL] Worker pages cleaned up');
       exportState.inProgress = false;
     }
-    })();
+  })();
 }
 
 async function handleApiExportStatus(req, res) {
@@ -1165,22 +1221,34 @@ const server = http.createServer(async (req, res) => {
 async function startServer() {
   server.listen(PORT, () => {
     console.log(`VitalSource Reader Server on port ${PORT}`);
-    if (!bookUrl || bookUrl.includes('reader/books')) {
-      console.log('Reader URL provided but no bc_token for authentication.');
-      console.log('Please POST bc_token URL to /vs/api/init to authenticate.');
-      console.log('Example: {"url":"https://bc.vitalsource.com/books/ISBN?bc_token=TOKEN&relaunch_vbid=ISBN&course_dash_relaunch=true"}');
-      
-      // Try loading cookies as fallback
-      const cookiesPath = path.join(path.dirname(new URL(import.meta.url).pathname), 'cookies_full.json');
-      try {
-        const cookies = JSON.parse(fs.readFileSync(cookiesPath, 'utf8'));
-        console.log(`Found ${cookies.length} cookies, attempting to use them...`);
-        initBrowser(bookUrl, cookies).catch(e => console.error('Cookie init error:', e.message));
-      } catch(e) {
-        console.log('No cookies file found.');
+
+    // Always try loading cookies as fallback
+    const cookiesPath = path.join(path.dirname(new URL(import.meta.url).pathname), 'cookies_full.json');
+    let fallbackCookies = null;
+    try {
+      const cookies = JSON.parse(fs.readFileSync(cookiesPath, 'utf8'));
+      fallbackCookies = cookies;
+      console.log(`Found ${cookies.length} fallback cookies`);
+    } catch(e) {
+      console.log('No cookies file found.');
+    }
+
+    if (!bookUrl) {
+      console.log('No reader URL provided.');
+      console.log('POST a bc_token URL to /vs/api/init to authenticate.');
+    } else if (bookUrl.includes('bc.vitalsource.com') || bookUrl.includes('bc_token')) {
+      // bc_token URL - navigate and let browser handle the redirect chain
+      // Cookies from redirect will be captured automatically in the context
+      initBrowser(bookUrl, fallbackCookies).catch(e => console.error('Init error:', e.message));
+    } else if (bookUrl.includes('reader/books')) {
+      // Reader URL - use cookies for auth
+      if (fallbackCookies) {
+        initBrowser(bookUrl, fallbackCookies).catch(e => console.error('Cookie init error:', e.message));
+      } else {
+        initBrowser(bookUrl).catch(e => console.error('Init error:', e.message));
       }
     } else {
-      initBrowser(bookUrl).catch(e => console.error('Init error:', e.message));
+      initBrowser(bookUrl, fallbackCookies).catch(e => console.error('Init error:', e.message));
     }
   });
 }
