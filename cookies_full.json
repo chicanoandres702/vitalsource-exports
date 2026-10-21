@@ -1,7 +1,7 @@
 [
   {
     "name": "_businesscenter",
-    "value": "4b4c058990a66778799fbf75c328161d",
+    "value": "a2979cb3f349bdc8374386237c767c9f",
     "domain": "bc.vitalsource.com",
     "path": "/",
     "expires": -1,
@@ -11,54 +11,14 @@
   },
   {
     "name": "cf_clearance",
-    "value": "gG_YDhvRyS2qOXSB_Zyqc556y7N2e2zuWFYBJChIG5U-1792573854-1.2.1.1-MqmueIAGWpIoAM4wdZyB8l7gvQTjczEawjv28ZhcBGigXm.CQfmzcoqorEW9cWIt1FI9vj301IxpyhO5RERgLG9vpN.zsc6zbYI2oZzHtmS0gtT9tYGjN6wMNYNGhY_GDB3Bujmu1cNBBtQgzH3GBnWTQPFLu6iau8yaLYMzPYI97Aaz6a_ZzwYa5bZvAAlyQemxrTgaqFB0bdd2nlnhJTN.fQb1YvGJylxisqoJsyYJB_B9_rJ3Wc9Om6VsDgkFUx8BOc_HAanEPWm3nQxFh5.ktN_f31cIS2L0vZ2QKnyGpQeNbi5fXMeZam4Nzl_UkHWe.yHxOtLr_.GnIfrddZj1isz_W3P.0iBuZbenrSE",
+    "value": "NMz2Z8kuZMp_fKRl9guNUCFVwO5IGd0n_9ozhRMiFbI-1792574778-1.2.1.1-wH93FSI6dByl2izYXOIae_qknCbRdhUsUV4Y4vkne..iSQ6b_BssfSwAiQpEsWtN_7ZyMoalo8d5F9dGShtjvT3N2cY1JSaoR7OTsPdFzsNN1TxkWGfHGGldGsdC0B_QlG0_jiOD4QiTkPiR10AeBovLwAB2QKEXiooGdxXb2wH_IGRgvoFBtuIwaVPVHFy11ol_NaLjAWDg5VrozaA7tr56.FX7MDmYPb6O5Ugs4Q6WfkWNnQdjHDICoTEBveM6rWfkaoqunUH9aBF6RBRDD7jvBNa_HrUIEAvkeln32nLNiGf05mLQbiZuArBZaiEG2whLUeyach4YwKZxYoG86CDpoakFqvWi5toyKMGCBow",
     "domain": ".vitalsource.com",
     "path": "/",
-    "expires": 1824109854.360896,
+    "expires": 1824110778.230113,
     "httpOnly": true,
     "secure": true,
     "sameSite": "None",
     "partitionKey": "https://vitalsource.com",
     "_crHasCrossSiteAncestor": false
-  },
-  {
-    "name": "jig_isbns",
-    "value": "IntcImlzYm5zXCI6W1wiOTc4MDQ2NTA5NDQ2MlwiLFwiODI1NTQxQlwiLFwiOTc4MTI2NjYwNzc1MlwiLFwiOTc5ODIxNDM0MjQ0M1wiLFwiOTc5ODIxNDM0NjI1MFwiLFwiOTc5ODIxNDU4MjU0MlwiXSxcImd1aWRcIjpcIkJZQlNBVVIzVkI3WEJQS1ZVUVpCXCIsXCJlXCI6MCxcImlkXCI6XCI5NTcyMWQwNTkzNmU2ZDFhMmM3MjIwNzVlNDA1OGY5MVwiLFwicnRcIjpudWxsLFwicmlcIjpudWxsfSI%3D--d5c1f8c7f88a5dcd4e4c2c1c0dda699c9841fe2f8e8c7137da181ab373262896",
-    "domain": "jigsaw.vitalsource.com",
-    "path": "/",
-    "expires": 1792575665.889309,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "prokofiev",
-    "value": "IlwiMzMyOWQxZjI1MmNkMTI0NTMwY2M3Yjc2MDRlMjBiZTlcIiI%3D--4aa9e43eef36cb80e0fb2e6de6dd22f59f762755051a64b1b8b9dac1fadc11d9",
-    "domain": "jigsaw.vitalsource.com",
-    "path": "/",
-    "expires": 1792833065.893137,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "_jigsaw_session",
-    "value": "BYMBEqRZWPZVGpId12Hiutu8LB3ByyKSm9hneyMEosoJNLHVJHGN%2F2C2qxSpDuPzp9qW9MOoGCDzvbuI7dnDQHUJY2Tl%2Fd3wgb%2F%2FneNM9OJ0sOGkRSQ6Mh6LTwhyHH4S3EM%3D--%2Bhd8b9Ti0WR6OtB5--djHMn3C5Lyrr%2FC%2FABrXv8Q%3D%3D",
-    "domain": "jigsaw.vitalsource.com",
-    "path": "/",
-    "expires": -1,
-    "httpOnly": true,
-    "secure": true,
-    "sameSite": "None"
-  },
-  {
-    "name": "_aloha__a3check",
-    "value": "true",
-    "domain": "login.vitalsource.com",
-    "path": "/",
-    "expires": 1792584667.588452,
-    "httpOnly": false,
-    "secure": true,
-    "sameSite": "None"
   }
 ]
